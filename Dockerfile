@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM mcr.microsoft.com/devcontainers/javascript-node:0-20 AS build
+FROM mcr.microsoft.com/devcontainers/javascript-node:0-18 AS build
 ARG REACT_APP_BACKEND_URL
 WORKDIR /code
 COPY ./src ./src
