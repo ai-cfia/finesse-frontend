@@ -2,12 +2,15 @@ name: Docker Image CI
 
 on:
   push:
-    branches: ['main']
+    branches:
+      - main
+      - Workflow-Setup
   pull_request:
   # Absence of the branches property under pull_request means it will apply to all branches
+
 jobs:
 
-  lint-and-test:
+  lint:
     runs-on: ubuntu-latest
     environment: experimental
     steps:
@@ -20,12 +23,20 @@ jobs:
         run: npm install
       - name: Run ESLint
         run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    environment: experimental
+    needs: lint
+    steps:
+      - uses: actions/checkout@v3
       - name: Run tests
         run: npm test
 
   build:
     runs-on: ubuntu-latest
     environment: experimental
+    needs: test
     steps:
       - name: Login to GAR
         uses: docker/login-action@v2
