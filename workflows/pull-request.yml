@@ -1,0 +1,80 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: ['main']
+  pull_request:
+  # Absence of the branches property under pull_request means it will apply to all branches
+jobs:
+
+  lint-and-test:
+    runs-on: ubuntu-latest
+    environment: experimental
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18.16.0' # Change to your desired Node.js version
+      - name: Install dependencies
+        run: npm install
+      - name: Run ESLint
+        run: npm run lint
+      - name: Run tests
+        run: npm test
+
+  build:
+    runs-on: ubuntu-latest
+    environment: experimental
+    steps:
+      - name: Login to GAR
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ secrets.GCP_CLOUDRUN_REGION }}-docker.pkg.dev
+          username: _json_key
+          password: ${{ secrets.LOUIS_GAR_JSON_KEY }}
+      - uses: actions/checkout@v3
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Cache Docker layers
+        uses: actions/cache@v2
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-louis-finesse-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-louis-finesse
+      - name: Build the Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          build-args: REACT_APP_BACKEND_URL=${{ secrets.REACT_APP_BACKEND_URL }}
+          tags: ${{ secrets.LOUIS_REGISTRY }}/louis-finesse:latest
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new
+      - name: Move cache
+        run: |
+          rm -rf /tmp/.buildx-cache
+          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    needs: build
+    runs-on: ubuntu-latest
+    environment: experimental
+    steps:
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v1
+        with:
+          credentials_json: ${{ secrets.LOUIS_GAR_JSON_KEY }}
+      - name: Deploy to Cloud Run
+        # You may pin to the exact commit or the version.
+        # uses: google-github-actions/deploy-cloudrun@e62f655d5754bec48078a72edc015367b01ee97b
+        uses: google-github-actions/deploy-cloudrun@v1.0.2
+        with:
+          # Name of the container image to deploy (e.g. gcr.io/cloudrun/hello:latest). Required if not using a service YAML.
+          image: ${{ secrets.LOUIS_REGISTRY }}/louis-finesse:latest
+          # ID of the service or fully qualified identifier for the service. Required if not using a service YAML.
+          service: louis-finesse
+          # Region in which the resource can be found.
+          region: ${{ secrets.GCP_CLOUDRUN_REGION }}
