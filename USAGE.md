@@ -7,7 +7,7 @@ To get started with the project, follow the steps below:
 ### Prerequisites
 
 - Node.js v18.16.0
-- NPM 9.5.1
+- NPM 9.8.1
 
 ### Installation
 
