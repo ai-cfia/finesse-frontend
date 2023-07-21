@@ -5,12 +5,16 @@ import Header from "../../components/header/Header";
 import { useStateValue } from "../../StateProvider";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
+import SearchResultList from "../../components/search_results/SearchResultsList";
+import { useApiUtil } from "../../api/useApiUtil";
 
 const SearchPage: React.FC = () => {
   const {
     state: { term },
   } = useStateValue();
-  const termProp = term !== null ? term : undefined;
+  const termProp = term !== null ? term : ""; // Provide a default value for termProp
+
+  const { data } = useApiUtil(termProp); // Use termProp instead of term
 
   // useEffect hook to print the value of term whenever it changes
   useEffect(() => {
@@ -20,7 +24,6 @@ const SearchPage: React.FC = () => {
   return (
     <div className={styles.layout}>
       <Header />
-
       <div className="searchPage_header">
         <CFIALogo />
 
@@ -28,6 +31,8 @@ const SearchPage: React.FC = () => {
           <SearchBar term={termProp} />
         </div>
       </div>
+      <SearchResultList data={data} query={termProp} />{" "}
+      {/* Use termProp instead of term */}
     </div>
   );
 };
