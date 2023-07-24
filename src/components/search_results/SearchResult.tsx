@@ -1,6 +1,7 @@
 // SearchResult.tsx
 import React from "react";
 import "./SearchResultsList.css";
+import HighlightedContent from "../highlighted_content/HighlightedContent";
 
 interface SearchResultProps {
   item: {
@@ -30,8 +31,9 @@ const SearchResult: React.FC<SearchResultProps> = ({ item, query }) => {
           <span className="url">{item.url}</span>
         </div>
       </a>
-      <div>{item.content}</div>
-      <div>{query}</div>
+      <div>
+        <HighlightedContent content={item.content} query={query} />
+      </div>
     </div>
   );
 };
