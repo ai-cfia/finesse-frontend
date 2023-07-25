@@ -1,4 +1,4 @@
-// api.ts
+// useApiUtil.tsx
 import { useState, useEffect } from "react";
 
 // Function to generate the endpoint URL based on the path
@@ -45,9 +45,9 @@ export const useApiUtil = (term: string): { data: any } => {
 };
 
 // Function to ping the backend
-export const PingBackend = async (): Promise<any> => {
+export const PingBackend = async (endpoint: string): Promise<any> => {
   try {
-    const response = await fetch(GetEndpoint("/search"), {
+    const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -60,9 +60,7 @@ export const PingBackend = async (): Promise<any> => {
       const data = await response.json(); // Parse the response body
       return data; // Return the response data
     } else {
-      throw new Error(
-        "Warning: Initializing ping request to backend $REACT_APP_BACKEND_URL failed.",
-      );
+      throw new Error("Warning: Initializing ping request to backend failed.");
     }
   } catch (error) {
     console.error("Error: ", error);
