@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@saithodev/ts-appversion": "^2.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -19,7 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "prestart": "ts-appversion",
     "start": "react-scripts start",
+    "prebuild": "ts-appversion",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

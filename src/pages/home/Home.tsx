@@ -4,6 +4,7 @@ import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { useState, useEffect } from "react";
 import { PingBackend, GetEndpoint } from "../../api/useApiUtil"; // Removed the import for GetEndpoint
+import { environment } from "../../environments/environment";
 
 const Home: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState(""); // State variable for the alert message
@@ -68,6 +69,9 @@ const Home: React.FC = () => {
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
         </text>
+      </div>
+      <div className={styles.versionText}>
+        {environment.version !== "" ? "v" + environment.version : ""}{" "}
       </div>
     </div>
   );
