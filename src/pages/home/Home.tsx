@@ -63,9 +63,9 @@ const Home: React.FC = () => {
           color: "grey",
         }}
       >
-        <text>Empowering agency`&apos;`s users with precision search.</text>
+        <text>Empowering agency&apos;s users with precision search.</text>
         <text style={{ marginTop: 10 }}>
-          Équiper les utilisateurs de l`&apos;`agence avec la recherche de
+          Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
         </text>
       </div>
