@@ -89,7 +89,9 @@ All necessary ESLint packages will be installed for your project.
   }
 }
 ```
+
 ### Step 14: Create a file in the root directory called ‘.prettierrc’. Copy and paste this code in there:
+
 ```json
 {
   "tabWidth": 2,
@@ -100,16 +102,18 @@ All necessary ESLint packages will be installed for your project.
   "printWidth": 80
 }
 ```
+
 ### Step 15: In the package.json file, add the following two lines inside the "scripts" section:
 
 ```json
 "lint": "eslint .",
 "lint:fix": "eslint --fix ."
 ```
-### Step 16: To format all the code in the project run: 
+
+### Step 16: To format all the code in the project run:
 
 `npx prettier --write .`
 
-### Step 17: To run ESLint run: 
+### Step 17: To run ESLint run:
 
 `npm run lint`
