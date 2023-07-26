@@ -1,13 +1,14 @@
 import React from "react"; // Import 'React' from the 'react' package.
 import cfia from "../../assets/CFIA_Banner.png";
 import styles from "../../pages/home/Home.module.css";
+import { HeaderContainer } from "../../styles/indexElements";
 
 // Header Component -> Displays CFIA banner image.
 const Header: React.FC = () => {
   // Add type annotation for the component.
   return (
     <header className={styles.header} role={"banner"}>
-      <div className={styles.headerContainer}>
+      <HeaderContainer>
         <nav>
           <ul className={styles.headerNavList}>
             <li className={styles.headerNavLeftMargin}>
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
             <li className={styles.headerRightText}>Alpha Version</li>
           </ul>
         </nav>
-      </div>
+      </HeaderContainer>
     </header>
   );
 };
