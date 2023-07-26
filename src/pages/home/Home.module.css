@@ -91,3 +91,14 @@
   padding: 10px;
   margin-bottom: 10px;
 }
+
+.versionText {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: grey;
+  font-size: 16px;
+  font-weight: bold;
+}
