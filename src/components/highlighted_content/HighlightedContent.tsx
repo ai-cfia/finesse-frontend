@@ -1,6 +1,5 @@
 import React from "react";
 
-// Function to highlight words within a sentence
 export const highlightWords = (
   sentence: string,
   query: string,
@@ -17,7 +16,7 @@ export const highlightWords = (
     const normalizedWord = word.replace(/[.,?!]/g, ""); // Remove punctuation for comparison
     const shouldHighlight =
       query.toLowerCase().includes(normalizedWord.toLowerCase()) &&
-      normalizedWord.length > 4; // Check if word length is greater than 4
+      normalizedWord.length >= 4; // Check if word length is greater than or equal to 4
     const punctuation = word
       .slice(normalizedWord.length)
       .replace(/[.,?!]/g, ""); // Extract punctuation
