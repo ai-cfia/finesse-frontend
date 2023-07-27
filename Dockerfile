@@ -6,6 +6,7 @@ COPY ./src ./src
 COPY ./public ./public
 COPY package.json .
 COPY package-lock.json .
+COPY tsconfig.json .
 RUN npm install --include=dev
 RUN REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL npm run build
 RUN CI=1 npm run test
