@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: "18.16.0" # Change to your desired Node.js version
       - name: Install dependencies
-        run: npm install -g
+        run: npm install -g --dev
       - name: Run ESLint
         run: npm run lint
 
