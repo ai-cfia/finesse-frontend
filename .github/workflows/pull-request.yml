@@ -4,21 +4,20 @@ on:
   push:
     branches:
       - main
-      - Workflow-Setup
   pull_request:
   # Absence of the branches property under pull_request means it will apply to all branches
 
 jobs:
   lint-test:
     runs-on: ubuntu-latest
-    # container: mcr.microsoft.com/devcontainers/javascript-node:0-18
     environment: experimental
     steps:
       - uses: actions/checkout@v3
       - name: Install Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: "18.16.0"
+          cache: npm
+          node-version-file: "package.json"
       - name: install npm
         run: npm install -g npm@9.8.1
       - name: install dependencies
@@ -29,6 +28,7 @@ jobs:
         run: npm test
 
   build:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment: experimental
     needs: lint-test
