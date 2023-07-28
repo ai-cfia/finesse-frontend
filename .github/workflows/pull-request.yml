@@ -9,12 +9,12 @@ on:
 
 jobs:
   lint-test:
-    uses: ./.github/workflows/workflow-lint-test-node.yml
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
 
   build:
     # if: github.ref == 'refs/heads/main'
     needs: lint-test
-    uses: ./.github/workflows/workflow-build-container.yml
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-build-container.yml@main
     with:
       container-name: ${{ github.event.repository.name }}
       tag: ${{ github.sha }}    
@@ -23,7 +23,7 @@ jobs:
   deploy:
     # if: github.ref == 'refs/heads/main'
     needs: build
-    uses: ./.github/workflows/workflow-deploy-gcp.yml
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-deploy-gcp.yml@main
     with:
       container-name: ${{ github.event.repository.name }}
       tag: ${{ github.sha }}
