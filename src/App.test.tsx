@@ -1,9 +1,10 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import App from "./App";
+import { environment } from "./environments/environment";
 
-test("renders learn react link", () => {
+test("make sure the version matches", () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+  const linkElement = screen.getByText("v" + environment.version);
   expect(linkElement).toBeInTheDocument();
 });
