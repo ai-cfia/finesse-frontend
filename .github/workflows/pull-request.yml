@@ -19,8 +19,10 @@ jobs:
       #   uses: actions/setup-node@v2
       #   with:
       #     node-version: "18.16.0"
+      - name: install npm
+        run: npm install -g npm@9.8.1
       - name: install dependencies
-        run: npm install -g --include=dev
+        run: npm install
       - name: Run ESLint
         run: npm run lint
 
