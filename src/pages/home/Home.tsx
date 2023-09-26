@@ -3,12 +3,20 @@ import styles from "../home/Home.module.css";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { useState, useEffect } from "react";
-import { PingBackend, GetEndpoint } from "../../api/useApiUtil"; // Removed the import for GetEndpoint
+import { PingBackend, GetEndpoint } from "../../api/useApiUtil";
 import { environment } from "../../environments/environment";
+import { DebugPanel } from "../../components/debug_panel/DebugPanel";
+import { useStateValue, actionTypes } from "../../StateProvider";
+import { FaCog } from "react-icons/fa"; // Import for the settings icon
 
 const Home: React.FC = () => {
-  const [alertMessage, setAlertMessage] = useState(""); // State variable for the alert message
-  const [isError, setIsError] = useState(false); // State to track if the backend URL is missing
+  const [alertMessage, setAlertMessage] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [isDebugPanelVisible, setIsDebugPanelVisible] = useState(false); // State for DebugPanel visibility
+  const {
+    state: { useSimulatedData },
+    dispatch,
+  } = useStateValue();
 
   useEffect(() => {
     // Check if the backend URL is missing or empty
@@ -48,6 +56,29 @@ const Home: React.FC = () => {
     <div className={styles.layout}>
       <Header />
       {isError && <div className={styles.warning}>{alertMessage}</div>}
+      <FaCog
+        onClick={() => {
+          setIsDebugPanelVisible(!isDebugPanelVisible);
+        }}
+        style={{
+          cursor: "pointer",
+          zIndex: 1001,
+          position: "absolute",
+          left: "10px",
+          top: isError ? "160px" : "110px", // Adjust according to Header height and potential error message height
+        }}
+      />
+      {isDebugPanelVisible && (
+        <DebugPanel
+          isEnabled={useSimulatedData}
+          onToggle={() => {
+            dispatch({
+              type: actionTypes.SET_USE_SIMULATED_DATA,
+              useSimulatedData: !useSimulatedData,
+            });
+          }}
+        />
+      )}
       <div className="logo-container">
         <CFIALogo />
       </div>

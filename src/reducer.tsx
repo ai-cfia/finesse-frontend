@@ -1,15 +1,16 @@
 import { type Reducer } from "react"; // Import Reducer type
 import { type State, type Action } from "./StateProvider"; // Import State and Action types from the correct file
 
-// Define action types as constants
 export const actionTypes = {
   SET_SEARCH_TERM: "SET_SEARCH_TERM",
+  SET_USE_SIMULATED_DATA: "SET_USE_SIMULATED_DATA",
   // Add other action types as needed
 };
 
 // Define the initial state
 export const initialState: State = {
   term: null,
+  useSimulatedData: false,
   // Initialize other state properties here if needed
 };
 
@@ -21,7 +22,11 @@ const reducer: Reducer<State, Action> = (state, action) => {
         ...state,
         term: action.term ?? null,
       };
-    // Add other cases for different actions if needed
+    case actionTypes.SET_USE_SIMULATED_DATA:
+      return {
+        ...state,
+        useSimulatedData: action.useSimulatedData ?? false,
+      };
     default:
       return state;
   }

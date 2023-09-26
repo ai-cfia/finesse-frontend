@@ -10,11 +10,11 @@ import { useApiUtil } from "../../api/useApiUtil";
 
 const SearchPage: React.FC = () => {
   const {
-    state: { term },
+    state: { term, useSimulatedData }, // Directly get useSimulatedData from the global state
   } = useStateValue();
   const termProp = term !== null ? term : ""; // Provide a default value for termProp
 
-  const { data } = useApiUtil(termProp); // Use termProp instead of term
+  const { data } = useApiUtil(termProp, useSimulatedData);
 
   // useEffect hook to print the value of term whenever it changes
   useEffect(() => {
@@ -31,8 +31,7 @@ const SearchPage: React.FC = () => {
           <SearchBar term={termProp} />
         </div>
       </div>
-      <SearchResultList data={data} query={termProp} />{" "}
-      {/* Use termProp instead of term */}
+      <SearchResultList data={data} query={termProp} />
     </div>
   );
 };

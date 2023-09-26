@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "url": "https://sample1.com",
+    "title": "Sample Title 1",
+    "content": "This is the content of the first sample data for your project. It's just a simple example."
+  },
+  {
+    "id": "2",
+    "url": "https://sample2.com",
+    "title": "Sample Title 2",
+    "content": "Here's some more content, this time from the second sample data item. Again, it's just a placeholder."
+  },
+  {
+    "id": "3",
+    "url": "https://sample3.com",
+    "title": "Sample Title 3",
+    "content": "Lastly, this is the content from the third sample data item. Just like the previous ones, it's here to help demonstrate the data structure."
+  }
+]
