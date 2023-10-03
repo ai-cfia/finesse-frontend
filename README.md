@@ -1,8 +1,8 @@
-# Louis Finesse
+# Finesse Frontend
 
 ## Introduction
 
-Louis Finesse is a project designed to provide users with the ability to search for agency-related content and present search results. The application aims to streamline the process of finding information by offering a user-friendly interface and intuitive search functionality.
+Finesse is a project designed to provide users with the ability to search for agency-related content and present search results. The application aims to streamline the process of finding information by offering a user-friendly interface and intuitive search functionality.
 
 ## Video Demonstration
 
