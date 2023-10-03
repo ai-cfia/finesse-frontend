@@ -4,6 +4,10 @@
 
 Louis Finesse is a project designed to provide users with the ability to search for agency-related content and present search results. The application aims to streamline the process of finding information by offering a user-friendly interface and intuitive search functionality.
 
+## Video Demonstration
+
+[Finesse Demo Video](https://youtu.be/10hBAW4eXjc?si=lTCt9FiLwuW3GAXZ)
+
 ## Usage
 
 ### Home Page
