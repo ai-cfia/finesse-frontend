@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b3cfccfd.css",
+    "main.js": "/static/js/main.1f4f90ff.js",
+    "static/js/496.0a61f303.chunk.js": "/static/js/496.0a61f303.chunk.js",
+    "static/media/CFIA_SmartSearch_Logo.png": "/static/media/CFIA_SmartSearch_Logo.98eb8410004f26c2e30a.png",
+    "static/media/CFIA_Banner.png": "/static/media/CFIA_Banner.db7c0cb91dda59663e0f.png",
+    "index.html": "/index.html",
+    "main.b3cfccfd.css.map": "/static/css/main.b3cfccfd.css.map",
+    "main.1f4f90ff.js.map": "/static/js/main.1f4f90ff.js.map",
+    "496.0a61f303.chunk.js.map": "/static/js/496.0a61f303.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3cfccfd.css",
+    "static/js/main.1f4f90ff.js"
+  ]
+}
