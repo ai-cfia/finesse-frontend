@@ -2,6 +2,7 @@
   "name": "louis-finesse",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ai-cfia.github.io/finesse-frontend",
   "dependencies": {
     "@saithodev/ts-appversion": "^2.2.0",
     "react": "^18.2.0",
@@ -58,7 +59,7 @@
     "eslint-config-standard-with-typescript": "^37.0.0",
     "eslint-plugin-prettier": "^5.0.0"
   },
-  "engines" : { 
+  "engines" : {
     "npm" : "^9.8.1",
     "node" : "^18.16.0"
   }

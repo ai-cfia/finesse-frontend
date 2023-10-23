@@ -3,7 +3,7 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - redat97/issue23
+      - issue23-update-deployment-workflow
 
 jobs:
   build-and-deploy:
