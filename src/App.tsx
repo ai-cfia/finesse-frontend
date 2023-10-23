@@ -10,7 +10,7 @@ import { BrowserRouter } from "react-router-dom";
 
 function App(): JSX.Element {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/finesse-frontend">
       <StateProvider reducer={reducer} initialState={initialState}>
         <Routes>
           <Route path="/" element={<Home />} />
