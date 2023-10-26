@@ -58,8 +58,8 @@
     "eslint-config-standard-with-typescript": "^37.0.0",
     "eslint-plugin-prettier": "^5.0.0"
   },
-  "engines" : { 
-    "npm" : "^9.8.1",
-    "node" : "^18.16.0"
+  "engines": {
+    "npm": "^9.8.1",
+    "node": "^18.16.0"
   }
 }
