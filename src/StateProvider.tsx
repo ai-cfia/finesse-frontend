@@ -10,6 +10,7 @@ import React, {
 export interface State {
   term: string | null;
   useSimulatedData: boolean;
+  simulatedData?: any; // Adjust the type according to what your simulated data looks like
   // Define other state properties if needed
 }
 
@@ -25,6 +26,7 @@ export interface Action {
   type: string;
   term?: string;
   useSimulatedData?: boolean;
+  simulatedData?: any; // or null,
   // Define other action properties if needed
 }
 
@@ -32,6 +34,7 @@ export interface Action {
 export const actionTypes = {
   SET_SEARCH_TERM: "SET_SEARCH_TERM",
   SET_USE_SIMULATED_DATA: "SET_USE_SIMULATED_DATA",
+  SET_SIMULATED_DATA: "SET_SIMULATED_DATA",
   // Add other action types as needed
 };
 

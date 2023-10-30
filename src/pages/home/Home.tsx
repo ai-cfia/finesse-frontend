@@ -7,19 +7,23 @@ import { PingBackend, GetEndpoint } from "../../api/useApiUtil";
 import { environment } from "../../environments/environment";
 import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import { useStateValue, actionTypes } from "../../StateProvider";
-import { FaCog } from "react-icons/fa"; // Import for the settings icon
+import { FaCog } from "react-icons/fa";
 
 const Home: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const [isError, setIsError] = useState(false);
-  const [isDebugPanelVisible, setIsDebugPanelVisible] = useState(false); // State for DebugPanel visibility
+  const [isDebugPanelVisible, setIsDebugPanelVisible] = useState(false);
+  const [simulatedData, setSimulatedData] = useState(null);
+
   const {
     state: { useSimulatedData },
     dispatch,
   } = useStateValue();
 
   useEffect(() => {
-    // Check if the backend URL is missing or empty
+    console.log("useSimulatedData:", useSimulatedData);
+    console.log("simulatedData:", simulatedData);
+
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
       process.env.REACT_APP_BACKEND_URL === ""
@@ -28,29 +32,31 @@ const Home: React.FC = () => {
       setAlertMessage(
         "Warning: Backend URL is not set, frontend is misconfigured.",
       );
+      console.log("Backend URL is not set, frontend is misconfigured.");
     } else {
-      // Check if response is ok
       PingBackend(GetEndpoint("/search"))
         .then((responseData) => {
           if (Array.isArray(responseData) && responseData.length === 0) {
-            // Response data is an empty array
-            console.log("Empty array response");
+            console.log("Empty array response from backend");
           } else {
-            // Response data is not an empty array
             setIsError(true);
             setAlertMessage(
               "Warning: Initializing ping request to backend failed.",
-            ); // Set the alert message on error
+            );
+            console.log("Initializing ping request to backend failed.");
           }
         })
         .catch(() => {
           setIsError(true);
           setAlertMessage(
             "Warning: Initializing ping request to backend failed.",
-          ); // Set the alert message on error
+          );
+          console.log(
+            "Initializing ping request to backend failed. Caught in catch.",
+          );
         });
     }
-  }, []);
+  }, [useSimulatedData, simulatedData]); // Add useSimulatedData and simulatedData to the dependency array
 
   return (
     <div className={styles.layout}>
@@ -59,13 +65,14 @@ const Home: React.FC = () => {
       <FaCog
         onClick={() => {
           setIsDebugPanelVisible(!isDebugPanelVisible);
+          console.log("Toggling Debug Panel visibility");
         }}
         style={{
           cursor: "pointer",
           zIndex: 1001,
           position: "absolute",
           left: "10px",
-          top: isError ? "160px" : "110px", // Adjust according to Header height and potential error message height
+          top: isError ? "160px" : "110px",
         }}
       />
       {isDebugPanelVisible && (
@@ -76,7 +83,9 @@ const Home: React.FC = () => {
               type: actionTypes.SET_USE_SIMULATED_DATA,
               useSimulatedData: !useSimulatedData,
             });
+            console.log("Toggling useSimulatedData");
           }}
+          onSetSimulatedData={setSimulatedData}
         />
       )}
       <div className="logo-container">
@@ -102,7 +111,7 @@ const Home: React.FC = () => {
         </text>
       </div>
       <div className={styles.versionText}>
-        {environment.version !== "" ? "v" + environment.version : ""}{" "}
+        {environment.version !== "" ? "v" + environment.version : ""}
       </div>
     </div>
   );

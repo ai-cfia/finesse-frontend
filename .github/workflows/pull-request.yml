@@ -17,7 +17,7 @@ jobs:
     uses: ai-cfia/github-workflows/.github/workflows/workflow-build-container.yml@main
     with:
       container-name: ${{ github.event.repository.name }}
-      tag: ${{ github.sha }}    
+      tag: ${{ github.sha }}
     secrets: inherit
 
   deploy:
@@ -28,4 +28,3 @@ jobs:
       container-name: ${{ github.event.repository.name }}
       tag: ${{ github.sha }}
     secrets: inherit
-  

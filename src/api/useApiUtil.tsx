@@ -1,6 +1,11 @@
-// useApiUtil.tsx
 import { useState, useEffect } from "react";
-import testData from "../test_data/testData.json"; // Make sure the path points to your test data file
+import { useStateValue } from "../StateProvider";
+
+interface UseApiUtilProps<T> {
+  term: string;
+  useSimulatedData: boolean;
+  simulatedData?: T;
+}
 
 // Function to generate the endpoint URL based on the path
 export const GetEndpoint = (path: string): string => {
@@ -9,17 +14,30 @@ export const GetEndpoint = (path: string): string => {
 };
 
 // Custom hook for making API requests
-export const useApiUtil = (
-  term: string,
-  useSimulatedData: boolean,
-): { data: any } => {
-  const [data, setData] = useState<any>(null);
+export const useApiUtil = <T,>(
+  props: UseApiUtilProps<T>,
+): { data: T | null } => {
+  const { state } = useStateValue();
+  const { term, useSimulatedData, simulatedData } = state;
+
+  const [data, setData] = useState<T | null>(null);
 
   useEffect(() => {
+    console.log("useApiUtil Hook triggered");
+    console.log("Term: ", term);
+    console.log("Use Simulated Data: ", useSimulatedData);
+    console.log("Simulated Data: ", simulatedData);
+
     const fetchData = async (): Promise<void> => {
-      if (useSimulatedData) {
-        setData(testData); // Use the test data directly if useSimulatedData is true
-      } else {
+      if (
+        useSimulatedData &&
+        simulatedData !== null &&
+        simulatedData !== undefined
+      ) {
+        console.log("Setting data from simulated data");
+        setData(simulatedData);
+      } else if (term !== null && term !== undefined && term.trim() !== "") {
+        console.log("Fetching data from API");
         try {
           const response = await fetch(GetEndpoint("/search"), {
             method: "POST",
@@ -28,24 +46,30 @@ export const useApiUtil = (
               query: term,
             }),
           });
-
           if (response.ok) {
             const responseData = await response.json();
+            console.log("API data fetched successfully: ", responseData);
             setData(responseData);
-            console.log("This is the data: ", responseData);
           } else {
-            throw new Error("Request failed");
+            console.error("API request failed with status: ", response.status);
+            setData(null);
           }
         } catch (error) {
-          console.error("Error: ", error);
+          console.error("API request failed with error: ", error);
+          setData(null);
         }
+      } else {
+        console.log(
+          "Term is null, empty or Use Simulated Data is true without data, not fetching data",
+        );
+        setData(null);
       }
     };
 
     fetchData().catch((error) => {
-      console.error("Error fetching data: ", error);
+      console.error("Error fetching data in fetchData: ", error);
     });
-  }, [term, useSimulatedData]); // Make sure to include useSimulatedData in the dependency array
+  }, [term, useSimulatedData, simulatedData]);
 
   return { data };
 };
@@ -63,13 +87,17 @@ export const PingBackend = async (endpoint: string): Promise<any> => {
 
     if (response.ok) {
       console.log("Active Server Connection");
-      const data = await response.json(); // Parse the response body
-      return data; // Return the response data
+      const data = await response.json();
+      return data;
     } else {
-      throw new Error("Warning: Initializing ping request to backend failed.");
+      console.error(
+        "Initializing ping request to backend failed with status: ",
+        response.status,
+      );
+      throw new Error("Initializing ping request to backend failed");
     }
   } catch (error) {
-    console.error("Error: ", error);
-    throw error; // Re-throw the error
+    console.error("Ping request failed with error: ", error);
+    throw error;
   }
 };

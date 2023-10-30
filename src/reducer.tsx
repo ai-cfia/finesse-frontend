@@ -4,6 +4,7 @@ import { type State, type Action } from "./StateProvider"; // Import State and A
 export const actionTypes = {
   SET_SEARCH_TERM: "SET_SEARCH_TERM",
   SET_USE_SIMULATED_DATA: "SET_USE_SIMULATED_DATA",
+  SET_SIMULATED_DATA: "SET_SIMULATED_DATA",
   // Add other action types as needed
 };
 
@@ -26,6 +27,11 @@ const reducer: Reducer<State, Action> = (state, action) => {
       return {
         ...state,
         useSimulatedData: action.useSimulatedData ?? false,
+      };
+    case actionTypes.SET_SIMULATED_DATA:
+      return {
+        ...state,
+        simulatedData: action.simulatedData,
       };
     default:
       return state;
