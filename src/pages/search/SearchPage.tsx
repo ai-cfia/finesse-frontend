@@ -8,20 +8,13 @@ import { SearchBar } from "../../components/searchbar/SearchBar";
 import SearchResultList from "../../components/search_results/SearchResultsList";
 import { useApiUtil } from "../../api/useApiUtil";
 
-interface SearchResult {
-  id: string;
-  url: string;
-  title: string;
-  content: string;
-}
-
 const SearchPage: React.FC = () => {
   const {
     state: { term, useSimulatedData }, // Directly get useSimulatedData from the global state
   } = useStateValue();
   const termProp = term !== null ? term : ""; // Provide a default value for termProp
 
-  const { data } = useApiUtil<SearchResult[]>({
+  const { data } = useApiUtil({
     term: termProp,
     useSimulatedData,
   });

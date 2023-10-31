@@ -1,11 +1,4 @@
 import { useState, useEffect } from "react";
-import { useStateValue } from "../StateProvider";
-
-interface UseApiUtilProps<T> {
-  term: string;
-  useSimulatedData: boolean;
-  simulatedData?: T;
-}
 
 // Function to generate the endpoint URL based on the path
 export const GetEndpoint = (path: string): string => {
@@ -13,55 +6,89 @@ export const GetEndpoint = (path: string): string => {
   return baseUrl + path;
 };
 
-// Custom hook for making API requests
-export const useApiUtil = <T,>(
-  props: UseApiUtilProps<T>,
-): { data: T | null } => {
-  const { state } = useStateValue();
-  const { term, useSimulatedData, simulatedData } = state;
+interface UseApiUtilProps {
+  term: string;
+  useSimulatedData: boolean;
+}
 
-  const [data, setData] = useState<T | null>(null);
+interface QueryIndexEntry {
+  query: string;
+  results_filename: string;
+}
+
+interface QueryResult {
+  id: string;
+  url: string;
+  title: string;
+  content: string;
+}
+
+type ResponseData = QueryResult[];
+
+export const useApiUtil = ({
+  term,
+  useSimulatedData,
+}: UseApiUtilProps): { data: ResponseData | null } => {
+  const [data, setData] = useState<ResponseData | null>(null);
 
   useEffect(() => {
-    console.log("useApiUtil Hook triggered");
-    console.log("Term: ", term);
-    console.log("Use Simulated Data: ", useSimulatedData);
-    console.log("Simulated Data: ", simulatedData);
-
     const fetchData = async (): Promise<void> => {
-      if (
-        useSimulatedData &&
-        simulatedData !== null &&
-        simulatedData !== undefined
-      ) {
-        console.log("Setting data from simulated data");
-        setData(simulatedData);
-      } else if (term !== null && term !== undefined && term.trim() !== "") {
-        console.log("Fetching data from API");
+      const baseUrl = process.env.REACT_APP_SIMULATED_RESPONSES_INDEX_URL;
+
+      if (!isNonEmptyString(baseUrl)) {
+        console.error("Base URL is not defined or is empty");
+        setData(null);
+        return;
+      }
+
+      if (useSimulatedData && isNonEmptyString(term)) {
         try {
-          const response = await fetch(GetEndpoint("/search"), {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              query: term,
-            }),
-          });
-          if (response.ok) {
-            const responseData = await response.json();
-            console.log("API data fetched successfully: ", responseData);
-            setData(responseData);
-          } else {
-            console.error("API request failed with status: ", response.status);
+          // Step 1: Fetch the index of queries and result filenames
+          const indexResponse = await fetch(`${baseUrl}index.json`);
+          if (!indexResponse.ok) {
+            console.error(
+              "Index fetch failed with status: ",
+              indexResponse.status,
+            );
             setData(null);
+            return;
           }
+          const queryIndex: QueryIndexEntry[] = await indexResponse.json();
+
+          // Step 2: Find the match in the index
+          const normalizedTerm = term.toLowerCase();
+          const matchingEntry = queryIndex.find(
+            (entry) => entry.query.toLowerCase() === normalizedTerm,
+          );
+          if (matchingEntry === null || matchingEntry === undefined) {
+            console.log("No matching query found");
+            setData(null);
+            return;
+          }
+
+          // Step 3: Fetch the results based on the results filename
+          const resultsResponse = await fetch(
+            `${baseUrl}${matchingEntry.results_filename}`,
+          );
+          if (!resultsResponse.ok) {
+            console.error(
+              "Results fetch failed with status: ",
+              resultsResponse.status,
+            );
+            setData(null);
+            return;
+          }
+          const resultsData: ResponseData = await resultsResponse.json();
+
+          // Step 4: Set the results data
+          setData(resultsData);
         } catch (error) {
           console.error("API request failed with error: ", error);
           setData(null);
         }
       } else {
-        console.log(
-          "Term is null, empty or Use Simulated Data is true without data, not fetching data",
-        );
+        // Handle the non-simulated data case if necessary
+        console.log("Not using simulated data or term is empty");
         setData(null);
       }
     };
@@ -69,35 +96,32 @@ export const useApiUtil = <T,>(
     fetchData().catch((error) => {
       console.error("Error fetching data in fetchData: ", error);
     });
-  }, [term, useSimulatedData, simulatedData]);
+  }, [term, useSimulatedData]);
 
   return { data };
 };
 
-// Function to ping the backend (remains unchanged)
 export const PingBackend = async (endpoint: string): Promise<any> => {
   try {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        query: "",
-      }),
+      body: JSON.stringify({ query: "" }),
     });
 
-    if (response.ok) {
-      console.log("Active Server Connection");
-      const data = await response.json();
-      return data;
-    } else {
-      console.error(
-        "Initializing ping request to backend failed with status: ",
-        response.status,
-      );
-      throw new Error("Initializing ping request to backend failed");
+    if (!response.ok) {
+      console.error("Ping request failed with status: ", response.status);
+      throw new Error("Ping request to backend failed");
     }
+
+    console.log("Active Server Connection");
+    return await response.json();
   } catch (error) {
     console.error("Ping request failed with error: ", error);
     throw error;
   }
 };
+
+function isNonEmptyString(str: string | undefined | null): str is string {
+  return typeof str === "string" && str.trim() !== "";
+}

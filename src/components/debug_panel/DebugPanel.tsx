@@ -6,30 +6,33 @@ import { actionTypes } from "../../reducer";
 interface DebugPanelProps {
   isEnabled: boolean;
   onToggle: () => void;
-  onSetSimulatedData: (data: any) => void;
+  onSetSimulatedData?: (data: any) => void;
 }
 
 export const DebugPanel: React.FC<DebugPanelProps> = ({
   isEnabled,
   onToggle,
 }) => {
-  const [jsonData, setJsonData] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
   const { dispatch } = useStateValue();
 
-  const handleSetData = (): void => {
-    console.log("Setting simulated data...");
-    try {
-      const parsedData = JSON.parse(jsonData);
-      console.log("Parsed JSON data: ", parsedData);
-      dispatch({
-        type: actionTypes.SET_SIMULATED_DATA,
-        simulatedData: parsedData,
-      });
-      alert("Simulated data set successfully!");
-    } catch (error) {
-      console.error("Error setting simulated data: ", error);
-      alert("Invalid JSON data. Please make sure it is correctly formatted.");
+  const handleSearch = (): void => {
+    if (searchQuery === "") {
+      alert("Please enter a search query.");
+      return;
     }
+    console.log("Search query set:", searchQuery); // This will log the search query
+    dispatch({
+      type: actionTypes.SET_SEARCH_TERM,
+      term: searchQuery,
+    });
+    if (isEnabled) {
+      dispatch({
+        type: actionTypes.SET_USE_SIMULATED_DATA,
+        useSimulatedData: true,
+      });
+    }
+    alert("Search query set successfully!");
   };
 
   return (
@@ -40,24 +43,22 @@ export const DebugPanel: React.FC<DebugPanelProps> = ({
         <input
           type="checkbox"
           checked={isEnabled}
-          onChange={() => {
-            onToggle();
-          }}
+          onChange={onToggle}
           className="toggle-input"
         />
       </div>
       {isEnabled && (
-        <div className="textarea-container">
-          <textarea
-            value={jsonData}
+        <div className="input-container">
+          <input
+            type="text"
+            value={searchQuery}
             onChange={(e) => {
-              setJsonData(e.target.value);
+              setSearchQuery(e.target.value);
             }}
-            rows={10}
-            cols={50}
-            placeholder="Paste JSON data here"
-          ></textarea>
-          <button onClick={handleSetData} className="set-data-button">
+            placeholder="Enter search query"
+            className="search-input"
+          />
+          <button onClick={handleSearch} className="set-data-button">
             Set Data
           </button>
         </div>

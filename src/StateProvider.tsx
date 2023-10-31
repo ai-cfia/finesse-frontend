@@ -10,14 +10,16 @@ import React, {
 export interface State {
   term: string | null;
   useSimulatedData: boolean;
-  simulatedData?: any; // Adjust the type according to what your simulated data looks like
+  simulatedData: boolean; // Changed from any to boolean
   // Define other state properties if needed
 }
 
-// Define the initial state
+// StateProvider.tsx
+
 export const initialState: State = {
   term: null,
   useSimulatedData: false,
+  simulatedData: false,
   // Initialize other state properties here if needed
 };
 

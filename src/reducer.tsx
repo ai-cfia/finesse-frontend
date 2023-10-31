@@ -8,10 +8,12 @@ export const actionTypes = {
   // Add other action types as needed
 };
 
-// Define the initial state
+// StateProvider.tsx
+
 export const initialState: State = {
   term: null,
   useSimulatedData: false,
+  simulatedData: false,
   // Initialize other state properties here if needed
 };
 
@@ -19,6 +21,7 @@ export const initialState: State = {
 const reducer: Reducer<State, Action> = (state, action) => {
   switch (action.type) {
     case actionTypes.SET_SEARCH_TERM:
+      console.log("Updating search term:", action.term);
       return {
         ...state,
         term: action.term ?? null,
@@ -31,7 +34,7 @@ const reducer: Reducer<State, Action> = (state, action) => {
     case actionTypes.SET_SIMULATED_DATA:
       return {
         ...state,
-        simulatedData: action.simulatedData,
+        simulatedData: action.simulatedData ?? false,
       };
     default:
       return state;

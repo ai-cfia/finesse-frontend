@@ -13,7 +13,6 @@ const Home: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState("");
   const [isError, setIsError] = useState(false);
   const [isDebugPanelVisible, setIsDebugPanelVisible] = useState(false);
-  const [simulatedData, setSimulatedData] = useState(null);
 
   const {
     state: { useSimulatedData },
@@ -22,7 +21,6 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     console.log("useSimulatedData:", useSimulatedData);
-    console.log("simulatedData:", simulatedData);
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
@@ -56,7 +54,7 @@ const Home: React.FC = () => {
           );
         });
     }
-  }, [useSimulatedData, simulatedData]); // Add useSimulatedData and simulatedData to the dependency array
+  }, [useSimulatedData]);
 
   return (
     <div className={styles.layout}>
@@ -85,7 +83,6 @@ const Home: React.FC = () => {
             });
             console.log("Toggling useSimulatedData");
           }}
-          onSetSimulatedData={setSimulatedData}
         />
       )}
       <div className="logo-container">
