@@ -1,12 +1,16 @@
 // SearchPage.tsx
 import React, { useEffect } from "react";
-import styles from "../home/Home.module.css";
 import Header from "../../components/header/Header";
 import { useStateValue } from "../../StateProvider";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
 import SearchResultList from "../../components/search_results/SearchResultsList";
 import { useApiUtil } from "../../api/useApiUtil";
+import {
+  LayoutContainer,
+  SearchPageHeaderContainer,
+  SearchBarSearchContainer,
+} from "../../styles/indexElements";
 
 const SearchPage: React.FC = () => {
   const {
@@ -22,18 +26,17 @@ const SearchPage: React.FC = () => {
   }, [term]);
 
   return (
-    <div className={styles.layout}>
+    <LayoutContainer>
       <Header />
-      <div className="searchPage_header">
+      <SearchPageHeaderContainer>
         <CFIALogo />
-
-        <div className="searchBar-container-search">
+        <SearchBarSearchContainer>
           <SearchBar term={termProp} />
-        </div>
-      </div>
+        </SearchBarSearchContainer>
+      </SearchPageHeaderContainer>
       <SearchResultList data={data} query={termProp} />{" "}
       {/* Use termProp instead of term */}
-    </div>
+    </LayoutContainer>
   );
 };
 

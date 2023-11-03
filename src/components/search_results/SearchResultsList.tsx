@@ -2,6 +2,7 @@
 import React from "react";
 import "./SearchResultsList.css";
 import SearchResult from "./SearchResult";
+import { ResultList } from "../../styles/indexElements";
 
 interface SearchResultListProps {
   data: Array<{
@@ -16,11 +17,11 @@ interface SearchResultListProps {
 // Search Result Component -> Displays a list of results retrieved from the back-end server.
 const SearchResultList: React.FC<SearchResultListProps> = ({ data, query }) => {
   return (
-    <div className="results-list">
+    <ResultList>
       {data?.map((item) => (
         <SearchResult key={item.id} item={item} query={query} />
       ))}
-    </div>
+    </ResultList>
   );
 };
 

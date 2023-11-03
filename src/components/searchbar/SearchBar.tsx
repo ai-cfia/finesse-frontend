@@ -5,6 +5,7 @@ import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { actionTypes } from "../../reducer"; // Make sure to import the actionTypes correctly
+import { FormWrapper, InputWrapper } from "../../styles/indexElements";
 
 interface SearchBarProps {
   term?: string;
@@ -38,8 +39,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
   };
 
   return (
-    <form className="form-wrapper">
-      <div className="input-wrapper">
+    <FormWrapper>
+      <InputWrapper>
         <FaSearch id="fa-arrow-right" />
         <input
           placeholder={previousSearchQuery}
@@ -51,7 +52,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
         <button className="button" type="submit" onClick={search}>
           <FaArrowRight id="fa-arrow-right" style={{ color: "#05486c" }} />
         </button>
-      </div>
-    </form>
+      </InputWrapper>
+    </FormWrapper>
   );
 };
