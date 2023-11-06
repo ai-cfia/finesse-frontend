@@ -8,7 +8,7 @@ import reducer, { initialState } from "./reducer"; // Import the reducer
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
-const basename = process.env.REACT_APP_BASENAME || '/';
+const basename = process.env.REACT_APP_BASENAME ?? "/";
 
 function App(): JSX.Element {
   return (
