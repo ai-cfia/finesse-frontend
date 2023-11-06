@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import * as React from "react";
+import { useEffect, useState } from "react";
 import "./DebugPanel.css";
 import { useStateValue } from "../../StateProvider";
+import { useNavigate } from "react-router-dom";
 import { actionTypes } from "../../reducer";
+import { fetchFilenames } from "../../api/useApiUtil";
 
 interface DebugPanelProps {
   isEnabled: boolean;
@@ -13,25 +16,41 @@ export const DebugPanel: React.FC<DebugPanelProps> = ({
   isEnabled,
   onToggle,
 }) => {
-  const [searchQuery, setSearchQuery] = useState("");
   const { dispatch } = useStateValue();
+  const [filenames, setFilenames] = useState<string[]>([]);
+  const navigate = useNavigate();
 
-  const handleSearch = (): void => {
-    if (searchQuery === "") {
-      alert("Please enter a search query.");
-      return;
+  useEffect(() => {
+    if (isEnabled) {
+      const loadFilenames = async (): Promise<void> => {
+        const fetchedFilenames = await fetchFilenames();
+        setFilenames(fetchedFilenames);
+      };
+
+      loadFilenames()
+        .then(() => {
+          console.log("Filenames loaded successfully");
+        })
+        .catch((error) => {
+          console.error("Error loading filenames", error);
+        });
+    } else {
+      setFilenames([]);
     }
-    console.log("Search query set:", searchQuery); // This will log the search query
+  }, [isEnabled]);
+
+  const handleFilenameClick = (
+    e: React.MouseEvent<HTMLButtonElement>,
+    filename: string,
+  ): void => {
+    e.preventDefault();
+    navigate("/search");
+
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
-      term: searchQuery,
+      term: filename,
     });
-    if (isEnabled) {
-      dispatch({
-        type: actionTypes.SET_USE_SIMULATED_DATA,
-        useSimulatedData: true,
-      });
-    }
+    // Add any other actions you need to perform on click here
     alert("Search query set successfully!");
   };
 
@@ -49,18 +68,22 @@ export const DebugPanel: React.FC<DebugPanelProps> = ({
       </div>
       {isEnabled && (
         <div className="input-container">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => {
-              setSearchQuery(e.target.value);
-            }}
-            placeholder="Enter search query"
-            className="search-input"
-          />
-          <button onClick={handleSearch} className="set-data-button">
-            Set Data
-          </button>
+          <div>
+            <h5>Filenames:</h5>
+            <ul>
+              {filenames.map((filename, index) => (
+                <li key={index}>
+                  <button
+                    onClick={(e) => {
+                      handleFilenameClick(e, filename);
+                    }}
+                  >
+                    {filename}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </div>

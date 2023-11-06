@@ -31,7 +31,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
     navigate("/search");
 
     // Ignore dispatch if useSimulatedData is true
-    if (state.useSimulatedData) {
+    if (state.useSimulatedData && searchQuery === "") {
       console.log("Search dispatch ignored because useSimulatedData is true");
       return;
     }
