@@ -27,6 +27,7 @@ jobs:
       run: npm run build
       env:
         REACT_APP_BACKEND_URL: ${{ secrets.REACT_APP_BACKEND_URL }}
+        REACT_APP_BASENAME : ${{ secrets.REACT_APP_BASENAME }}
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
