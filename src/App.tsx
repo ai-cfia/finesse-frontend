@@ -11,8 +11,9 @@ import { BrowserRouter } from "react-router-dom";
 const basename = process.env.REACT_APP_BASENAME ?? "/";
 
 function App(): JSX.Element {
+  console.log("Basename:", basename);
   return (
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/finesse-frontend">
       <StateProvider reducer={reducer} initialState={initialState}>
         <Routes>
           <Route path="/" element={<Home />} />
