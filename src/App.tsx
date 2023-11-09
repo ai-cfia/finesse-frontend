@@ -12,7 +12,7 @@ const basename = process.env.REACT_APP_BASENAME ?? "/";
 
 function App(): JSX.Element {
   return (
-    <BrowserRouter basename={ basename }>
+    <BrowserRouter basename={basename}>
       <StateProvider reducer={reducer} initialState={initialState}>
         <Routes>
           <Route path="/" element={<Home />} />
