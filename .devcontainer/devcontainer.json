@@ -4,8 +4,9 @@
   "name": "Finesse Frontend Node.js project",
   // Use 'postCreateCommand' to run commands after the container is created.
   "image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
-  "postCreateCommand": "npm install -g npm@9.8.1 --force",
+  "postCreateCommand": "npm install -g npm@9.8.1 --force && npx npm -v && npx npm install",
 
+  
   // Configure tool-specific properties.
   // "customizations": {},
 
