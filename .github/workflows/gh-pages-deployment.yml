@@ -8,4 +8,5 @@ on:
 jobs:
   build-and-deploy:
     uses: ai-cfia/github-workflows/.github/workflows/workflow-gh-pages-deployment.yml@temporary-branch-gh-pages-deployment
-    secrets: { secrets.ENV }
+    secrets:
+      ENV: ${{ secrets.ENV }}
