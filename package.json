@@ -1,5 +1,5 @@
 {
-  "name": "louis-finesse",
+  "name": "finesse-frontend",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://ai-cfia.github.io/finesse-frontend",
@@ -59,8 +59,8 @@
     "eslint-config-standard-with-typescript": "^37.0.0",
     "eslint-plugin-prettier": "^5.0.0"
   },
-  "engines" : {
-    "npm" : "^9.8.1",
-    "node" : "^18.16.0"
+  "engines": {
+    "npm": "^9.8.1",
+    "node": "^18.16.0"
   }
 }
