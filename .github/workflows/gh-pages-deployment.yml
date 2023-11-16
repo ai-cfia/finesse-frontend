@@ -6,6 +6,10 @@ on:
       - issue23-update-deployment-workflow
 
 jobs:
+
+  lint-test:
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
+
   build-and-deploy:
     runs-on: ubuntu-latest
     env:
