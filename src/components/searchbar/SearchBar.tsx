@@ -4,14 +4,13 @@ import { FaSearch, FaArrowRight } from "react-icons/fa";
 import "./SearchBar.css";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
-import { actionTypes } from "../../reducer"; // Make sure to import the actionTypes correctly
+import { actionTypes } from "../../reducer";
 
 interface SearchBarProps {
   term?: string;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
-  // eslint-disable-next-line
   const { state, dispatch } = useStateValue();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
@@ -27,10 +26,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
     }
   }, [term]);
 
-  // On form submission perform search.
   const search = (e: React.FormEvent): void => {
     e.preventDefault();
     navigate("/search");
+
+    // Ignore dispatch if useSimulatedData is true
+    if (state.useSimulatedData && searchQuery === "") {
+      console.log("Search dispatch ignored because useSimulatedData is true");
+      return;
+    }
+
     dispatch({
       type: actionTypes.SET_SEARCH_TERM,
       term: searchQuery,
