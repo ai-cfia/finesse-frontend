@@ -9,12 +9,17 @@ import React, {
 // Define the type for the state
 export interface State {
   term: string | null;
+  useSimulatedData: boolean;
+  simulatedData: boolean; // Changed from any to boolean
   // Define other state properties if needed
 }
 
-// Define the initial state
+// StateProvider.tsx
+
 export const initialState: State = {
   term: null,
+  useSimulatedData: false,
+  simulatedData: false,
   // Initialize other state properties here if needed
 };
 
@@ -22,12 +27,16 @@ export const initialState: State = {
 export interface Action {
   type: string;
   term?: string;
+  useSimulatedData?: boolean;
+  simulatedData?: any; // or null,
   // Define other action properties if needed
 }
 
 // Define action types as constants
 export const actionTypes = {
   SET_SEARCH_TERM: "SET_SEARCH_TERM",
+  SET_USE_SIMULATED_DATA: "SET_USE_SIMULATED_DATA",
+  SET_SIMULATED_DATA: "SET_SIMULATED_DATA",
   // Add other action types as needed
 };
 
