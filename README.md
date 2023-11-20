@@ -6,7 +6,7 @@ Finesse is a project designed to provide users with the ability to search for ag
 
 ## Video Demonstration
 
-[Finesse Demo Video](https://youtu.be/7sDQ9smVMww?si=uSTCZKUUrhT5vbcc)
+[Finesse Demo Video](https://youtu.be/7sDQ9smVMww)
 
 ## Usage
 
