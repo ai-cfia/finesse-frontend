@@ -5,7 +5,7 @@ export enum ActionTypes {
 }
 
 export enum SearchSources {
-  Simulated = "simulated",
+  Simulated = "static",
   Ailab = "ailab",
   Azure = "azure",
 }

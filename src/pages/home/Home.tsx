@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { FaCog } from "react-icons/fa";
 import { useStateValue } from "../../StateProvider";
-import { GetEndpoint, PingBackend } from "../../api/useApiUtil";
+import { PingBackend } from "../../api/useApiUtil";
 import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
@@ -31,7 +31,7 @@ const Home: React.FC = () => {
       );
       console.log("Backend URL is not set, frontend is misconfigured.");
     } else {
-      PingBackend(GetEndpoint("/health"))
+      PingBackend()
         .then((response) => {
           if (response === "ok") {
             console.log("Ping response:", response);
