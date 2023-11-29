@@ -1,17 +1,20 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import { FaSearch, FaArrowRight } from "react-icons/fa";
-import "./SearchBar.css";
+import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
-import { actionTypes } from "../../reducer";
+import { ActionTypes, SearchSources } from "../../types";
+import "./SearchBar.css";
 
 interface SearchBarProps {
   term?: string;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
-  const { state, dispatch } = useStateValue();
+  const {
+    state: { currentSearchSource },
+    dispatch,
+  } = useStateValue();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
   const [previousSearchQuery, setPreviousSearchQuery] = useState<
@@ -31,14 +34,15 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
     navigate("/search");
 
     // Ignore dispatch if useSimulatedData is true
-    if (state.useSimulatedData && searchQuery === "") {
+    // TODO: revisit
+    if (currentSearchSource === SearchSources.Simulated && searchQuery === "") {
       console.log("Search dispatch ignored because useSimulatedData is true");
       return;
     }
 
     dispatch({
-      type: actionTypes.SET_SEARCH_TERM,
-      term: searchQuery,
+      type: ActionTypes.SetSearchTerm,
+      payload: searchQuery,
     });
   };
 

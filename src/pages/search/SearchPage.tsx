@@ -10,13 +10,13 @@ import { useApiUtil } from "../../api/useApiUtil";
 
 const SearchPage: React.FC = () => {
   const {
-    state: { term, useSimulatedData }, // Directly get useSimulatedData from the global state
+    state: { term, currentSearchSource }, // Directly get useSimulatedData from the global state
   } = useStateValue();
   const termProp = term !== null ? term : ""; // Provide a default value for termProp
 
   const { data } = useApiUtil({
     term: termProp,
-    useSimulatedData,
+    currentSearchSource,
   });
 
   // useEffect hook to print the value of term whenever it changes
