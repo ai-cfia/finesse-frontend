@@ -5,6 +5,8 @@
   "homepage": "https://ai-cfia.github.io/finesse-frontend",
   "dependencies": {
     "@saithodev/ts-appversion": "^2.2.0",
+    "@types/dompurify": "^3.0.5",
+    "dompurify": "^3.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.10.1",

@@ -4,7 +4,7 @@ export enum ActionTypes {
   SetQueryResults = "SET_SEARCH_RESULTS",
 }
 
-export enum SearchSources {
+export enum SearchSource {
   Simulated = "static",
   Ailab = "ailab",
   Azure = "azure",
@@ -19,11 +19,11 @@ export interface QueryResult {
 
 export interface State {
   term: string | null;
-  currentSearchSource: SearchSources;
+  currentSearchSource: SearchSource;
   queryResults: QueryResult[];
 }
 
 export type Action =
   | { type: ActionTypes.SetSearchTerm; payload: string | null }
-  | { type: ActionTypes.SetSearchSource; payload: SearchSources }
+  | { type: ActionTypes.SetSearchSource; payload: SearchSource }
   | { type: ActionTypes.SetQueryResults; payload: QueryResult[] };
