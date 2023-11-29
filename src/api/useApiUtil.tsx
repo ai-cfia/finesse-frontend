@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { type QueryResult, SearchSources } from "../types";
 
 // Helper function to construct the endpoint URL using environment variable as base
 export const GetEndpoint = (path: string): string => {
@@ -9,14 +10,7 @@ export const GetEndpoint = (path: string): string => {
 // TypeScript interfaces to define the structure of expected props and data
 interface UseApiUtilProps {
   term: string;
-  useSimulatedData: boolean;
-}
-
-interface QueryResult {
-  id: string;
-  url: string;
-  title: string;
-  content: string;
+  currentSearchSource: SearchSources;
 }
 
 // Defining a type for an array of QueryResult objects
@@ -25,7 +19,7 @@ type ResponseData = QueryResult[];
 // Custom hook for fetching data based on the search term and simulated data flag
 export const useApiUtil = ({
   term,
-  useSimulatedData,
+  currentSearchSource,
 }: UseApiUtilProps): { data: ResponseData | null } => {
   const [data, setData] = useState<ResponseData | null>(null);
 
@@ -37,7 +31,10 @@ export const useApiUtil = ({
         "https://api.github.com/repos/ai-cfia/finesse-data/contents";
 
       // Conditional fetching depending on whether simulated data is used
-      if (useSimulatedData && isNonEmptyString(term)) {
+      if (
+        currentSearchSource === SearchSources.Simulated &&
+        isNonEmptyString(term)
+      ) {
         try {
           // Fetching the list of files from GitHub repository
           const response = await fetch(githubApiUrl);
@@ -115,7 +112,7 @@ export const useApiUtil = ({
     fetchData().catch((error) => {
       console.error("Error fetching data in fetchData: ", error);
     });
-  }, [term, useSimulatedData]); // Dependencies for the useEffect hook
+  }, [term, currentSearchSource]); // Dependencies for the useEffect hook
 
   return { data };
 };

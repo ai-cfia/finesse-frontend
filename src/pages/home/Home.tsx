@@ -1,13 +1,13 @@
-import { SearchBar } from "../../components/searchbar/SearchBar";
-import styles from "../home/Home.module.css";
+import { useEffect, useState } from "react";
+import { FaCog } from "react-icons/fa";
+import { useStateValue } from "../../StateProvider";
+import { GetEndpoint, PingBackend } from "../../api/useApiUtil";
+import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
-import { useState, useEffect } from "react";
-import { PingBackend, GetEndpoint } from "../../api/useApiUtil";
+import { SearchBar } from "../../components/searchbar/SearchBar";
 import { environment } from "../../environments/environment";
-import { DebugPanel } from "../../components/debug_panel/DebugPanel";
-import { useStateValue, actionTypes } from "../../StateProvider";
-import { FaCog } from "react-icons/fa";
+import styles from "../home/Home.module.css";
 
 const Home: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState("");
@@ -15,12 +15,11 @@ const Home: React.FC = () => {
   const [isDebugPanelVisible, setIsDebugPanelVisible] = useState(false);
 
   const {
-    state: { useSimulatedData },
-    dispatch,
+    state: { currentSearchSource },
   } = useStateValue();
 
   useEffect(() => {
-    console.log("useSimulatedData:", useSimulatedData);
+    console.log("currentSearchSource:", currentSearchSource);
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
@@ -32,10 +31,10 @@ const Home: React.FC = () => {
       );
       console.log("Backend URL is not set, frontend is misconfigured.");
     } else {
-      PingBackend(GetEndpoint("/search"))
-        .then((responseData) => {
-          if (Array.isArray(responseData) && responseData.length === 0) {
-            console.log("Empty array response from backend");
+      PingBackend(GetEndpoint("/health"))
+        .then((response) => {
+          if (response === "ok") {
+            console.log("Ping response:", response);
           } else {
             setIsError(true);
             setAlertMessage(
@@ -54,7 +53,7 @@ const Home: React.FC = () => {
           );
         });
     }
-  }, [useSimulatedData]);
+  }, [currentSearchSource]);
 
   return (
     <div className={styles.layout}>
@@ -73,18 +72,7 @@ const Home: React.FC = () => {
           top: isError ? "160px" : "110px",
         }}
       />
-      {isDebugPanelVisible && (
-        <DebugPanel
-          isEnabled={useSimulatedData}
-          onToggle={() => {
-            dispatch({
-              type: actionTypes.SET_USE_SIMULATED_DATA,
-              useSimulatedData: !useSimulatedData,
-            });
-            console.log("Toggling useSimulatedData");
-          }}
-        />
-      )}
+      {isDebugPanelVisible && <DebugPanel />}
       <div className="logo-container">
         <CFIALogo />
       </div>
