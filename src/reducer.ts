@@ -4,6 +4,8 @@ export const initialState: State = {
   term: null,
   currentSearchSource: SearchSource.Ailab,
   queryResults: [],
+  error: null,
+  debugPanelIsVisible: false,
 };
 
 export function reducer(state: State, action: Action): State {
@@ -14,6 +16,10 @@ export function reducer(state: State, action: Action): State {
       return { ...state, currentSearchSource: action.payload };
     case ActionTypes.SetQueryResults:
       return { ...state, queryResults: action.payload };
+    case ActionTypes.SetError:
+      return { ...state, error: action.payload };
+    case ActionTypes.ToggleDebugPanel:
+      return { ...state, debugPanelIsVisible: !state.debugPanelIsVisible };
     default:
       return state;
   }
