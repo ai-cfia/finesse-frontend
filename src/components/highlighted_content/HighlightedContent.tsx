@@ -1,4 +1,6 @@
+import DOMPurify from "dompurify";
 import React from "react";
+import { useStateValue } from "../../StateProvider";
 
 export const getHighlightedIndices = (
   sentence: string,
@@ -36,18 +38,25 @@ const HighlightedContent: React.FC<HighlightedContentProps> = ({
   content,
   query,
 }) => {
-  const highlightedElements = highlightWords(content, query);
-
-  return (
-    <span>
-      {highlightedElements.map((word, index) => (
-        <React.Fragment key={index}>
-          {word}
-          {index !== highlightedElements.length - 1 && <span> </span>}
-        </React.Fragment>
-      ))}
-    </span>
-  );
+  const {
+    state: { currentSearchSource },
+  } = useStateValue();
+  if (currentSearchSource === "azure") {
+    const sanitizedContent = DOMPurify.sanitize(content);
+    return <span dangerouslySetInnerHTML={{ __html: sanitizedContent }} />;
+  } else {
+    const highlightedElements = highlightWords(content, query);
+    return (
+      <span>
+        {highlightedElements.map((word, index) => (
+          <React.Fragment key={index}>
+            {word}
+            {index !== highlightedElements.length - 1 && <span> </span>}
+          </React.Fragment>
+        ))}
+      </span>
+    );
+  }
 };
 
 export default HighlightedContent;

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
-import { ActionTypes, SearchSources } from "../../types";
+import { ActionTypes, SearchSource } from "../../types";
 import "./SearchBar.css";
 
 interface SearchBarProps {
@@ -35,7 +35,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
 
     // Ignore dispatch if useSimulatedData is true
     // TODO: revisit
-    if (currentSearchSource === SearchSources.Simulated && searchQuery === "") {
+    if (currentSearchSource === SearchSource.Simulated && searchQuery === "") {
       console.log("Search dispatch ignored because useSimulatedData is true");
       return;
     }

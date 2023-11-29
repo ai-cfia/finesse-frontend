@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { QueryResult, SearchSources } from "../types";
+import type { QueryResult, SearchSource } from "../types";
 
 // Helper function to construct the endpoint URL using environment variable as base
 export const GetEndpoint = (path: string): string => {
@@ -10,7 +10,7 @@ export const GetEndpoint = (path: string): string => {
 // TypeScript interfaces to define the structure of expected props and data
 interface UseApiUtilProps {
   term: string;
-  currentSearchSource: SearchSources;
+  currentSearchSource: SearchSource;
 }
 
 // Defining a type for an array of QueryResult objects

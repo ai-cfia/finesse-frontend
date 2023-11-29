@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../../StateProvider";
 import { fetchFilenames } from "../../api/useApiUtil";
-import { ActionTypes, SearchSources } from "../../types";
+import { ActionTypes, SearchSource } from "../../types";
 import "./DebugPanel.css";
 
 interface DebugPanelProps {
@@ -19,7 +19,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (currentSearchSource === SearchSources.Simulated) {
+    if (currentSearchSource === SearchSource.Simulated) {
       const loadFilenames = async (): Promise<void> => {
         const fetchedFilenames = await fetchFilenames();
         setFilenames(fetchedFilenames);
@@ -51,7 +51,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
     alert("Search query set successfully!");
   };
 
-  const handleSourceChange = (source: SearchSources): void => {
+  const handleSourceChange = (source: SearchSource): void => {
     dispatch({
       type: ActionTypes.SetSearchSource,
       payload: source,
@@ -66,9 +66,9 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
           <input
             type="radio"
             value="ailab"
-            checked={currentSearchSource === SearchSources.Ailab}
+            checked={currentSearchSource === SearchSource.Ailab}
             onChange={() => {
-              handleSourceChange(SearchSources.Ailab);
+              handleSourceChange(SearchSource.Ailab);
             }}
           />
           <span className="radio-label">Use ailab search</span>
@@ -77,9 +77,9 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
           <input
             type="radio"
             value="azure"
-            checked={currentSearchSource === SearchSources.Azure}
+            checked={currentSearchSource === SearchSource.Azure}
             onChange={() => {
-              handleSourceChange(SearchSources.Azure);
+              handleSourceChange(SearchSource.Azure);
             }}
           />
           <span className="radio-label">Use azure search</span>
@@ -88,15 +88,15 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
           <input
             type="radio"
             value="simulated"
-            checked={currentSearchSource === SearchSources.Simulated}
+            checked={currentSearchSource === SearchSource.Simulated}
             onChange={() => {
-              handleSourceChange(SearchSources.Simulated);
+              handleSourceChange(SearchSource.Simulated);
             }}
           />
           <span className="radio-label">Use Simulated Data</span>
         </label>
       </div>
-      {currentSearchSource === SearchSources.Simulated && (
+      {currentSearchSource === SearchSource.Simulated && (
         <div className="input-container">
           <div>
             <h5>Filenames:</h5>

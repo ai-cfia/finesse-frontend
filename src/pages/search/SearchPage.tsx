@@ -1,16 +1,16 @@
 // SearchPage.tsx
 import React, { useEffect } from "react";
-import styles from "../home/Home.module.css";
-import Header from "../../components/header/Header";
 import { useStateValue } from "../../StateProvider";
-import CFIALogo from "../../components/logo/CFIALogo";
-import { SearchBar } from "../../components/searchbar/SearchBar";
-import SearchResultList from "../../components/search_results/SearchResultsList";
 import { useApiUtil } from "../../api/useApiUtil";
+import Header from "../../components/header/Header";
+import CFIALogo from "../../components/logo/CFIALogo";
+import SearchResultList from "../../components/search_results/SearchResultsList";
+import { SearchBar } from "../../components/searchbar/SearchBar";
+import styles from "../home/Home.module.css";
 
 const SearchPage: React.FC = () => {
   const {
-    state: { term, currentSearchSource }, // Directly get useSimulatedData from the global state
+    state: { term, currentSearchSource },
   } = useStateValue();
   const termProp = term !== null ? term : ""; // Provide a default value for termProp
 

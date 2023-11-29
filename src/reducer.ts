@@ -1,8 +1,8 @@
-import { ActionTypes, SearchSources, type Action, type State } from "./types";
+import { ActionTypes, SearchSource, type Action, type State } from "./types";
 
 export const initialState: State = {
   term: null,
-  currentSearchSource: SearchSources.Ailab,
+  currentSearchSource: SearchSource.Ailab,
   queryResults: [],
 };
 
