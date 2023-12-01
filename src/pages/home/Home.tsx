@@ -1,21 +1,19 @@
 import { useEffect } from "react";
-import { FaCog } from "react-icons/fa";
 import { PingBackend } from "../../api/useApiUtil";
 import AlertBanner from "../../components/alert_banner/AlertBanner";
+import DebugButton from "../../components/debug_button/DebugButton";
 import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
 import { useAlert } from "../../contexts/AlertContext";
 import { useData } from "../../contexts/DataContext";
-import { useLayout } from "../../contexts/LayoutContext";
 import { environment } from "../../environments/environment";
 import styles from "../home/Home.module.css";
 
 const Home: React.FC = () => {
   const { currentSearchSource } = useData();
   const { setAlertMessage } = useAlert();
-  const { toggleDebugPanel } = useLayout();
 
   useEffect(() => {
     console.log("currentSearchSource:", currentSearchSource);
@@ -50,10 +48,7 @@ const Home: React.FC = () => {
     <div className={styles.layout}>
       <Header />
       <AlertBanner />
-      <FaCog
-        onClick={() => {
-          toggleDebugPanel();
-        }}
+      <DebugButton
         style={{
           cursor: "pointer",
           zIndex: 1001,
