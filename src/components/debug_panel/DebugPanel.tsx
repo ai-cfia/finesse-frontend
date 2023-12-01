@@ -1,9 +1,10 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useStateValue } from "../../StateProvider";
 import { fetchFilenames } from "../../api/useApiUtil";
-import { ActionTypes, SearchSource } from "../../types";
+import { useData } from "../../contexts/DataContext";
+import { useLayout } from "../../contexts/LayoutContext";
+import { SearchSource } from "../../types";
 import "./DebugPanel.css";
 
 interface DebugPanelProps {
@@ -11,10 +12,9 @@ interface DebugPanelProps {
 }
 
 export const DebugPanel: React.FC<DebugPanelProps> = () => {
-  const {
-    state: { currentSearchSource },
-    dispatch,
-  } = useStateValue();
+  const { isDebugPanelVisible } = useLayout();
+  const { currentSearchSource, setCurrentSearchSource, setSearchTerm } =
+    useData();
   const [filenames, setFilenames] = useState<string[]>([]);
   const navigate = useNavigate();
 
@@ -42,22 +42,13 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
     filename: string,
   ): void => {
     e.preventDefault();
+    // TODO: revisit navigate.
     navigate("/search");
-
-    dispatch({
-      type: ActionTypes.SetSearchTerm,
-      payload: filename,
-    });
+    setSearchTerm(filename);
     alert("Search query set successfully!");
   };
 
-  const handleSourceChange = (source: SearchSource): void => {
-    dispatch({
-      type: ActionTypes.SetSearchSource,
-      payload: source,
-    });
-  };
-
+  if (!isDebugPanelVisible) return null;
   return (
     <div className="debug-panel">
       <h4>Debug Panel</h4>
@@ -68,7 +59,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
             value="ailab"
             checked={currentSearchSource === SearchSource.Ailab}
             onChange={() => {
-              handleSourceChange(SearchSource.Ailab);
+              setCurrentSearchSource(SearchSource.Ailab);
             }}
           />
           <span className="radio-label">Use ailab search</span>
@@ -79,7 +70,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
             value="azure"
             checked={currentSearchSource === SearchSource.Azure}
             onChange={() => {
-              handleSourceChange(SearchSource.Azure);
+              setCurrentSearchSource(SearchSource.Azure);
             }}
           />
           <span className="radio-label">Use azure search</span>
@@ -90,7 +81,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
             value="simulated"
             checked={currentSearchSource === SearchSource.Simulated}
             onChange={() => {
-              handleSourceChange(SearchSource.Simulated);
+              setCurrentSearchSource(SearchSource.Simulated);
             }}
           />
           <span className="radio-label">Use Simulated Data</span>

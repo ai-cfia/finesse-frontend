@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
-import { StateProvider } from "./StateProvider";
+import { AlertProvider } from "./contexts/AlertContext";
+import { DataProvider } from "./contexts/DataContext";
+import { LayoutProvider } from "./contexts/LayoutContext";
 import Home from "./pages/home/Home";
 import SearchPage from "./pages/search/SearchPage";
 
@@ -14,12 +16,16 @@ function App({
 }: AppProps): JSX.Element {
   return (
     <BrowserRouter basename={basename}>
-      <StateProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<SearchPage />} />
-        </Routes>
-      </StateProvider>
+      <AlertProvider>
+        <DataProvider>
+          <LayoutProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/search" element={<SearchPage />} />
+            </Routes>
+          </LayoutProvider>
+        </DataProvider>
+      </AlertProvider>
     </BrowserRouter>
   );
 }
