@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { FaCog } from "react-icons/fa";
 import { useStateValue } from "../../StateProvider";
 import { PingBackend } from "../../api/useApiUtil";
+import AlertBanner from "../../components/alert_banner/AlertBanner";
 import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
@@ -49,7 +50,7 @@ const Home: React.FC = () => {
   return (
     <div className={styles.layout}>
       <Header />
-      {error !== null && <div className={styles.warning}>{error}</div>}
+      <AlertBanner alertMessage={error} />
       <FaCog
         onClick={() => {
           dispatch({
@@ -82,11 +83,11 @@ const Home: React.FC = () => {
           color: "grey",
         }}
       >
-        <text>Empowering agency&apos;s users with precision search.</text>
-        <text style={{ marginTop: 10 }}>
+        <span>Empowering agency&apos;s users with precision search.</span>
+        <span style={{ marginTop: 10 }}>
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
-        </text>
+        </span>
       </div>
       <div className={styles.versionText}>
         {environment.version !== "" ? "v" + environment.version : ""}
