@@ -3,7 +3,7 @@ import App from "./App";
 import { environment } from "./environments/environment";
 
 test("make sure the version matches", () => {
-  render(<App />);
+  render(<App basename="/" />);
   const linkElement = screen.getByText("v" + environment.version);
   expect(linkElement).toBeInTheDocument();
 });
