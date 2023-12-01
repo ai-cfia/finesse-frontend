@@ -1,0 +1,228 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DebugPanel Component Tests can switch to simulated data and display filenames 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4>
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use ailab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use azure search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+  <div
+    class="input-container"
+  >
+    <div>
+      <h5>
+        Filenames:
+      </h5>
+      <ul>
+        <li>
+          <button>
+            file1
+          </button>
+        </li>
+        <li>
+          <button>
+            file2
+          </button>
+        </li>
+        <li>
+          <button>
+            file3
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests clicking on a filename button updates the search term 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4>
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use ailab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use azure search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+  <div
+    class="input-container"
+  >
+    <div>
+      <h5>
+        Filenames:
+      </h5>
+      <ul>
+        <li>
+          <button>
+            file1
+          </button>
+        </li>
+        <li>
+          <button>
+            file2
+          </button>
+        </li>
+        <li>
+          <button>
+            file3
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests renders radio buttons for search sources 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4>
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use ailab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use azure search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        checked=""
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+  <div
+    class="input-container"
+  >
+    <div>
+      <h5>
+        Filenames:
+      </h5>
+      <ul />
+    </div>
+  </div>
+</div>
+`;

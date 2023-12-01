@@ -15,7 +15,7 @@ interface DataContextState {
 const DataContext = createContext<DataContextState>({
   searchTerm: null,
   setSearchTerm: () => {},
-  currentSearchSource: SearchSource.Simulated,
+  currentSearchSource: SearchSource.Ailab,
   setCurrentSearchSource: () => {},
   queryResult: [],
   setQueryResult: () => {},
