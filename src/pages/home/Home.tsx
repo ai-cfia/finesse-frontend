@@ -42,7 +42,7 @@ const Home: React.FC = () => {
           );
         });
     }
-  }, [currentSearchSource]);
+  }, [currentSearchSource, setAlertMessage]);
 
   return (
     <div className={styles.layout}>
