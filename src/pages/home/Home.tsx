@@ -1,62 +1,58 @@
 import { useEffect } from "react";
 import { FaCog } from "react-icons/fa";
-import { useStateValue } from "../../StateProvider";
 import { PingBackend } from "../../api/useApiUtil";
 import AlertBanner from "../../components/alert_banner/AlertBanner";
 import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
+import { useAlert } from "../../contexts/AlertContext";
+import { useData } from "../../contexts/DataContext";
+import { useLayout } from "../../contexts/LayoutContext";
 import { environment } from "../../environments/environment";
-import { ActionTypes } from "../../types";
 import styles from "../home/Home.module.css";
 
 const Home: React.FC = () => {
-  const {
-    state: { currentSearchSource, debugPanelIsVisible, error },
-    dispatch,
-  } = useStateValue();
+  const { currentSearchSource } = useData();
+  const { setAlertMessage } = useAlert();
+  const { toggleDebugPanel } = useLayout();
 
   useEffect(() => {
     console.log("currentSearchSource:", currentSearchSource);
-    const setError = (error: string): void => {
-      console.log(error);
-      dispatch({
-        type: ActionTypes.SetError,
-        payload: error,
-      });
-    };
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
       process.env.REACT_APP_BACKEND_URL === ""
     ) {
-      setError("Warning: Backend URL is not set, frontend is misconfigured.");
+      setAlertMessage(
+        "Warning: Backend URL is not set, frontend is misconfigured.",
+      );
     } else {
       PingBackend()
         .then((response) => {
           if (response === "ok") {
             console.log("Ping response:", response);
           } else {
-            setError("Warning: Initializing ping request to backend failed.");
+            setAlertMessage(
+              "Warning: Initializing ping request to backend failed.",
+            );
           }
         })
         .catch(() => {
-          setError("Warning: Initializing ping request to backend failed.");
+          setAlertMessage(
+            "Warning: Initializing ping request to backend failed.",
+          );
         });
     }
-  }, [currentSearchSource, dispatch]);
+  }, [currentSearchSource]);
 
   return (
     <div className={styles.layout}>
       <Header />
-      <AlertBanner alertMessage={error} />
+      <AlertBanner />
       <FaCog
         onClick={() => {
-          dispatch({
-            type: ActionTypes.ToggleDebugPanel,
-          });
-          console.log("Toggling Debug Panel visibility");
+          toggleDebugPanel();
         }}
         style={{
           cursor: "pointer",
@@ -66,7 +62,7 @@ const Home: React.FC = () => {
           marginTop: "10px",
         }}
       />
-      {debugPanelIsVisible && <DebugPanel />}
+      <DebugPanel />
       <div className="logo-container">
         <CFIALogo />
       </div>

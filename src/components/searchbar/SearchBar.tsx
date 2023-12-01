@@ -2,8 +2,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useStateValue } from "../../StateProvider";
-import { ActionTypes, SearchSource } from "../../types";
+import { useData } from "../../contexts/DataContext";
+import { SearchSource } from "../../types";
 import "./SearchBar.css";
 
 interface SearchBarProps {
@@ -11,10 +11,7 @@ interface SearchBarProps {
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
-  const {
-    state: { currentSearchSource },
-    dispatch,
-  } = useStateValue();
+  const { currentSearchSource, setSearchTerm } = useData();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
   const [previousSearchQuery, setPreviousSearchQuery] = useState<
@@ -40,10 +37,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
       return;
     }
 
-    dispatch({
-      type: ActionTypes.SetSearchTerm,
-      payload: searchQuery,
-    });
+    setSearchTerm(searchQuery);
   };
 
   return (
