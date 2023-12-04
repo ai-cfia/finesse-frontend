@@ -62,7 +62,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
               setCurrentSearchSource(SearchSource.Ailab);
             }}
           />
-          <span className="radio-label">Use ailab search</span>
+          <span className="radio-label">Use AI Lab search</span>
         </label>
         <label className="radio-option">
           <input
@@ -73,7 +73,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
               setCurrentSearchSource(SearchSource.Azure);
             }}
           />
-          <span className="radio-label">Use azure search</span>
+          <span className="radio-label">Use Azure AI Search</span>
         </label>
         <label className="radio-option">
           <input

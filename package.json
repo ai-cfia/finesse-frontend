@@ -22,6 +22,7 @@
     "prebuild": "ts-appversion",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:updateSnapshot": "react-scripts test --updateSnapshot",
     "eject": "react-scripts eject",
     "lint": "eslint .",
     "lint:fix": "eslint --fix ."

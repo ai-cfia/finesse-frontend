@@ -15,13 +15,14 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
       class="radio-option"
     >
       <input
+        checked=""
         type="radio"
         value="ailab"
       />
       <span
         class="radio-label"
       >
-        Use ailab search
+        Use AI Lab search
       </span>
     </label>
     <label
@@ -34,14 +35,13 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
       <span
         class="radio-label"
       >
-        Use azure search
+        Use Azure AI Search
       </span>
     </label>
     <label
       class="radio-option"
     >
       <input
-        checked=""
         type="radio"
         value="simulated"
       />
@@ -96,13 +96,14 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
       class="radio-option"
     >
       <input
+        checked=""
         type="radio"
         value="ailab"
       />
       <span
         class="radio-label"
       >
-        Use ailab search
+        Use AI Lab search
       </span>
     </label>
     <label
@@ -115,14 +116,13 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
       <span
         class="radio-label"
       >
-        Use azure search
+        Use Azure AI Search
       </span>
     </label>
     <label
       class="radio-option"
     >
       <input
-        checked=""
         type="radio"
         value="simulated"
       />
@@ -177,13 +177,14 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
       class="radio-option"
     >
       <input
+        checked=""
         type="radio"
         value="ailab"
       />
       <span
         class="radio-label"
       >
-        Use ailab search
+        Use AI Lab search
       </span>
     </label>
     <label
@@ -196,14 +197,13 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
       <span
         class="radio-label"
       >
-        Use azure search
+        Use Azure AI Search
       </span>
     </label>
     <label
       class="radio-option"
     >
       <input
-        checked=""
         type="radio"
         value="simulated"
       />
@@ -213,16 +213,6 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
         Use Simulated Data
       </span>
     </label>
-  </div>
-  <div
-    class="input-container"
-  >
-    <div>
-      <h5>
-        Filenames:
-      </h5>
-      <ul />
-    </div>
   </div>
 </div>
 `;

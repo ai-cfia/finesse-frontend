@@ -27,7 +27,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
   const [currentSearchSource, setCurrentSearchSource] = useState<SearchSource>(
-    SearchSource.Simulated,
+    SearchSource.Ailab,
   );
   const [queryResult, setQueryResult] = useState<QueryResult[]>([]);
 
