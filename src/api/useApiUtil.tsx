@@ -29,27 +29,13 @@ export const useApiUtil = ({
     }
 
     const fetchData = async (): Promise<void> => {
-      const endpoint = GetEndpoint(`/search/${currentSearchSource}`);
-
-      try {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ query: term }),
-        });
-
-        if (!response.ok) {
-          console.error("Failed to fetch data with status:", response.status);
-          setData(null);
-          return;
-        }
-
-        const resultsData: ResponseData = await response.json();
-        setData(resultsData);
-      } catch (error) {
-        console.error("API request failed with error: ", error);
-        setData(null);
+      if (isNonEmptyString(process.env.REACT_APP_BACKEND_URL)) {
+        const backendData = await fetchFromBackend(term, currentSearchSource);
+        setData(backendData);
+        return;
       }
+      const staticData = await fetchStaticData(term);
+      setData(staticData);
     };
 
     fetchData().catch((error) => {
@@ -60,13 +46,86 @@ export const useApiUtil = ({
   return { data };
 };
 
+// Function to fetch static data from finesse-data
+export const fetchStaticData = async (
+  term: string,
+): Promise<ResponseData | null> => {
+  const githubApiUrl = process.env.REACT_APP_GITHUB_API_URL ?? "";
+
+  try {
+    // Fetching the list of files from GitHub repository
+    const response = await fetch(githubApiUrl);
+    if (!response.ok) {
+      console.error("Failed to fetch data with status:", response.status);
+      return null;
+    }
+
+    // Parsing the JSON response to an array of files with their download URLs
+    const data: Array<{ name: string; download_url: string }> =
+      await response.json();
+
+    // Normalizing the search term to lower case
+    const normalizedTerm = term.toLowerCase();
+
+    // Finding the matching file based on the normalized term
+    const matchingFile = data.find((file) =>
+      file.name.toLowerCase().includes(normalizedTerm + ".json"),
+    );
+
+    // Handling the case where no matching file is found
+    if (matchingFile == null) {
+      console.log("No matching file found");
+      return null;
+    }
+
+    // Fetching the actual data from the matched file's download URL
+    const resultsResponse = await fetch(matchingFile.download_url);
+    if (!resultsResponse.ok) {
+      console.error(
+        "Results fetch failed with status: ",
+        resultsResponse.status,
+      );
+      return null;
+    }
+
+    // Parsing the fetched data into the expected format and setting it to state
+    const resultsData: ResponseData = await resultsResponse.json();
+    return resultsData;
+  } catch (error) {
+    console.error("API request failed with error: ", error);
+    return null;
+  }
+};
+
+// Function to search from backend
+export const fetchFromBackend = async (
+  term: string,
+  currentSearchSource: SearchSource,
+): Promise<ResponseData | null> => {
+  try {
+    const endpoint = GetEndpoint(`/search/${currentSearchSource}`);
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: term }),
+    });
+    if (!response.ok) {
+      console.error("Failed to fetch data with status:", response.status);
+      return null;
+    }
+    const resultsData: ResponseData = await response.json();
+    return resultsData;
+  } catch (error) {
+    console.error("API request failed with error: ", error);
+    return null;
+  }
+};
+
 // Function to fetch filenames from the GitHub repository
 export const fetchFilenames = async (): Promise<string[]> => {
   try {
     // Fetching the contents of the repository
-    const response = await fetch(
-      "https://api.github.com/repos/ai-cfia/finesse-data/contents",
-    );
+    const response = await fetch(process.env.REACT_APP_GITHUB_API_URL ?? "");
     if (!response.ok) {
       console.error("Failed to fetch filenames with status:", response.status);
       return [];
