@@ -4,6 +4,7 @@ import { environment } from "./environments/environment";
 
 describe("App Component Tests", () => {
   test("version matches the environment version", () => {
+    process.env.REACT_APP_DEBUG_MODE = "True";
     const { container } = render(<App basename="/" />);
     const versionElement = screen.getByText("v" + environment.version);
     expect(versionElement).toBeInTheDocument();
