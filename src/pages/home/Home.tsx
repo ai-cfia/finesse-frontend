@@ -8,6 +8,13 @@ import { environment } from "../../environments/environment";
 import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import { useStateValue, actionTypes } from "../../StateProvider";
 import { FaCog } from "react-icons/fa";
+import {
+  LayoutContainer,
+  LogoContainer,
+  SearchBarContainer,
+  SloganContainer,
+  VersionTextContainer,
+} from "../../styles/indexElements";
 
 const Home: React.FC = () => {
   const [alertMessage, setAlertMessage] = useState("");
@@ -57,7 +64,7 @@ const Home: React.FC = () => {
   }, [useSimulatedData]);
 
   return (
-    <div className={styles.layout}>
+    <LayoutContainer>
       <Header />
       {isError && <div className={styles.warning}>{alertMessage}</div>}
       <FaCog
@@ -85,32 +92,23 @@ const Home: React.FC = () => {
           }}
         />
       )}
-      <div className="logo-container">
+      <LogoContainer>
         <CFIALogo />
-      </div>
-      <div className="searchBar-container">
+      </LogoContainer>
+      <SearchBarContainer>
         <SearchBar />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          textAlign: "center",
-          marginTop: 20,
-          flexDirection: "column",
-          alignItems: "center",
-          color: "grey",
-        }}
-      >
+      </SearchBarContainer>
+      <SloganContainer>
         <text>Empowering agency&apos;s users with precision search.</text>
         <text style={{ marginTop: 10 }}>
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
         </text>
-      </div>
-      <div className={styles.versionText}>
+      </SloganContainer>
+      <VersionTextContainer>
         {environment.version !== "" ? "v" + environment.version : ""}
-      </div>
-    </div>
+      </VersionTextContainer>
+    </LayoutContainer>
   );
 };
 
