@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/finesse-frontend/static/css/main.6fa383c4.css",
-    "main.js": "/finesse-frontend/static/js/main.22ec46c0.js",
+    "main.css": "/finesse-frontend/static/css/main.b886f406.css",
+    "main.js": "/finesse-frontend/static/js/main.803029bc.js",
     "static/js/496.12a63fe6.chunk.js": "/finesse-frontend/static/js/496.12a63fe6.chunk.js",
     "static/media/CFIA_SmartSearch_Logo.png": "/finesse-frontend/static/media/CFIA_SmartSearch_Logo.98eb8410004f26c2e30a.png",
     "static/media/CFIA_Banner.png": "/finesse-frontend/static/media/CFIA_Banner.db7c0cb91dda59663e0f.png",
     "index.html": "/finesse-frontend/index.html",
-    "main.6fa383c4.css.map": "/finesse-frontend/static/css/main.6fa383c4.css.map",
-    "main.22ec46c0.js.map": "/finesse-frontend/static/js/main.22ec46c0.js.map",
+    "main.b886f406.css.map": "/finesse-frontend/static/css/main.b886f406.css.map",
+    "main.803029bc.js.map": "/finesse-frontend/static/js/main.803029bc.js.map",
     "496.12a63fe6.chunk.js.map": "/finesse-frontend/static/js/496.12a63fe6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6fa383c4.css",
-    "static/js/main.22ec46c0.js"
+    "static/css/main.b886f406.css",
+    "static/js/main.803029bc.js"
   ]
 }
