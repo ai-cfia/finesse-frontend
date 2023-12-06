@@ -106,9 +106,9 @@ const Home: React.FC = () => {
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
         </text>
-      </div>
-      <div className={styles.versionText}>
-        {environment.version !== "" ? "v" + environment.version : ""}
+        <div className={styles.versionText}>
+          {environment.version !== "" ? "v" + environment.version : ""}
+        </div>
       </div>
     </div>
   );
