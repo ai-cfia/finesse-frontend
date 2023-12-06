@@ -14,22 +14,20 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
   const { state, dispatch } = useStateValue();
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
-  const [previousSearchQuery, setPreviousSearchQuery] = useState<
-    string | undefined
-  >("");
+  const [previousSearchQuery, setPreviousSearchQuery] = useState<string>("");
 
   useEffect(() => {
     if (typeof term === "undefined") {
       setPreviousSearchQuery("Type to search...");
     } else {
       setPreviousSearchQuery(term);
+      setSearchQuery(term);
     }
   }, [term]);
 
   const search = (e: React.FormEvent): void => {
     e.preventDefault();
     navigate("/search");
-
     // Ignore dispatch if useSimulatedData is true
     if (state.useSimulatedData && searchQuery === "") {
       console.log("Search dispatch ignored because useSimulatedData is true");
@@ -40,6 +38,8 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
       type: actionTypes.SET_SEARCH_TERM,
       term: searchQuery,
     });
+
+    // setSearchQuery(previousSearchQuery);
   };
 
   return (
