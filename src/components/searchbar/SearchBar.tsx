@@ -38,8 +38,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
       type: actionTypes.SET_SEARCH_TERM,
       term: searchQuery,
     });
-
-    // setSearchQuery(previousSearchQuery);
   };
 
   return (
