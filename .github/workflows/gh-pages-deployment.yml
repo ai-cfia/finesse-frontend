@@ -1,18 +1,28 @@
-name: Build and Deploy to GitHub Pages
+name: Vercel Preview Deployment
 
 on:
   push:
+    branches:
+      - main
+  pull_request:
 
 jobs:
+
   lint-test:
     uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
+
+  vercel-deployment-dev:
+    needs: lint-test
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@main
+    with:
+        project-name: 'finesse-frontend'
+        deployment-environment: 'dev'
     secrets: inherit
 
-  build-and-deploy:
-    needs: lint-test
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-gh-pages-deployment.yml@main
-    secrets: inherit
+  vercel-deployment-uat:
+    if: github.ref == 'refs/heads/main'
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@main
     with:
-      node-version: "18"
-      publish-dir: "./build"
-      cache-dependency-path: "."
+        project-name: 'finesse-frontend'
+        deployment-environment: 'uat'
+    secrets: inherit
