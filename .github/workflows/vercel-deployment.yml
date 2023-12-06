@@ -1,0 +1,28 @@
+name: Vercel Preview Deployment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+
+  lint-test:
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
+
+  vercel-deployment-dev:
+    needs: lint-test
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@53-update-vercel-deployment-to-add-setup-node-step
+    with:
+        project-name: 'finesse-frontend'
+        deployment-environment: 'dev'
+    secrets: inherit
+
+  vercel-deployment-uat:
+    if: github.ref == 'refs/heads/main'
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@53-update-vercel-deployment-to-add-setup-node-step
+    with:
+        project-name: 'finesse-frontend'
+        deployment-environment: 'uat'
+    secrets: inherit
