@@ -1,0 +1,32 @@
+name: TS version validation
+
+on:
+  push:
+
+env:
+  TYPESCRIPT_VERSION: ${{ secrets.TYPESCRIPT_VERSION }}
+  SCRIPT_PATH: "./scripts/extract-typescript-version.js"
+
+jobs:
+  extract-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: Extract Version
+        id: extract_version
+        run: node ${{ env.SCRIPT_PATH }}
+
+      - name: Check Version
+        run: |
+          if [ "${{ steps.extract_version.outputs.version }}" != "${{ env.TYPESCRIPT_VERSION }}" ]; then
+            echo "Please change the TypeScript version to ${{ env.TYPESCRIPT_VERSION }} in your _versions.ts file";
+            exit 1;
+          fi
