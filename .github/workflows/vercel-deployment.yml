@@ -2,18 +2,12 @@ name: Vercel Preview Deployment
 
 on:
   push:
-    branches:
-      - main
   pull_request:
 
 jobs:
 
-  lint-test:
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
-
   vercel-deployment-dev:
-    needs: lint-test
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@53-update-vercel-deployment-to-add-setup-node-step
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@58-allow-the-use-of-env-file-to-frontend-static-deployment-workflows
     with:
         project-name: 'finesse-frontend'
         deployment-environment: 'dev'
@@ -21,7 +15,7 @@ jobs:
 
   vercel-deployment-uat:
     if: github.ref == 'refs/heads/main'
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@53-update-vercel-deployment-to-add-setup-node-step
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@58-allow-the-use-of-env-file-to-frontend-static-deployment-workflows
     with:
         project-name: 'finesse-frontend'
         deployment-environment: 'uat'
