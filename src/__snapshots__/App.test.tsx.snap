@@ -124,7 +124,7 @@ exports[`App Component Tests debug button is not visible when debug mode is fals
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.2
     </div>
   </div>
 </div>
@@ -269,7 +269,7 @@ exports[`App Component Tests debug button is visible when debug mode is true 1`]
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.2
     </div>
   </div>
 </div>
@@ -414,7 +414,7 @@ exports[`App Component Tests debug panel toggles visibility when debug button is
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.2
     </div>
   </div>
 </div>
@@ -611,7 +611,7 @@ exports[`App Component Tests debug panel toggles visibility when debug button is
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.2
     </div>
   </div>
 </div>
@@ -756,7 +756,7 @@ exports[`App Component Tests debug panel toggles visibility when debug button is
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.2
     </div>
   </div>
 </div>
@@ -901,7 +901,7 @@ exports[`App Component Tests version matches the environment version 1`] = `
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.2
     </div>
   </div>
 </div>
