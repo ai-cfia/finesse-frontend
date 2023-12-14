@@ -34,13 +34,22 @@ describe("DebugPanel Component Tests", () => {
     );
     return screen.getByTestId("debug-panel");
   };
+  const originalEnv = process.env;
 
   beforeAll(() => {
+    jest.resetModules();
+    process.env.REACT_APP_BASENAME = "finesse-frontend";
+    process.env.REACT_APP_DEBUG_MODE = "true";
+    process.env.REACT_APP_SEARCH_SOURCE = "ailab";
     window.alert = jest.fn();
   });
 
   afterEach(() => {
     jest.resetAllMocks();
+  });
+
+  afterAll(() => {
+    process.env = originalEnv;
   });
 
   test("renders radio buttons for search sources", async () => {

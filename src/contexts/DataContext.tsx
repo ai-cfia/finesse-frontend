@@ -11,6 +11,20 @@ interface DataContextState {
   setQueryResult: React.Dispatch<React.SetStateAction<QueryResult[]>>;
 }
 
+// Utility function to map the environment variable to the SearchSource enum
+export const getDefaultSearchSource = (): SearchSource => {
+  const envSearchSource = process.env.REACT_APP_SEARCH_SOURCE?.toLowerCase();
+  for (const source in SearchSource)
+    if (
+      SearchSource[source as keyof typeof SearchSource].toLowerCase() ===
+      envSearchSource
+    )
+      return SearchSource[source as keyof typeof SearchSource];
+  if (envSearchSource !== undefined)
+    throw new Error(`Invalid search source: ${envSearchSource}`);
+  return SearchSource.Azure;
+};
+
 // Create the context with a default value
 const DataContext = createContext<DataContextState>({
   searchTerm: null,
@@ -27,7 +41,7 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
   const [currentSearchSource, setCurrentSearchSource] = useState<SearchSource>(
-    SearchSource.Ailab,
+    getDefaultSearchSource(),
   );
   const [queryResult, setQueryResult] = useState<QueryResult[]>([]);
 
