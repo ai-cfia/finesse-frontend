@@ -6,7 +6,11 @@ on:
 
 jobs:
 
+  lint-test:
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
+
   vercel-deployment-dev:
+    needs: lint-test
     uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@60-vercel-deployment-workflow-only-comments-the-url-of-the-most-recent-build
     with:
         project-name: 'finesse-frontend'
