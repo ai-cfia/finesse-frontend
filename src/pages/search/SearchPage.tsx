@@ -30,7 +30,7 @@ const SearchPage: React.FC = () => {
         <CFIALogo />
 
         <div className="searchBar-container-search">
-          <SearchBar term={termProp} />
+          <SearchBar />
         </div>
       </div>
       <SearchResultList data={data} query={termProp} />
