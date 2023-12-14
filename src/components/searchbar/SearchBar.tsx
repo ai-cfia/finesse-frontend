@@ -1,57 +1,47 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../contexts/DataContext";
-import { SearchSource } from "../../types";
 import "./SearchBar.css";
 
-interface SearchBarProps {
-  term?: string;
-}
+const SEARCH_PLACEHOLDER = "Type to search...";
 
-export const SearchBar: React.FC<SearchBarProps> = ({ term }) => {
-  const { currentSearchSource, setSearchTerm } = useData();
-  const [searchQuery, setSearchQuery] = useState("");
+export const SearchBar: React.FC = () => {
+  const { searchTerm, setSearchTerm } = useData();
+  const [searchQuery, setSearchQuery] = useState(searchTerm ?? "");
   const navigate = useNavigate();
-  const [previousSearchQuery, setPreviousSearchQuery] = useState<
-    string | undefined
-  >("");
-
-  useEffect(() => {
-    if (typeof term === "undefined") {
-      setPreviousSearchQuery("Type to search...");
-    } else {
-      setPreviousSearchQuery(term);
-    }
-  }, [term]);
 
   const search = (e: React.FormEvent): void => {
     e.preventDefault();
-    navigate("/search");
-
-    // Ignore dispatch if useSimulatedData is true
-    // TODO: revisit
-    if (currentSearchSource === SearchSource.Simulated && searchQuery === "") {
-      console.log("Search dispatch ignored because useSimulatedData is true");
+    const trimmedSearchQuery = searchQuery.trim();
+    if (trimmedSearchQuery === "") {
+      console.warn("Empty string search not allowed.");
       return;
     }
-
-    setSearchTerm(searchQuery);
+    // TODO: do we want to navigate every time?
+    navigate("/search");
+    setSearchTerm(trimmedSearchQuery);
   };
 
   return (
     <form className="form-wrapper">
       <div className="input-wrapper">
-        <FaSearch id="fa-arrow-right" />
+        <FaSearch id="fa-arrow-right" data-testid="search-icon" />
         <input
-          placeholder={previousSearchQuery}
+          placeholder={SEARCH_PLACEHOLDER}
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
           }}
+          data-testid="search-input"
         />
-        <button className="button" type="submit" onClick={search}>
+        <button
+          className="button"
+          type="submit"
+          onClick={search}
+          data-testid="submit-button"
+        >
           <FaArrowRight id="fa-arrow-right" style={{ color: "#05486c" }} />
         </button>
       </div>
