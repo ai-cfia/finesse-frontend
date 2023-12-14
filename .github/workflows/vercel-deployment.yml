@@ -10,7 +10,6 @@ jobs:
     uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
 
   vercel-deployment-dev:
-    if: ${{ github.event_name != 'push' }}
     needs: lint-test
     uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@60-vercel-deployment-workflow-only-comments-the-url-of-the-most-recent-build
     with:
