@@ -14,7 +14,6 @@ jest.mock("react-router-dom", () => ({
 describe("SearchBar", () => {
   const mockSetSearchTerm = jest.fn();
   const mockNavigate = jest.fn();
-  let consoleWarnSpy: jest.SpyInstance;
 
   beforeEach(() => {
     (useData as jest.Mock).mockReturnValue({
@@ -22,7 +21,7 @@ describe("SearchBar", () => {
       setSearchTerm: mockSetSearchTerm,
     });
     (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
-    consoleWarnSpy = jest.spyOn(console, "warn").mockImplementation(() => {});
+    jest.spyOn(console, "warn").mockImplementation(() => {});
   });
 
   afterEach(() => {
