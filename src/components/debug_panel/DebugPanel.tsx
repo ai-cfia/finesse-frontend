@@ -19,7 +19,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (currentSearchSource === SearchSource.Simulated) {
+    if (currentSearchSource === SearchSource.static) {
       const loadFilenames = async (): Promise<void> => {
         const fetchedFilenames = await fetchFilenames();
         setFilenames(fetchedFilenames);
@@ -55,39 +55,42 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
       <div className="radio-container">
         <label className="radio-option">
           <input
+            data-testid="search-source-ailab"
             type="radio"
             value="ailab"
-            checked={currentSearchSource === SearchSource.Ailab}
+            checked={currentSearchSource === SearchSource.ailab}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.Ailab);
+              setCurrentSearchSource(SearchSource.ailab);
             }}
           />
           <span className="radio-label">Use AI Lab search</span>
         </label>
         <label className="radio-option">
           <input
+            data-testid="search-source-azure"
             type="radio"
             value="azure"
-            checked={currentSearchSource === SearchSource.Azure}
+            checked={currentSearchSource === SearchSource.azure}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.Azure);
+              setCurrentSearchSource(SearchSource.azure);
             }}
           />
           <span className="radio-label">Use Azure AI Search</span>
         </label>
         <label className="radio-option">
           <input
+            data-testid="search-source-static"
             type="radio"
             value="simulated"
-            checked={currentSearchSource === SearchSource.Simulated}
+            checked={currentSearchSource === SearchSource.static}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.Simulated);
+              setCurrentSearchSource(SearchSource.static);
             }}
           />
           <span className="radio-label">Use Simulated Data</span>
         </label>
       </div>
-      {currentSearchSource === SearchSource.Simulated && (
+      {currentSearchSource === SearchSource.static && (
         <div className="input-container">
           <div>
             <h5>Filenames:</h5>

@@ -1,6 +1,7 @@
 import DOMPurify from "dompurify";
 import React from "react";
 import { useData } from "../../contexts/DataContext";
+import { SearchSource } from "../../types";
 
 export const getHighlightedIndices = (
   sentence: string,
@@ -39,7 +40,7 @@ const HighlightedContent: React.FC<HighlightedContentProps> = ({
   query,
 }) => {
   const { currentSearchSource } = useData();
-  if (currentSearchSource === "azure") {
+  if (currentSearchSource === SearchSource.azure) {
     const sanitizedContent = DOMPurify.sanitize(content);
     return <span dangerouslySetInnerHTML={{ __html: sanitizedContent }} />;
   } else {
