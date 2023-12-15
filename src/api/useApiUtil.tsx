@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import type { QueryResult, SearchSource } from "../types";
+import { SearchSource, type QueryResult } from "../types";
 
 // Helper function to construct the endpoint URL using environment variable as base
 export const GetEndpoint = (path: string): string => {
@@ -29,13 +29,17 @@ export const useApiUtil = ({
     }
 
     const fetchData = async (): Promise<void> => {
-      if (isNonEmptyString(process.env.REACT_APP_BACKEND_URL)) {
-        const backendData = await fetchFromBackend(term, currentSearchSource);
-        setData(backendData);
+      if (
+        !isNonEmptyString(process.env.REACT_APP_BACKEND_URL) &&
+        currentSearchSource === SearchSource.Simulated
+      ) {
+        const staticData = await fetchStaticData(term);
+        setData(staticData);
         return;
       }
-      const staticData = await fetchStaticData(term);
-      setData(staticData);
+
+      const backendData = await fetchFromBackend(term, currentSearchSource);
+      setData(backendData);
     };
 
     fetchData().catch((error) => {
