@@ -65,6 +65,7 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
             class="input-wrapper"
           >
             <svg
+              data-testid="search-icon"
               fill="currentColor"
               height="1em"
               id="fa-arrow-right"
@@ -79,11 +80,13 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
               />
             </svg>
             <input
-              placeholder=""
+              data-testid="search-input"
+              placeholder="Type to search..."
               value=""
             />
             <button
               class="button"
+              data-testid="submit-button"
               type="submit"
             >
               <svg
@@ -193,6 +196,7 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
             class="input-wrapper"
           >
             <svg
+              data-testid="search-icon"
               fill="currentColor"
               height="1em"
               id="fa-arrow-right"
@@ -207,11 +211,13 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
               />
             </svg>
             <input
-              placeholder=""
+              data-testid="search-input"
+              placeholder="Type to search..."
               value=""
             />
             <button
               class="button"
+              data-testid="submit-button"
               type="submit"
             >
               <svg
@@ -375,6 +381,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
             class="input-wrapper"
           >
             <svg
+              data-testid="search-icon"
               fill="currentColor"
               height="1em"
               id="fa-arrow-right"
@@ -389,11 +396,13 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
               />
             </svg>
             <input
-              placeholder=""
+              data-testid="search-input"
+              placeholder="Type to search..."
               value=""
             />
             <button
               class="button"
+              data-testid="submit-button"
               type="submit"
             >
               <svg
@@ -503,6 +512,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
             class="input-wrapper"
           >
             <svg
+              data-testid="search-icon"
               fill="currentColor"
               height="1em"
               id="fa-arrow-right"
@@ -517,11 +527,13 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
               />
             </svg>
             <input
-              placeholder=""
+              data-testid="search-input"
+              placeholder="Type to search..."
               value=""
             />
             <button
               class="button"
+              data-testid="submit-button"
               type="submit"
             >
               <svg

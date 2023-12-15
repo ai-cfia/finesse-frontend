@@ -66,6 +66,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
           class="input-wrapper"
         >
           <svg
+            data-testid="search-icon"
             fill="currentColor"
             height="1em"
             id="fa-arrow-right"
@@ -80,11 +81,13 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
             />
           </svg>
           <input
+            data-testid="search-input"
             placeholder="Type to search..."
             value=""
           />
           <button
             class="button"
+            data-testid="submit-button"
             type="submit"
           >
             <svg
@@ -121,7 +124,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.3
     </div>
   </div>
 </DocumentFragment>
@@ -208,6 +211,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
           class="input-wrapper"
         >
           <svg
+            data-testid="search-icon"
             fill="currentColor"
             height="1em"
             id="fa-arrow-right"
@@ -222,11 +226,13 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
             />
           </svg>
           <input
+            data-testid="search-input"
             placeholder="Type to search..."
             value=""
           />
           <button
             class="button"
+            data-testid="submit-button"
             type="submit"
           >
             <svg
@@ -263,7 +269,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.3
     </div>
   </div>
 </DocumentFragment>
@@ -404,6 +410,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
           class="input-wrapper"
         >
           <svg
+            data-testid="search-icon"
             fill="currentColor"
             height="1em"
             id="fa-arrow-right"
@@ -418,11 +425,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             />
           </svg>
           <input
+            data-testid="search-input"
             placeholder="Type to search..."
             value=""
           />
           <button
             class="button"
+            data-testid="submit-button"
             type="submit"
           >
             <svg
@@ -459,7 +468,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.3
     </div>
   </div>
 </DocumentFragment>
@@ -546,6 +555,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
           class="input-wrapper"
         >
           <svg
+            data-testid="search-icon"
             fill="currentColor"
             height="1em"
             id="fa-arrow-right"
@@ -560,11 +570,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             />
           </svg>
           <input
+            data-testid="search-input"
             placeholder="Type to search..."
             value=""
           />
           <button
             class="button"
+            data-testid="submit-button"
             type="submit"
           >
             <svg
@@ -601,7 +613,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.3
     </div>
   </div>
 </DocumentFragment>
@@ -688,6 +700,7 @@ exports[`Home renders the Home page correctly 1`] = `
           class="input-wrapper"
         >
           <svg
+            data-testid="search-icon"
             fill="currentColor"
             height="1em"
             id="fa-arrow-right"
@@ -702,11 +715,13 @@ exports[`Home renders the Home page correctly 1`] = `
             />
           </svg>
           <input
+            data-testid="search-input"
             placeholder="Type to search..."
             value=""
           />
           <button
             class="button"
+            data-testid="submit-button"
             type="submit"
           >
             <svg
@@ -743,7 +758,7 @@ exports[`Home renders the Home page correctly 1`] = `
     <div
       class="versionText"
     >
-      v0.2.0
+      v0.2.3
     </div>
   </div>
 </DocumentFragment>
