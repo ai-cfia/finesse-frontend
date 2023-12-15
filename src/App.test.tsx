@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
 import App from "./App";
 import { environment } from "./environments/environment";
+import { setupTestEnvVars } from "./setupTests";
 
 describe("App Component", () => {
-  // Set up environment variable before tests
-  beforeEach(() => {
-    process.env.REACT_APP_DEBUG_MODE = "True";
+  beforeAll(() => {
+    setupTestEnvVars();
   });
 
   it("displays the version that matches the environment version", () => {

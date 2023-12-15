@@ -8,9 +8,14 @@ import {
 import { BrowserRouter } from "react-router-dom";
 import { DataProvider } from "../../contexts/DataContext";
 import { LayoutProvider } from "../../contexts/LayoutContext";
-import SearchPage from "./SearchPage"; // Adjust the import path as needed.
+import { setupTestEnvVars } from "../../setupTests";
+import SearchPage from "./SearchPage";
 
 describe("SearchPage", () => {
+  beforeAll(() => {
+    setupTestEnvVars();
+  });
+
   const renderSearchPage = (): RenderResult => {
     return render(
       <BrowserRouter>
