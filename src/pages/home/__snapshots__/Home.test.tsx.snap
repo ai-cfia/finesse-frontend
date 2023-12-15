@@ -45,6 +45,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -124,7 +125,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
     <div
       class="versionText"
     >
-      v0.2.3
+      v0.2.4
     </div>
   </div>
 </DocumentFragment>
@@ -190,6 +191,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -269,7 +271,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
     <div
       class="versionText"
     >
-      v0.2.3
+      v0.2.4
     </div>
   </div>
 </DocumentFragment>
@@ -389,6 +391,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -468,7 +471,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.3
+      v0.2.4
     </div>
   </div>
 </DocumentFragment>
@@ -534,6 +537,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -613,7 +617,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.3
+      v0.2.4
     </div>
   </div>
 </DocumentFragment>
@@ -679,6 +683,7 @@ exports[`Home renders the Home page correctly 1`] = `
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -758,7 +763,7 @@ exports[`Home renders the Home page correctly 1`] = `
     <div
       class="versionText"
     >
-      v0.2.3
+      v0.2.4
     </div>
   </div>
 </DocumentFragment>

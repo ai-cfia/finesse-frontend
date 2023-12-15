@@ -45,6 +45,7 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -176,6 +177,7 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -361,6 +363,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
@@ -492,6 +495,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
