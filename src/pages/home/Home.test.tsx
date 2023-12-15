@@ -9,6 +9,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AlertProvider } from "../../contexts/AlertContext";
 import { DataProvider } from "../../contexts/DataContext";
 import { LayoutProvider } from "../../contexts/LayoutContext";
+import { setupTestEnvVars } from "../../setupTests";
 import Home from "./Home"; // Adjust the import path as needed.
 
 jest.mock("../../api/useApiUtil", () => ({
@@ -29,6 +30,10 @@ describe("Home", () => {
       </BrowserRouter>,
     );
   };
+
+  beforeAll(() => {
+    setupTestEnvVars();
+  });
 
   it("renders the Home page correctly", () => {
     const { asFragment } = renderHomePage();
