@@ -51,7 +51,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
   if (!isDebugPanelVisible) return null;
   return (
     <div className="debug-panel" data-testid="debug-panel">
-      <h4>Debug Panel</h4>
+      <h4 style={{ color: "black" }}>Debug Panel</h4>
       <div className="radio-container">
         <label className="radio-option">
           <input

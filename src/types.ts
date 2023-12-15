@@ -4,6 +4,13 @@ export enum SearchSource {
   Azure = "azure",
 }
 
+export enum EDirection {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+
 export interface QueryResult {
   id: string;
   url: string;

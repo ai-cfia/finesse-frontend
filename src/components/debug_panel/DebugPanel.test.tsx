@@ -2,6 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { DataProvider } from "../../contexts/DataContext";
 import { LayoutProvider } from "../../contexts/LayoutContext";
+import { setupTestEnvVars } from "../../setupTests";
 import { DebugPanel } from "./DebugPanel";
 
 jest.mock("../../api/useApiUtil", () => ({
@@ -36,6 +37,7 @@ describe("DebugPanel Component Tests", () => {
   };
 
   beforeAll(() => {
+    setupTestEnvVars();
     window.alert = jest.fn();
   });
 

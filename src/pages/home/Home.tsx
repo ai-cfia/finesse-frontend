@@ -1,14 +1,12 @@
 import { useEffect } from "react";
 import { PingBackend } from "../../api/useApiUtil";
-import AlertBanner from "../../components/alert_banner/AlertBanner";
-import DebugButton from "../../components/debug_button/DebugButton";
-import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
 import { useAlert } from "../../contexts/AlertContext";
 import { useData } from "../../contexts/DataContext";
 import { environment } from "../../environments/environment";
+import { EDirection } from "../../types";
 import styles from "../home/Home.module.css";
 
 const Home: React.FC = () => {
@@ -17,6 +15,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     console.log("currentSearchSource:", currentSearchSource);
+    console.log("testing enums", EDirection["Up" as keyof typeof EDirection]);
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
@@ -47,17 +46,6 @@ const Home: React.FC = () => {
   return (
     <div className={styles.layout}>
       <Header />
-      <AlertBanner />
-      <DebugButton
-        style={{
-          cursor: "pointer",
-          zIndex: 1001,
-          position: "absolute",
-          left: "10px",
-          marginTop: "10px",
-        }}
-      />
-      <DebugPanel />
       <div className="logo-container">
         <CFIALogo />
       </div>
