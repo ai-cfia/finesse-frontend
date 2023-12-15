@@ -1,7 +1,7 @@
 export enum SearchSource {
-  Simulated = "static",
-  Ailab = "ailab",
-  Azure = "azure",
+  static = "static",
+  ailab = "ailab",
+  azure = "azure",
 }
 
 export interface QueryResult {

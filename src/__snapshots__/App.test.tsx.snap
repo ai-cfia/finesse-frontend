@@ -489,6 +489,7 @@ exports[`App Component Tests debug panel toggles visibility when debug button is
           class="radio-option"
         >
           <input
+            data-testid="search-source-ailab"
             type="radio"
             value="ailab"
           />
@@ -503,6 +504,7 @@ exports[`App Component Tests debug panel toggles visibility when debug button is
         >
           <input
             checked=""
+            data-testid="search-source-azure"
             type="radio"
             value="azure"
           />
@@ -516,6 +518,7 @@ exports[`App Component Tests debug panel toggles visibility when debug button is
           class="radio-option"
         >
           <input
+            data-testid="search-source-static"
             type="radio"
             value="simulated"
           />
