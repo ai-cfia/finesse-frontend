@@ -1,14 +1,16 @@
 import React from "react"; // Import 'React' from the 'react' package.
 import cfia from "../../assets/CFIA_Banner.png";
 import styles from "../../pages/home/Home.module.css";
-import { HeaderContainer } from "../../styles/indexElements";
+import AlertBanner from "../alert_banner/AlertBanner";
+import DebugButton from "../debug_button/DebugButton";
+import { DebugPanel } from "../debug_panel/DebugPanel";
 
 // Header Component -> Displays CFIA banner image.
 const Header: React.FC = () => {
   // Add type annotation for the component.
   return (
     <header className={styles.header} role={"banner"}>
-      <HeaderContainer>
+      <div className={styles.headerContainer}>
         <nav>
           <ul className={styles.headerNavList}>
             <li className={styles.headerNavLeftMargin}>
@@ -24,7 +26,18 @@ const Header: React.FC = () => {
             <li className={styles.headerRightText}>Alpha Version</li>
           </ul>
         </nav>
-      </HeaderContainer>
+      </div>
+      <AlertBanner />
+      <DebugButton
+        style={{
+          cursor: "pointer",
+          zIndex: 1001,
+          position: "absolute",
+          margin: "10px",
+          color: "black",
+        }}
+      />
+      <DebugPanel />
     </header>
   );
 };

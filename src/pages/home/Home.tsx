@@ -1,114 +1,77 @@
-import { SearchBar } from "../../components/searchbar/SearchBar";
-import styles from "../home/Home.module.css";
+import { useEffect } from "react";
+import { PingBackend } from "../../api/useApiUtil";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
-import { useState, useEffect } from "react";
-import { PingBackend, GetEndpoint } from "../../api/useApiUtil";
+import { SearchBar } from "../../components/searchbar/SearchBar";
+import { useAlert } from "../../contexts/AlertContext";
+import { useData } from "../../contexts/DataContext";
 import { environment } from "../../environments/environment";
-import { DebugPanel } from "../../components/debug_panel/DebugPanel";
-import { useStateValue, actionTypes } from "../../StateProvider";
-import { FaCog } from "react-icons/fa";
-import {
-  LayoutContainer,
-  LogoContainer,
-  SearchBarContainer,
-  SloganContainer,
-  VersionTextContainer,
-} from "../../styles/indexElements";
+import { EDirection } from "../../types";
+import styles from "../home/Home.module.css";
 
 const Home: React.FC = () => {
-  const [alertMessage, setAlertMessage] = useState("");
-  const [isError, setIsError] = useState(false);
-  const [isDebugPanelVisible, setIsDebugPanelVisible] = useState(false);
-
-  const {
-    state: { useSimulatedData },
-    dispatch,
-  } = useStateValue();
+  const { currentSearchSource } = useData();
+  const { setAlertMessage } = useAlert();
 
   useEffect(() => {
-    console.log("useSimulatedData:", useSimulatedData);
+    console.log("currentSearchSource:", currentSearchSource);
+    console.log("testing enums", EDirection["Up" as keyof typeof EDirection]);
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
       process.env.REACT_APP_BACKEND_URL === ""
     ) {
-      setIsError(true);
       setAlertMessage(
         "Warning: Backend URL is not set, frontend is misconfigured.",
       );
-      console.log("Backend URL is not set, frontend is misconfigured.");
     } else {
-      PingBackend(GetEndpoint("/search"))
-        .then((responseData) => {
-          if (Array.isArray(responseData) && responseData.length === 0) {
-            console.log("Empty array response from backend");
+      PingBackend()
+        .then((response) => {
+          if (response === "ok") {
+            console.log("Ping response:", response);
           } else {
-            setIsError(true);
             setAlertMessage(
               "Warning: Initializing ping request to backend failed.",
             );
-            console.log("Initializing ping request to backend failed.");
           }
         })
         .catch(() => {
-          setIsError(true);
           setAlertMessage(
             "Warning: Initializing ping request to backend failed.",
           );
-          console.log(
-            "Initializing ping request to backend failed. Caught in catch.",
-          );
         });
     }
-  }, [useSimulatedData]);
+  }, [currentSearchSource, setAlertMessage]);
 
   return (
-    <LayoutContainer>
+    <div className={styles.layout}>
       <Header />
-      {isError && <div className={styles.warning}>{alertMessage}</div>}
-      <FaCog
-        onClick={() => {
-          setIsDebugPanelVisible(!isDebugPanelVisible);
-          console.log("Toggling Debug Panel visibility");
-        }}
-        style={{
-          cursor: "pointer",
-          zIndex: 1001,
-          position: "absolute",
-          left: "10px",
-          top: isError ? "160px" : "110px",
-        }}
-      />
-      {isDebugPanelVisible && (
-        <DebugPanel
-          isEnabled={useSimulatedData}
-          onToggle={() => {
-            dispatch({
-              type: actionTypes.SET_USE_SIMULATED_DATA,
-              useSimulatedData: !useSimulatedData,
-            });
-            console.log("Toggling useSimulatedData");
-          }}
-        />
-      )}
-      <LogoContainer>
+      <div className="logo-container">
         <CFIALogo />
-      </LogoContainer>
-      <SearchBarContainer>
+      </div>
+      <div className="searchBar-container">
         <SearchBar />
-      </SearchBarContainer>
-      <SloganContainer>
-        <text>Empowering agency&apos;s users with precision search.</text>
-        <text style={{ marginTop: 10 }}>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          textAlign: "center",
+          marginTop: 20,
+          flexDirection: "column",
+          alignItems: "center",
+          color: "grey",
+        }}
+      >
+        <span>Empowering agency&apos;s users with precision search.</span>
+        <span style={{ marginTop: 10 }}>
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
-        </text>
-      </SloganContainer>
-      <VersionTextContainer>
+        </span>
+      </div>
+      <div className={styles.versionText}>
         {environment.version !== "" ? "v" + environment.version : ""}
-      </VersionTextContainer>
-    </LayoutContainer>
+      </div>
+    </div>
   );
 };
 

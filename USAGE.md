@@ -17,11 +17,9 @@ To get started with the project, follow the steps below:
 
 ### Configuration
 
-1. In the root of the project directory, create a file named `.env`.
-2. Open the `.env` file in a text editor.
-3. Assign the `REACT_APP_BACKEND_URL` variable to the endpoint URL of your backend server.
-
-   For example: `REACT_APP_BACKEND_URL=Endpoint_url_goes_here`
+1. In the root of the project directory, locate the file named `.env.template`.
+2. Run the command `cp .env.template .env` to create a new `.env` file with the same contents.
+3. Edit the `.env` file according to your specific needs.
 
 ### Running application
 
