@@ -1,27 +1,25 @@
 import * as React from "react";
 import { useEffect, useState } from "react";
-import "./DebugPanel.css";
-import { useStateValue } from "../../StateProvider";
 import { useNavigate } from "react-router-dom";
-import { actionTypes } from "../../reducer";
 import { fetchFilenames } from "../../api/useApiUtil";
+import { useData } from "../../contexts/DataContext";
+import { useLayout } from "../../contexts/LayoutContext";
+import { SearchSource } from "../../types";
+import "./DebugPanel.css";
 
 interface DebugPanelProps {
-  isEnabled: boolean;
-  onToggle: () => void;
   onSetSimulatedData?: (data: any) => void;
 }
 
-export const DebugPanel: React.FC<DebugPanelProps> = ({
-  isEnabled,
-  onToggle,
-}) => {
-  const { dispatch } = useStateValue();
+export const DebugPanel: React.FC<DebugPanelProps> = () => {
+  const { isDebugPanelVisible } = useLayout();
+  const { currentSearchSource, setCurrentSearchSource, setSearchTerm } =
+    useData();
   const [filenames, setFilenames] = useState<string[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (isEnabled) {
+    if (currentSearchSource === SearchSource.Simulated) {
       const loadFilenames = async (): Promise<void> => {
         const fetchedFilenames = await fetchFilenames();
         setFilenames(fetchedFilenames);
@@ -37,36 +35,59 @@ export const DebugPanel: React.FC<DebugPanelProps> = ({
     } else {
       setFilenames([]);
     }
-  }, [isEnabled]);
+  }, [currentSearchSource]);
 
   const handleFilenameClick = (
     e: React.MouseEvent<HTMLButtonElement>,
     filename: string,
   ): void => {
     e.preventDefault();
+    // TODO: revisit navigate.
     navigate("/search");
-
-    dispatch({
-      type: actionTypes.SET_SEARCH_TERM,
-      term: filename,
-    });
-    // Add any other actions you need to perform on click here
+    setSearchTerm(filename);
     alert("Search query set successfully!");
   };
 
+  if (!isDebugPanelVisible) return null;
   return (
-    <div className="debug-panel">
+    <div className="debug-panel" data-testid="debug-panel">
       <h4>Debug Panel</h4>
-      <div className="toggle-container">
-        <span className="toggle-label">Use Simulated Data:</span>
-        <input
-          type="checkbox"
-          checked={isEnabled}
-          onChange={onToggle}
-          className="toggle-input"
-        />
+      <div className="radio-container">
+        <label className="radio-option">
+          <input
+            type="radio"
+            value="ailab"
+            checked={currentSearchSource === SearchSource.Ailab}
+            onChange={() => {
+              setCurrentSearchSource(SearchSource.Ailab);
+            }}
+          />
+          <span className="radio-label">Use AI Lab search</span>
+        </label>
+        <label className="radio-option">
+          <input
+            type="radio"
+            value="azure"
+            checked={currentSearchSource === SearchSource.Azure}
+            onChange={() => {
+              setCurrentSearchSource(SearchSource.Azure);
+            }}
+          />
+          <span className="radio-label">Use Azure AI Search</span>
+        </label>
+        <label className="radio-option">
+          <input
+            type="radio"
+            value="simulated"
+            checked={currentSearchSource === SearchSource.Simulated}
+            onChange={() => {
+              setCurrentSearchSource(SearchSource.Simulated);
+            }}
+          />
+          <span className="radio-label">Use Simulated Data</span>
+        </label>
       </div>
-      {isEnabled && (
+      {currentSearchSource === SearchSource.Simulated && (
         <div className="input-container">
           <div>
             <h5>Filenames:</h5>

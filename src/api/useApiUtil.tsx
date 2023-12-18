@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import type { QueryResult, SearchSource } from "../types";
 
 // Helper function to construct the endpoint URL using environment variable as base
 export const GetEndpoint = (path: string): string => {
@@ -9,124 +10,122 @@ export const GetEndpoint = (path: string): string => {
 // TypeScript interfaces to define the structure of expected props and data
 interface UseApiUtilProps {
   term: string;
-  useSimulatedData: boolean;
-}
-
-interface QueryResult {
-  id: string;
-  url: string;
-  title: string;
-  content: string;
+  currentSearchSource: SearchSource;
 }
 
 // Defining a type for an array of QueryResult objects
 type ResponseData = QueryResult[];
 
-// Custom hook for fetching data based on the search term and simulated data flag
 export const useApiUtil = ({
   term,
-  useSimulatedData,
+  currentSearchSource,
 }: UseApiUtilProps): { data: ResponseData | null } => {
   const [data, setData] = useState<ResponseData | null>(null);
 
-  // useEffect hook to trigger data fetching when term or useSimulatedData changes
   useEffect(() => {
-    // Async function to fetch data
+    if (!isNonEmptyString(term)) {
+      setData(null);
+      return;
+    }
+
     const fetchData = async (): Promise<void> => {
-      const githubApiUrl =
-        "https://api.github.com/repos/ai-cfia/finesse-data/contents";
-
-      // Conditional fetching depending on whether simulated data is used
-      if (useSimulatedData && isNonEmptyString(term)) {
-        try {
-          // Fetching the list of files from GitHub repository
-          const response = await fetch(githubApiUrl);
-          if (!response.ok) {
-            console.error("Failed to fetch data with status:", response.status);
-            setData(null);
-            return;
-          }
-
-          // Parsing the JSON response to an array of files with their download URLs
-          const data: Array<{ name: string; download_url: string }> =
-            await response.json();
-
-          // Normalizing the search term to lower case
-          const normalizedTerm = term.toLowerCase();
-
-          // Finding the matching file based on the normalized term
-          const matchingFile = data.find((file) =>
-            file.name.toLowerCase().includes(normalizedTerm + ".json"),
-          );
-
-          // Handling the case where no matching file is found
-          if (matchingFile == null) {
-            console.log("No matching file found");
-            setData(null);
-            return;
-          }
-
-          // Fetching the actual data from the matched file's download URL
-          const resultsResponse = await fetch(matchingFile.download_url);
-          if (!resultsResponse.ok) {
-            console.error(
-              "Results fetch failed with status: ",
-              resultsResponse.status,
-            );
-            setData(null);
-            return;
-          }
-
-          // Parsing the fetched data into the expected format and setting it to state
-          const resultsData: ResponseData = await resultsResponse.json();
-          setData(resultsData);
-        } catch (error) {
-          console.error("API request failed with error: ", error);
-          setData(null);
-        }
-      } else {
-        // Handling real data fetching case
-        // (Please note, the real data fetching logic seems to be incomplete or not shown here)
-        try {
-          // Fetching data from a custom endpoint
-          const response = await fetch(GetEndpoint("/search"), {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              query: term,
-            }),
-          });
-
-          // Handling the response and setting the data
-          if (response.ok) {
-            const responseData = await response.json();
-            setData(responseData);
-            console.log("This is the data: ", responseData);
-          } else {
-            throw new Error("Request failed");
-          }
-        } catch (error) {
-          console.error("Error: ", error);
-        }
+      if (isNonEmptyString(process.env.REACT_APP_BACKEND_URL)) {
+        const backendData = await fetchFromBackend(term, currentSearchSource);
+        setData(backendData);
+        return;
       }
+      const staticData = await fetchStaticData(term);
+      setData(staticData);
     };
 
-    // Executing the fetchData function and catching any unhandled errors
     fetchData().catch((error) => {
       console.error("Error fetching data in fetchData: ", error);
     });
-  }, [term, useSimulatedData]); // Dependencies for the useEffect hook
+  }, [term, currentSearchSource]);
 
   return { data };
+};
+
+// Function to fetch static data from finesse-data
+export const fetchStaticData = async (
+  term: string,
+): Promise<ResponseData | null> => {
+  const githubApiUrl = process.env.REACT_APP_GITHUB_API_URL ?? "";
+
+  try {
+    // Fetching the list of files from GitHub repository
+    const response = await fetch(githubApiUrl);
+    if (!response.ok) {
+      console.error("Failed to fetch data with status:", response.status);
+      return null;
+    }
+
+    // Parsing the JSON response to an array of files with their download URLs
+    const data: Array<{ name: string; download_url: string }> =
+      await response.json();
+
+    // Normalizing the search term to lower case
+    const normalizedTerm = term.toLowerCase();
+
+    // Finding the matching file based on the normalized term
+    const matchingFile = data.find((file) =>
+      file.name.toLowerCase().includes(normalizedTerm + ".json"),
+    );
+
+    // Handling the case where no matching file is found
+    if (matchingFile == null) {
+      console.log("No matching file found");
+      return null;
+    }
+
+    // Fetching the actual data from the matched file's download URL
+    const resultsResponse = await fetch(matchingFile.download_url);
+    if (!resultsResponse.ok) {
+      console.error(
+        "Results fetch failed with status: ",
+        resultsResponse.status,
+      );
+      return null;
+    }
+
+    // Parsing the fetched data into the expected format and setting it to state
+    const resultsData: ResponseData = await resultsResponse.json();
+    return resultsData;
+  } catch (error) {
+    console.error("API request failed with error: ", error);
+    return null;
+  }
+};
+
+// Function to search from backend
+export const fetchFromBackend = async (
+  term: string,
+  currentSearchSource: SearchSource,
+): Promise<ResponseData | null> => {
+  try {
+    const endpoint = GetEndpoint(`/search/${currentSearchSource}`);
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ query: term }),
+    });
+    if (!response.ok) {
+      console.error("Failed to fetch data with status:", response.status);
+      return null;
+    }
+    const resultsData: ResponseData = await response.json();
+    return resultsData;
+  } catch (error) {
+    console.error("API request failed with error: ", error);
+    return null;
+  }
 };
 
 // Function to fetch filenames from the GitHub repository
 export const fetchFilenames = async (): Promise<string[]> => {
   try {
     // Fetching the contents of the repository
-    const response = await fetch(
-      "https://api.github.com/repos/ai-cfia/finesse-data/contents",
-    );
+    const response = await fetch(process.env.REACT_APP_GITHUB_API_URL ?? "");
     if (!response.ok) {
       console.error("Failed to fetch filenames with status:", response.status);
       return [];
@@ -146,14 +145,10 @@ export const fetchFilenames = async (): Promise<string[]> => {
 };
 
 // Function to test connectivity with the backend
-export const PingBackend = async (endpoint: string): Promise<any> => {
+export const PingBackend = async (): Promise<any> => {
   try {
     // Sending a POST request to the backend to test connectivity
-    const response = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ query: "" }),
-    });
+    const response = await fetch(GetEndpoint("/health"));
 
     if (!response.ok) {
       console.error("Ping request failed with status: ", response.status);
@@ -162,7 +157,7 @@ export const PingBackend = async (endpoint: string): Promise<any> => {
 
     // Logging successful connection
     console.log("Active Server Connection");
-    return await response.json();
+    return await response.text();
   } catch (error) {
     console.error("Ping request failed with error: ", error);
     throw error;

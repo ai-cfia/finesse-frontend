@@ -1,28 +1,27 @@
 // SearchPage.tsx
 import React, { useEffect } from "react";
-import styles from "../home/Home.module.css";
-import Header from "../../components/header/Header";
-import { useStateValue } from "../../StateProvider";
-import CFIALogo from "../../components/logo/CFIALogo";
-import { SearchBar } from "../../components/searchbar/SearchBar";
-import SearchResultList from "../../components/search_results/SearchResultsList";
 import { useApiUtil } from "../../api/useApiUtil";
+import Header from "../../components/header/Header";
+import CFIALogo from "../../components/logo/CFIALogo";
+import SearchResultList from "../../components/search_results/SearchResultsList";
+import { SearchBar } from "../../components/searchbar/SearchBar";
+import { useData } from "../../contexts/DataContext";
+import styles from "../home/Home.module.css";
 
 const SearchPage: React.FC = () => {
-  const {
-    state: { term, useSimulatedData }, // Directly get useSimulatedData from the global state
-  } = useStateValue();
-  const termProp = term !== null ? term : ""; // Provide a default value for termProp
+  const { searchTerm, currentSearchSource } = useData();
+  // Provide a default value for termProp
+  const termProp = searchTerm !== null ? searchTerm : "";
 
   const { data } = useApiUtil({
     term: termProp,
-    useSimulatedData,
+    currentSearchSource,
   });
 
   // useEffect hook to print the value of term whenever it changes
   useEffect(() => {
-    console.log("Term:", term);
-  }, [term]);
+    console.log("Term:", searchTerm);
+  }, [searchTerm]);
 
   return (
     <div className={styles.layout}>
@@ -31,7 +30,7 @@ const SearchPage: React.FC = () => {
         <CFIALogo />
 
         <div className="searchBar-container-search">
-          <SearchBar term={termProp} />
+          <SearchBar />
         </div>
       </div>
       <SearchResultList data={data} query={termProp} />
