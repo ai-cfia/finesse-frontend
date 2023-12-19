@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../contexts/DataContext";
+import { setupTestEnvVars } from "../../setupTests";
 import { SearchBar } from "./SearchBar";
 
 jest.mock("../../contexts/DataContext", () => ({
@@ -14,6 +15,10 @@ jest.mock("react-router-dom", () => ({
 describe("SearchBar", () => {
   const mockSetSearchTerm = jest.fn();
   const mockNavigate = jest.fn();
+
+  beforeAll(() => {
+    setupTestEnvVars();
+  });
 
   beforeEach(() => {
     (useData as jest.Mock).mockReturnValue({

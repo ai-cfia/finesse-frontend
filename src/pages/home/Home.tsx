@@ -1,15 +1,19 @@
 import { useEffect } from "react";
 import { PingBackend } from "../../api/useApiUtil";
-import AlertBanner from "../../components/alert_banner/AlertBanner";
-import DebugButton from "../../components/debug_button/DebugButton";
-import { DebugPanel } from "../../components/debug_panel/DebugPanel";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
 import { useAlert } from "../../contexts/AlertContext";
 import { useData } from "../../contexts/DataContext";
 import { environment } from "../../environments/environment";
-import styles from "../home/Home.module.css";
+import { EDirection } from "../../types";
+import {
+  LayoutContainer,
+  LogoContainer,
+  SearchBarContainer,
+  SloganContainer,
+  VersionTextContainer,
+} from "../../styles/indexElements";
 
 const Home: React.FC = () => {
   const { currentSearchSource } = useData();
@@ -17,6 +21,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     console.log("currentSearchSource:", currentSearchSource);
+    console.log("testing enums", EDirection["Up" as keyof typeof EDirection]);
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||
@@ -45,45 +50,25 @@ const Home: React.FC = () => {
   }, [currentSearchSource, setAlertMessage]);
 
   return (
-    <div className={styles.layout}>
+    <LayoutContainer>
       <Header />
-      <AlertBanner />
-      <DebugButton
-        style={{
-          cursor: "pointer",
-          zIndex: 1001,
-          position: "absolute",
-          left: "10px",
-          marginTop: "10px",
-        }}
-      />
-      <DebugPanel />
-      <div className="logo-container">
+      <LogoContainer>
         <CFIALogo />
-      </div>
-      <div className="searchBar-container">
+      </LogoContainer>
+      <SearchBarContainer>
         <SearchBar />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          textAlign: "center",
-          marginTop: 20,
-          flexDirection: "column",
-          alignItems: "center",
-          color: "grey",
-        }}
-      >
-        <span>Empowering agency&apos;s users with precision search.</span>
-        <span style={{ marginTop: 10 }}>
+      </SearchBarContainer>
+      <SloganContainer>
+        <text>Empowering agency&apos;s users with precision search.</text>
+        <text style={{ marginTop: 10 }}>
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
-        </span>
-      </div>
-      <div className={styles.versionText}>
+        </text>
+      </SloganContainer>
+      <VersionTextContainer>
         {environment.version !== "" ? "v" + environment.version : ""}
-      </div>
-    </div>
+      </VersionTextContainer>
+    </LayoutContainer>
   );
 };
 

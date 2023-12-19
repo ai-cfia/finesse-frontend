@@ -1,35 +1,4 @@
-.debug-panel {
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  padding: 15px;
-  border-radius: 5px;
-  min-width: 250px; /* Adjusted width */
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 0px;
-  z-index: 1000;
-  white-space: normal; /* Updated white-space property */
-}
-
-.radio-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 10px;
-}
-
-.radio-option {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px; 
-}
-
 .radio-option input[type="radio"] {
   margin-right: 5px;
-  cursor: pointer;
-}
-
-.radio-label {
-  white-space: nowrap;
   cursor: pointer;
 }

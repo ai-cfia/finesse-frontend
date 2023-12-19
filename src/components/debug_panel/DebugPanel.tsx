@@ -5,6 +5,12 @@ import { fetchFilenames } from "../../api/useApiUtil";
 import { useData } from "../../contexts/DataContext";
 import { useLayout } from "../../contexts/LayoutContext";
 import { SearchSource } from "../../types";
+import {
+  DebugPanelContainer,
+  RadioContainer,
+  RadioLabel,
+  RadioOption,
+} from "../../styles/indexElements";
 import "./DebugPanel.css";
 
 interface DebugPanelProps {
@@ -50,10 +56,10 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
 
   if (!isDebugPanelVisible) return null;
   return (
-    <div className="debug-panel" data-testid="debug-panel">
-      <h4>Debug Panel</h4>
-      <div className="radio-container">
-        <label className="radio-option">
+    <DebugPanelContainer data-testid="debug-panel">
+      <h4 style={{ color: "black" }}>Debug Panel</h4>
+      <RadioContainer>
+        <RadioOption>
           <input
             type="radio"
             value="ailab"
@@ -62,9 +68,9 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
               setCurrentSearchSource(SearchSource.Ailab);
             }}
           />
-          <span className="radio-label">Use AI Lab search</span>
-        </label>
-        <label className="radio-option">
+          <RadioLabel>Use AI Lab search</RadioLabel>
+        </RadioOption>
+        <RadioOption>
           <input
             type="radio"
             value="azure"
@@ -73,9 +79,9 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
               setCurrentSearchSource(SearchSource.Azure);
             }}
           />
-          <span className="radio-label">Use Azure AI Search</span>
-        </label>
-        <label className="radio-option">
+          <RadioLabel>Use Azure AI Search</RadioLabel>
+        </RadioOption>
+        <RadioOption>
           <input
             type="radio"
             value="simulated"
@@ -84,9 +90,9 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
               setCurrentSearchSource(SearchSource.Simulated);
             }}
           />
-          <span className="radio-label">Use Simulated Data</span>
-        </label>
-      </div>
+          <RadioLabel>Use Simulated Data</RadioLabel>
+        </RadioOption>
+      </RadioContainer>
       {currentSearchSource === SearchSource.Simulated && (
         <div className="input-container">
           <div>
@@ -107,6 +113,6 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
           </div>
         </div>
       )}
-    </div>
+    </DebugPanelContainer>
   );
 };

@@ -2,17 +2,19 @@
 
 exports[`DebugPanel Component Tests can switch to simulated data and display filenames 1`] = `
 <div
-  class="debug-panel"
+  class="sc-iqHXzD heCJM"
   data-testid="debug-panel"
 >
-  <h4>
+  <h4
+    style="color: black;"
+  >
     Debug Panel
   </h4>
   <div
-    class="radio-container"
+    class="sc-crrtmM KqfJY"
   >
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         checked=""
@@ -20,33 +22,33 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
         value="ailab"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use AI Lab search
       </span>
     </label>
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         type="radio"
         value="azure"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         type="radio"
         value="simulated"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use Simulated Data
       </span>
@@ -83,17 +85,19 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
 
 exports[`DebugPanel Component Tests clicking on a filename button updates the search term 1`] = `
 <div
-  class="debug-panel"
+  class="sc-iqHXzD heCJM"
   data-testid="debug-panel"
 >
-  <h4>
+  <h4
+    style="color: black;"
+  >
     Debug Panel
   </h4>
   <div
-    class="radio-container"
+    class="sc-crrtmM KqfJY"
   >
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         checked=""
@@ -101,33 +105,33 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
         value="ailab"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use AI Lab search
       </span>
     </label>
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         type="radio"
         value="azure"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         type="radio"
         value="simulated"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use Simulated Data
       </span>
@@ -164,17 +168,19 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
 
 exports[`DebugPanel Component Tests renders radio buttons for search sources 1`] = `
 <div
-  class="debug-panel"
+  class="sc-iqHXzD heCJM"
   data-testid="debug-panel"
 >
-  <h4>
+  <h4
+    style="color: black;"
+  >
     Debug Panel
   </h4>
   <div
-    class="radio-container"
+    class="sc-crrtmM KqfJY"
   >
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         checked=""
@@ -182,33 +188,33 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
         value="ailab"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use AI Lab search
       </span>
     </label>
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         type="radio"
         value="azure"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="radio-option"
+      class="sc-dQpIV knqZxe"
     >
       <input
         type="radio"
         value="simulated"
       />
       <span
-        class="radio-label"
+        class="sc-bqyKbq jYLzpr"
       >
         Use Simulated Data
       </span>
