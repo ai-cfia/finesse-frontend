@@ -3,10 +3,10 @@
 exports[`SearchBar does not navigate or set search term with empty trimmed query 1`] = `
 <DocumentFragment>
   <form
-    class="form-wrapper"
+    class="sc-fubDmA kGDFDk"
   >
     <div
-      class="input-wrapper"
+      class="sc-pGaPU czysfp"
     >
       <svg
         data-testid="search-icon"
@@ -29,7 +29,7 @@ exports[`SearchBar does not navigate or set search term with empty trimmed query
         value="     "
       />
       <button
-        class="button"
+        class="sc-kstpWv fEZtjS button"
         data-testid="submit-button"
         type="submit"
       >
@@ -57,10 +57,10 @@ exports[`SearchBar does not navigate or set search term with empty trimmed query
 exports[`SearchBar keeps the search query in the input after submission 1`] = `
 <DocumentFragment>
   <form
-    class="form-wrapper"
+    class="sc-fubDmA kGDFDk"
   >
     <div
-      class="input-wrapper"
+      class="sc-pGaPU czysfp"
     >
       <svg
         data-testid="search-icon"
@@ -83,7 +83,7 @@ exports[`SearchBar keeps the search query in the input after submission 1`] = `
         value="test query"
       />
       <button
-        class="button"
+        class="sc-kstpWv fEZtjS button"
         data-testid="submit-button"
         type="submit"
       >
@@ -111,10 +111,10 @@ exports[`SearchBar keeps the search query in the input after submission 1`] = `
 exports[`SearchBar renders correctly 1`] = `
 <DocumentFragment>
   <form
-    class="form-wrapper"
+    class="sc-fubDmA kGDFDk"
   >
     <div
-      class="input-wrapper"
+      class="sc-pGaPU czysfp"
     >
       <svg
         data-testid="search-icon"
@@ -137,7 +137,7 @@ exports[`SearchBar renders correctly 1`] = `
         value="initial"
       />
       <button
-        class="button"
+        class="sc-kstpWv fEZtjS button"
         data-testid="submit-button"
         type="submit"
       >
@@ -165,10 +165,10 @@ exports[`SearchBar renders correctly 1`] = `
 exports[`SearchBar trims search query and navigates on valid form submit 1`] = `
 <DocumentFragment>
   <form
-    class="form-wrapper"
+    class="sc-fubDmA kGDFDk"
   >
     <div
-      class="input-wrapper"
+      class="sc-pGaPU czysfp"
     >
       <svg
         data-testid="search-icon"
@@ -191,7 +191,7 @@ exports[`SearchBar trims search query and navigates on valid form submit 1`] = `
         value="  test query  "
       />
       <button
-        class="button"
+        class="sc-kstpWv fEZtjS button"
         data-testid="submit-button"
         type="submit"
       >
@@ -219,10 +219,10 @@ exports[`SearchBar trims search query and navigates on valid form submit 1`] = `
 exports[`SearchBar updates input value on change 1`] = `
 <DocumentFragment>
   <form
-    class="form-wrapper"
+    class="sc-fubDmA kGDFDk"
   >
     <div
-      class="input-wrapper"
+      class="sc-pGaPU czysfp"
     >
       <svg
         data-testid="search-icon"
@@ -245,7 +245,7 @@ exports[`SearchBar updates input value on change 1`] = `
         value="test query"
       />
       <button
-        class="button"
+        class="sc-kstpWv fEZtjS button"
         data-testid="submit-button"
         type="submit"
       >
