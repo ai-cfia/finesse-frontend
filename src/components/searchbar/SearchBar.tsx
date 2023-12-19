@@ -4,6 +4,11 @@ import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../contexts/DataContext";
 import "./SearchBar.css";
+import {
+  FormWrapper,
+  InputWrapper,
+  SearchButton,
+} from "../../styles/indexElements";
 
 const SEARCH_PLACEHOLDER = "Type to search...";
 
@@ -25,8 +30,8 @@ export const SearchBar: React.FC = () => {
   };
 
   return (
-    <form className="form-wrapper">
-      <div className="input-wrapper">
+    <FormWrapper>
+      <InputWrapper>
         <FaSearch id="fa-arrow-right" data-testid="search-icon" />
         <input
           placeholder={SEARCH_PLACEHOLDER}
@@ -36,15 +41,15 @@ export const SearchBar: React.FC = () => {
           }}
           data-testid="search-input"
         />
-        <button
+        <SearchButton
           className="button"
           type="submit"
           onClick={search}
           data-testid="submit-button"
         >
           <FaArrowRight id="fa-arrow-right" style={{ color: "#05486c" }} />
-        </button>
-      </div>
-    </form>
+        </SearchButton>
+      </InputWrapper>
+    </FormWrapper>
   );
 };

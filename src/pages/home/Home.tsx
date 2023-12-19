@@ -7,7 +7,13 @@ import { useAlert } from "../../contexts/AlertContext";
 import { useData } from "../../contexts/DataContext";
 import { environment } from "../../environments/environment";
 import { EDirection } from "../../types";
-import styles from "../home/Home.module.css";
+import {
+  LayoutContainer,
+  LogoContainer,
+  SearchBarContainer,
+  SloganContainer,
+  VersionTextContainer,
+} from "../../styles/indexElements";
 
 const Home: React.FC = () => {
   const { currentSearchSource } = useData();
@@ -44,34 +50,25 @@ const Home: React.FC = () => {
   }, [currentSearchSource, setAlertMessage]);
 
   return (
-    <div className={styles.layout}>
+    <LayoutContainer>
       <Header />
-      <div className="logo-container">
+      <LogoContainer>
         <CFIALogo />
-      </div>
-      <div className="searchBar-container">
+      </LogoContainer>
+      <SearchBarContainer>
         <SearchBar />
-      </div>
-      <div
-        style={{
-          display: "flex",
-          textAlign: "center",
-          marginTop: 20,
-          flexDirection: "column",
-          alignItems: "center",
-          color: "grey",
-        }}
-      >
-        <span>Empowering agency&apos;s users with precision search.</span>
-        <span style={{ marginTop: 10 }}>
+      </SearchBarContainer>
+      <SloganContainer>
+        <text>Empowering agency&apos;s users with precision search.</text>
+        <text style={{ marginTop: 10 }}>
           Équiper les utilisateurs de l&apos;agence avec la recherche de
           précision.
-        </span>
-      </div>
-      <div className={styles.versionText}>
+        </text>
+      </SloganContainer>
+      <VersionTextContainer>
         {environment.version !== "" ? "v" + environment.version : ""}
-      </div>
-    </div>
+      </VersionTextContainer>
+    </LayoutContainer>
   );
 };
 

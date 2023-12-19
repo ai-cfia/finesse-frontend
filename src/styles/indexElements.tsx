@@ -109,3 +109,45 @@ export const ResultList = styled.div`
   overflow-y: auto;
   margin-left: 1%;
 `;
+
+export const WarningLabel = styled.div`
+  background-color: #ffd700;
+  color: #ff4500;
+  padding: 10px;
+`;
+
+export const DebugPanelContainer = styled.div`
+  background-color: #f9f9f9;
+  border: 1px solid #e0e0e0;
+  padding: 15px;
+  border-radius: 5px;
+  min-width: 250px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0px;
+  z-index: 1000;
+  white-space: normal;
+`;
+
+export const RadioContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 10px;
+`;
+
+export const RadioOption = styled.label`
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+`;
+export const RadioLabel = styled.span`
+  white-space: nowrap;
+  cursor: pointer;
+  color: black;
+`;
+
+export const SearchButton = styled.button`
+  all: unset;
+  cursor: pointer;
+`;
