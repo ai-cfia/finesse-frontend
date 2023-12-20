@@ -35,7 +35,7 @@ jobs:
       - name: Push env to vercel
         uses: hackzcompany/vercel-env-push-action@v4
         with:
-          project: ${{ secrets.VERCEL_PROJECT_NAME }}
+          project: ${{ env.VERCEL_PROJECT_NAME }}
           team_id: ${{ secrets.VERCEL_ORG_ID }}
           token: ${{ secrets.VERCEL_TOKEN }}
           env_file: .env
