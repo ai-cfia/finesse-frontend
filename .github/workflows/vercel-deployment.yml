@@ -1,22 +1,53 @@
-name: Vercel Preview Deployment
+name: Vercel Static Frontend Deployment
 
 on:
   push:
-  pull_request:
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_PROJECT_NAME: 'finesse-frontend'
+  DEPLOYMENT_ENVIRONMENT: 'dev'
+
+permissions:
+    checks: read
+    contents: read
+    pull-requests: write
 
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
 
-  vercel-deployment-dev:
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@58-allow-the-use-of-env-file-to-frontend-static-deployment-workflows
-    with:
-        project-name: 'finesse-frontend'
-        deployment-environment: 'dev'
-    secrets: inherit
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
 
-  vercel-deployment-uat:
-    if: github.ref == 'refs/heads/main'
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-vercel-deployment.yml@58-allow-the-use-of-env-file-to-frontend-static-deployment-workflows
-    with:
-        project-name: 'finesse-frontend'
-        deployment-environment: 'uat'
-    secrets: inherit
+      - name: ENVFILE
+        uses: alekangelov/secret-envfile@v1
+        with:
+          content: ${{ secrets.ENV }}
+          filename: .env
+
+      - name: List files
+        run: ls -a
+
+      - name: Push env to vercel
+        uses: hackzcompany/vercel-env-push-action@v4
+        with:
+          project: ${{ secrets.VERCEL_PROJECT_NAME }}
+          team_id: ${{ secrets.VERCEL_ORG_ID }}
+          token: ${{ secrets.VERCEL_TOKEN }}
+          env_file: .env
+
+      - name: Pull Vercel Environment Information
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel
+        run: echo "DEPLOYMENT_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})" >> $GITHUB_ENV
+
+      - name: Set URL to dev environment
+        run: vc alias "$DEPLOYMENT_URL" ${{ env.VERCEL_PROJECT_NAME }}-${{ env.DEPLOYMENT_ENVIRONMENT }}.vercel.app --token=${{ secrets.VERCEL_TOKEN }}
