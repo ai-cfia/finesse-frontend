@@ -41,12 +41,13 @@ jobs:
       - name: List files
         run: ls -a
 
-      - name: Push env to vercel
+      - name: Push env variables to vercel
         uses: hackzcompany/vercel-env-push-action@v4
         with:
           project: ${{ env.VERCEL_PROJECT_NAME }}
           team_id: ${{ secrets.VERCEL_ORG_ID }}
           token: ${{ secrets.VERCEL_TOKEN }}
+          environments: 'development,preview,production'
           env_file: .env
 
       - name: Pull Vercel Environment Information
