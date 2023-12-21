@@ -47,7 +47,8 @@ jobs:
           project: ${{ env.VERCEL_PROJECT_NAME }}
           team_id: ${{ secrets.VERCEL_ORG_ID }}
           token: ${{ secrets.VERCEL_TOKEN }}
-          environments: development, preview, production
+          environments: preview
+          env_type: secret
           env_file: .env
 
       - name: Pull Vercel Environment Information
