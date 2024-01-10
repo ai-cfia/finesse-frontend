@@ -52,4 +52,4 @@ This structure illustrates a separation of concerns between pages (`Home` and `S
 - As for CSS and styling, [styled components](https://styled-components.com/) was used
 - Styled components is a library that allows you to write CSS in JS while building custom components in Reactjs
 - Styled components library can be installed via npm with `npm i styled-components`
-- Any component that uses styled components, will have an `indexElements.tsx` file, that includes the styled component exports which are imported in the components `index.tsx` file
+- Any component that uses styled components, will import from the `src/components/styles/indexElements.tsx` file.
