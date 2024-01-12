@@ -8,6 +8,8 @@
   - [Test 3: Data Source Selection Affects Search Results](#test-3-data-source-selection-affects-search-results)
 - [Testing Filenames List Interaction](#testing-filenames-list-interaction)
   - [Test 1: Clicking on Filename Sets Search Bar String and Performs Search with Simulated Data](#test-1-clicking-on-filename-sets-search-bar-string-and-performs-search-with-simulated-data)
+- [Testing CFIA Logo Navigation](#testing-cfia-logo-navigation)
+  - [Test 1: CFIA Logo Redirect Functionality](#test-1-cfia-logo-redirect-functionality)
 
 ## Overview
 
@@ -242,4 +244,42 @@ simulated data.
 - [ ] Fail if any of the expected results are not achieved, especially if "Use
       Simulated Data" is not selected.
 
----
+## Testing CFIA Logo Navigation
+
+### Test 1: CFIA Logo Redirect Functionality
+
+**Objective:** Verify that clicking the CFIA logo redirects the user to the
+application's base path as defined by the `REACT_APP_BASENAME` environment
+variable.
+
+**Preconditions:**
+
+- [ ] The application is open, and the user is on a page other than the base
+  path set by `REACT_APP_BASENAME`.
+- [ ] The CFIA logo is visible and not obscured by any elements.
+- [ ] The `REACT_APP_BASENAME` environment variable is set to the appropriate
+  base path (e.g., "/finesse-frontend").
+
+**Test Steps:**
+
+1. Ensure the `REACT_APP_BASENAME` environment variable is set to the desired
+   base path.
+2. Navigate to a page within the application that is not the base path.
+3. Click on the CFIA logo.
+
+**Expected Results:**
+
+- [ ] Clicking the logo should redirect the user to the base path as defined by
+  `REACT_APP_BASENAME`.
+- [ ] The base path page should load successfully without errors.
+
+**Actual Results:**
+
+- [ ] Describe what happens after clicking the CFIA logo.
+
+**Pass/Fail:**
+
+- [ ] Pass if the user is redirected to the base path set by
+  `REACT_APP_BASENAME` and it loads correctly.
+- [ ] Fail if the user is not redirected to the base path, or the base path does
+  not load properly.

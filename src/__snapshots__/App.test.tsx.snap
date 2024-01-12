@@ -60,6 +60,7 @@ exports[`App Component displays the version that matches the environment version
     >
       <div>
         <a
+          data-testid="cfia-logo"
           href="/"
           title="ACIA | CFIA"
         >
