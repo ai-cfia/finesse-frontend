@@ -9,10 +9,10 @@ export interface TsAppVersion {
     gitTag?: string;
 };
 export const versions: TsAppVersion = {
-    version: '0.2.5',
+    version: '0.2.6',
     name: 'finesse-frontend',
-    versionDate: '2024-01-12T18:16:45.032Z',
-    gitCommitHash: '7b3faaf',
-    versionLong: '0.2.5-7b3faaf',
+    versionDate: '2024-01-12T19:47:59.588Z',
+    gitCommitHash: 'cc4d393',
+    versionLong: '0.2.6-cc4d393',
 };
 export default versions;

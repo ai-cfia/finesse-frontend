@@ -125,7 +125,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
     <div
       class="versionText"
     >
-      v0.2.5
+      v0.2.6
     </div>
   </div>
 </DocumentFragment>
@@ -271,7 +271,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
     <div
       class="versionText"
     >
-      v0.2.5
+      v0.2.6
     </div>
   </div>
 </DocumentFragment>
@@ -474,7 +474,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.5
+      v0.2.6
     </div>
   </div>
 </DocumentFragment>
@@ -620,7 +620,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.5
+      v0.2.6
     </div>
   </div>
 </DocumentFragment>
@@ -766,7 +766,7 @@ exports[`Home renders the Home page correctly 1`] = `
     <div
       class="versionText"
     >
-      v0.2.5
+      v0.2.6
     </div>
   </div>
 </DocumentFragment>
