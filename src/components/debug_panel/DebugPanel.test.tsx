@@ -2,6 +2,7 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { DataProvider } from "../../contexts/DataContext";
 import { LayoutProvider } from "../../contexts/LayoutContext";
+import { setupTestEnvVars } from "../../setupTests";
 import { DebugPanel } from "./DebugPanel";
 
 jest.mock("../../api/useApiUtil", () => ({
@@ -37,10 +38,7 @@ describe("DebugPanel Component Tests", () => {
   const originalEnv = process.env;
 
   beforeAll(() => {
-    jest.resetModules();
-    process.env.REACT_APP_BASENAME = "finesse-frontend";
-    process.env.REACT_APP_DEBUG_MODE = "true";
-    process.env.REACT_APP_SEARCH_SOURCE = "ailab";
+    setupTestEnvVars();
     window.alert = jest.fn();
   });
 
