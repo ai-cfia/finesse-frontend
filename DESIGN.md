@@ -53,11 +53,26 @@ This structure illustrates a separation of concerns between pages (`Home` and `S
 
 ---
 
-## **CSS**
+## **Styled Components**
 
 - As for CSS and styling, [styled components](https://styled-components.com/) was used.
 - Styled components is a library that allows you to write CSS in JS while building custom components in Reactjs.
 - Styled components library can be installed via npm with `npm i styled-components`.
 - Any component that uses styled components, will import from the `src/components/styles/indexElements.tsx` file.
+
+- ## Benefits of Using Styled Components over Traditional CSS
+
+  1. **Component-Level Styling:** Styled Components enable defining styles at the component level, enhancing modularity and reusability. This encapsulation ensures styles remain confined to their respective components.
+
+  2. **Dynamic Styling:** Easily pass props to dynamically alter styles with Styled Components, offering greater flexibility and control over component appearance.
+
+  3. **Reduced Naming Conflicts:** Styled Components generate unique class names, significantly reducing the risk of naming conflicts in a large codebase.
+
+  4. **Easier Deletion of Unused Styles:** Deleting a component also removes its associated styles, preventing the accumulation of unused CSS.
+
+  5. **Improved Developer Experience:** Styled Components integrate with modern development tools, providing features like syntax highlighting and style linting, thus enhancing the overall development process.
+
+In summary, Styled Components provide an efficient, maintainable, and scalable approach to styling in React applications.
+
 
 ---
