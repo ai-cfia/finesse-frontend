@@ -17,7 +17,7 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
       class="radio-option"
     >
       <input
-        checked=""
+        data-testid="search-source-ailab"
         type="radio"
         value="ailab"
       />
@@ -31,6 +31,8 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
       class="radio-option"
     >
       <input
+        checked=""
+        data-testid="search-source-azure"
         type="radio"
         value="azure"
       />
@@ -44,6 +46,7 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
       class="radio-option"
     >
       <input
+        data-testid="search-source-static"
         type="radio"
         value="simulated"
       />
@@ -100,7 +103,7 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
       class="radio-option"
     >
       <input
-        checked=""
+        data-testid="search-source-ailab"
         type="radio"
         value="ailab"
       />
@@ -114,6 +117,8 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
       class="radio-option"
     >
       <input
+        checked=""
+        data-testid="search-source-azure"
         type="radio"
         value="azure"
       />
@@ -127,6 +132,7 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
       class="radio-option"
     >
       <input
+        data-testid="search-source-static"
         type="radio"
         value="simulated"
       />
@@ -166,6 +172,65 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
 </div>
 `;
 
+exports[`DebugPanel Component Tests no radio button is selected when REACT_APP_SEARCH_SOURCE has a bad value 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4
+    style="color: black;"
+  >
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-ailab"
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use AI Lab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-azure"
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Azure AI Search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-static"
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
 exports[`DebugPanel Component Tests renders radio buttons for search sources 1`] = `
 <div
   class="debug-panel"
@@ -183,7 +248,7 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
       class="radio-option"
     >
       <input
-        checked=""
+        data-testid="search-source-ailab"
         type="radio"
         value="ailab"
       />
@@ -197,6 +262,8 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
       class="radio-option"
     >
       <input
+        checked=""
+        data-testid="search-source-azure"
         type="radio"
         value="azure"
       />
@@ -210,6 +277,7 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
       class="radio-option"
     >
       <input
+        data-testid="search-source-static"
         type="radio"
         value="simulated"
       />
@@ -219,6 +287,196 @@ exports[`DebugPanel Component Tests renders radio buttons for search sources 1`]
         Use Simulated Data
       </span>
     </label>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests selects the "AI Lab" radio button when REACT_APP_SEARCH_SOURCE is ailab 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4
+    style="color: black;"
+  >
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        checked=""
+        data-testid="search-source-ailab"
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use AI Lab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-azure"
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Azure AI Search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-static"
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests selects the "Azure AI" radio button when REACT_APP_SEARCH_SOURCE is azure 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4
+    style="color: black;"
+  >
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-ailab"
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use AI Lab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        checked=""
+        data-testid="search-source-azure"
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Azure AI Search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-static"
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests selects the "Simulated Data" radio button when REACT_APP_SEARCH_SOURCE is static 1`] = `
+<div
+  class="debug-panel"
+  data-testid="debug-panel"
+>
+  <h4
+    style="color: black;"
+  >
+    Debug Panel
+  </h4>
+  <div
+    class="radio-container"
+  >
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-ailab"
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="radio-label"
+      >
+        Use AI Lab search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        data-testid="search-source-azure"
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Azure AI Search
+      </span>
+    </label>
+    <label
+      class="radio-option"
+    >
+      <input
+        checked=""
+        data-testid="search-source-static"
+        type="radio"
+        value="simulated"
+      />
+      <span
+        class="radio-label"
+      >
+        Use Simulated Data
+      </span>
+    </label>
+  </div>
+  <div
+    class="input-container"
+  >
+    <div>
+      <h5>
+        Filenames:
+      </h5>
+      <ul />
+    </div>
   </div>
 </div>
 `;

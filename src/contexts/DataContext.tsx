@@ -15,7 +15,7 @@ interface DataContextState {
 const DataContext = createContext<DataContextState>({
   searchTerm: null,
   setSearchTerm: () => {},
-  currentSearchSource: SearchSource.Ailab,
+  currentSearchSource: SearchSource.ailab,
   setCurrentSearchSource: () => {},
   queryResult: [],
   setQueryResult: () => {},
@@ -26,8 +26,10 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
+  const envSearchSource =
+    process.env.REACT_APP_SEARCH_SOURCE?.toLowerCase() ?? SearchSource.azure;
   const [currentSearchSource, setCurrentSearchSource] = useState<SearchSource>(
-    SearchSource.Ailab,
+    SearchSource[envSearchSource as keyof typeof SearchSource],
   );
   const [queryResult, setQueryResult] = useState<QueryResult[]>([]);
 

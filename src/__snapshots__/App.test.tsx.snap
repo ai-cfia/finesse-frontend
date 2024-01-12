@@ -140,7 +140,7 @@ exports[`App Component displays the version that matches the environment version
     <div
       class="versionText"
     >
-      v0.2.4
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>

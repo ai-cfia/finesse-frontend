@@ -31,7 +31,7 @@ export const useApiUtil = ({
     const fetchData = async (): Promise<void> => {
       if (
         !isNonEmptyString(process.env.REACT_APP_BACKEND_URL) &&
-        currentSearchSource === SearchSource.Simulated
+        currentSearchSource === SearchSource.static
       ) {
         const staticData = await fetchStaticData(term);
         setData(staticData);

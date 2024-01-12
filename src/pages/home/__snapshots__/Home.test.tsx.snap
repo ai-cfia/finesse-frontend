@@ -125,7 +125,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
     <div
       class="versionText"
     >
-      v0.2.4
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>
@@ -271,7 +271,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
     <div
       class="versionText"
     >
-      v0.2.4
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>
@@ -347,7 +347,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             class="radio-option"
           >
             <input
-              checked=""
+              data-testid="search-source-ailab"
               type="radio"
               value="ailab"
             />
@@ -361,6 +361,8 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             class="radio-option"
           >
             <input
+              checked=""
+              data-testid="search-source-azure"
               type="radio"
               value="azure"
             />
@@ -374,6 +376,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             class="radio-option"
           >
             <input
+              data-testid="search-source-static"
               type="radio"
               value="simulated"
             />
@@ -471,7 +474,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.4
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>
@@ -617,7 +620,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
     <div
       class="versionText"
     >
-      v0.2.4
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>
@@ -763,7 +766,7 @@ exports[`Home renders the Home page correctly 1`] = `
     <div
       class="versionText"
     >
-      v0.2.4
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>

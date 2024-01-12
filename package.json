@@ -1,6 +1,6 @@
 {
   "name": "finesse-frontend",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "private": true,
   "dependencies": {
     "@saithodev/ts-appversion": "^2.2.0",

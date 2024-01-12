@@ -319,7 +319,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
             class="radio-option"
           >
             <input
-              checked=""
+              data-testid="search-source-ailab"
               type="radio"
               value="ailab"
             />
@@ -333,6 +333,8 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
             class="radio-option"
           >
             <input
+              checked=""
+              data-testid="search-source-azure"
               type="radio"
               value="azure"
             />
@@ -346,6 +348,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
             class="radio-option"
           >
             <input
+              data-testid="search-source-static"
               type="radio"
               value="simulated"
             />

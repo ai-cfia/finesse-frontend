@@ -35,6 +35,7 @@ describe("DebugPanel Component Tests", () => {
     );
     return screen.getByTestId("debug-panel");
   };
+  const originalEnv = process.env;
 
   beforeAll(() => {
     setupTestEnvVars();
@@ -43,6 +44,10 @@ describe("DebugPanel Component Tests", () => {
 
   afterEach(() => {
     jest.resetAllMocks();
+  });
+
+  afterAll(() => {
+    process.env = originalEnv;
   });
 
   test("renders radio buttons for search sources", async () => {
@@ -82,6 +87,63 @@ describe("DebugPanel Component Tests", () => {
     fireEvent.click(firstFilenameButton);
     expect(window.alert).toHaveBeenCalledWith("Search query set successfully!");
 
+    expect(view).toMatchSnapshot();
+  });
+
+  test('selects the "AI Lab" radio button when REACT_APP_SEARCH_SOURCE is ailab', async () => {
+    process.env.REACT_APP_SEARCH_SOURCE = "ailab";
+    const view = renderDebugPanel();
+    const ailabRadioButton = screen.getByTestId("search-source-ailab");
+    const azureRadioButton = screen.getByTestId("search-source-azure");
+    const staticRadioButton = screen.getByTestId("search-source-static");
+    expect(ailabRadioButton).toBeInTheDocument();
+    expect(azureRadioButton).toBeInTheDocument();
+    expect(staticRadioButton).toBeInTheDocument();
+    expect(ailabRadioButton).toBeChecked();
+    expect(azureRadioButton).not.toBeChecked();
+    expect(staticRadioButton).not.toBeChecked();
+    expect(view).toMatchSnapshot();
+  });
+
+  test('selects the "Azure AI" radio button when REACT_APP_SEARCH_SOURCE is azure', async () => {
+    process.env.REACT_APP_SEARCH_SOURCE = "azure";
+    const view = renderDebugPanel();
+    const ailabRadioButton = screen.getByTestId("search-source-ailab");
+    const azureRadioButton = screen.getByTestId("search-source-azure");
+    const staticRadioButton = screen.getByTestId("search-source-static");
+    expect(ailabRadioButton).toBeInTheDocument();
+    expect(azureRadioButton).toBeInTheDocument();
+    expect(staticRadioButton).toBeInTheDocument();
+    expect(azureRadioButton).toBeChecked();
+    expect(ailabRadioButton).not.toBeChecked();
+    expect(staticRadioButton).not.toBeChecked();
+    expect(view).toMatchSnapshot();
+  });
+
+  test('selects the "Simulated Data" radio button when REACT_APP_SEARCH_SOURCE is static', async () => {
+    process.env.REACT_APP_SEARCH_SOURCE = "static";
+    const view = renderDebugPanel();
+    const ailabRadioButton = screen.getByTestId("search-source-ailab");
+    const azureRadioButton = screen.getByTestId("search-source-azure");
+    const staticRadioButton = screen.getByTestId("search-source-static");
+    expect(ailabRadioButton).toBeInTheDocument();
+    expect(azureRadioButton).toBeInTheDocument();
+    expect(staticRadioButton).toBeInTheDocument();
+    expect(staticRadioButton).toBeChecked();
+    expect(ailabRadioButton).not.toBeChecked();
+    expect(azureRadioButton).not.toBeChecked();
+    expect(view).toMatchSnapshot();
+  });
+
+  test("no radio button is selected when REACT_APP_SEARCH_SOURCE has a bad value", async () => {
+    process.env.REACT_APP_SEARCH_SOURCE = "badvalue";
+    const view = renderDebugPanel();
+    const ailabRadioButton = screen.getByTestId("search-source-ailab");
+    const azureRadioButton = screen.getByTestId("search-source-azure");
+    const staticRadioButton = screen.getByTestId("search-source-static");
+    expect(ailabRadioButton).not.toBeChecked();
+    expect(azureRadioButton).not.toBeChecked();
+    expect(staticRadioButton).not.toBeChecked();
     expect(view).toMatchSnapshot();
   });
 });
