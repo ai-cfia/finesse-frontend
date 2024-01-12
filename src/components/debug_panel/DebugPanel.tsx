@@ -93,13 +93,13 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
               setCurrentSearchSource(SearchSource.static);
             }}
           />
-          <span className="radio-label">Use Simulated Data</span>
+          <RadioLabel>Use Simulated Data</RadioLabel>
         </RadioOption>
       </RadioContainer>
       {currentSearchSource === SearchSource.static && (
         <div className="input-container">
           <div>
-            <h5>Filenames:</h5>
+            <h5 style={{ color: "black" }}>Filenames:</h5>
             <ul>
               {filenames.map((filename, index) => (
                 <li key={index}>
