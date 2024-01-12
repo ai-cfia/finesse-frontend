@@ -6,7 +6,6 @@ import { SearchBar } from "../../components/searchbar/SearchBar";
 import { useAlert } from "../../contexts/AlertContext";
 import { useData } from "../../contexts/DataContext";
 import { environment } from "../../environments/environment";
-import { EDirection } from "../../types";
 import styles from "../home/Home.module.css";
 
 const Home: React.FC = () => {
@@ -15,7 +14,6 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     console.log("currentSearchSource:", currentSearchSource);
-    console.log("testing enums", EDirection["Up" as keyof typeof EDirection]);
 
     if (
       process.env.REACT_APP_BACKEND_URL === null ||

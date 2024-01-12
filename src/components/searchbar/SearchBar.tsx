@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useData } from "../../contexts/DataContext";
@@ -11,6 +11,10 @@ export const SearchBar: React.FC = () => {
   const { searchTerm, setSearchTerm } = useData();
   const [searchQuery, setSearchQuery] = useState(searchTerm ?? "");
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setSearchQuery(searchTerm ?? "");
+  }, [searchTerm, setSearchQuery]);
 
   const search = (e: React.FormEvent): void => {
     e.preventDefault();
