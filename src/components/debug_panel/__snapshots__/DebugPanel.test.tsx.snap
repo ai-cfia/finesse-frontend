@@ -57,9 +57,7 @@ exports[`DebugPanel Component Tests can switch to simulated data and display fil
       </span>
     </label>
   </div>
-  <div
-    class="input-container"
-  >
+  <div>
     <div>
       <h5>
         Filenames:
@@ -143,9 +141,7 @@ exports[`DebugPanel Component Tests clicking on a filename button updates the se
       </span>
     </label>
   </div>
-  <div
-    class="input-container"
-  >
+  <div>
     <div>
       <h5>
         Filenames:
@@ -468,9 +464,7 @@ exports[`DebugPanel Component Tests selects the "Simulated Data" radio button wh
       </span>
     </label>
   </div>
-  <div
-    class="input-container"
-  >
+  <div>
     <div>
       <h5>
         Filenames:

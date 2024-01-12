@@ -1,1 +1,47 @@
-node_modules/
+# Node modules
+node_modules
+
+# Build output
+/build
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+.yarn
+.yarn-cache
+
+# IDE / editors
+.idea
+.vscode
+*.swp
+*.swo
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+
+# Markdown & Documentation
+*.md
+LICENSE
+README.md
+CHANGELOG.md
+
+# Test files
+__tests__
+__mocks__
+
+# Configuration files
+*.config.js
+*.config.json
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local

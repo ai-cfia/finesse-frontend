@@ -91,7 +91,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
         </label>
       </div>
       {currentSearchSource === SearchSource.static && (
-        <div className="input-container">
+        <div>
           <div>
             <h5>Filenames:</h5>
             <ul>

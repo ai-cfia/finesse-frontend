@@ -1,6 +1,11 @@
 # syntax=docker/dockerfile:1
-FROM mcr.microsoft.com/devcontainers/javascript-node:0-18 AS build
+FROM node:18.16.0-alpine AS build
 ARG REACT_APP_BACKEND_URL
+ARG REACT_APP_BASENAME
+ARG REACT_APP_DEBUG_MODE
+ARG REACT_APP_GITHUB_API_URL
+ARG REACT_APP_SEARCH_SOURCE
+
 WORKDIR /code
 COPY ./src ./src
 COPY ./public ./public
@@ -9,7 +14,7 @@ COPY package-lock.json .
 COPY tsconfig.json .
 RUN npm install -g npm@9.8.1
 RUN npm install --include=dev
-RUN REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL npm run build
+RUN npm run build
 RUN CI=1 npm run test
 
 FROM node

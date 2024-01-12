@@ -28,3 +28,15 @@ To get started with the project, follow the steps below:
 ### Testing application
 
 1. npm test
+
+### Running locally with docker
+
+#### Build Image
+
+- Prepare `.env` in project root.
+- Run `./build-docker-image.sh`.
+
+#### Run Container
+
+- Execute: `docker run -p 3000:3000 -e PORT=3000 finesse-frontend`.
+- Access at `http://localhost:3000`.

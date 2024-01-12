@@ -9,6 +9,7 @@
   left: 0px;
   z-index: 1000;
   white-space: normal; /* Updated white-space property */
+  color: black;
 }
 
 .radio-container {
