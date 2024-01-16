@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import cfia from "../../assets/CFIA_SmartSearch_Logo.png";
-import styles from "../../pages/home/Home.module.css";
 
 const CFIALogo: React.FC = () => {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const CFIALogo: React.FC = () => {
         data-testid="cfia-logo"
         onClick={handleClick}
       >
-        <img src={cfia} alt="CFIA logo" className={styles.githubLogo} />
+        <img src={cfia} alt="CFIA logo" style={{ height: 110 }} />
       </a>
     </div>
   );

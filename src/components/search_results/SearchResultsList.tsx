@@ -2,6 +2,7 @@
 import React from "react";
 import "./SearchResultsList.css";
 import SearchResult from "./SearchResult";
+import { ResultList } from "../../styles/indexElements";
 
 interface SearchResultListProps {
   data: Array<{
@@ -27,13 +28,13 @@ const SearchResultList: React.FC<SearchResultListProps> = ({ data, query }) => {
   }
 
   return (
-    <div className="results-list">
+    <ResultList>
       {data?.map((item, index) => {
         // Log each item in the data array
         console.log(`Rendering item at index ${index}:`, item);
         return <SearchResult key={item.id} item={item} query={query} />;
       })}
-    </div>
+    </ResultList>
   );
 };
 
