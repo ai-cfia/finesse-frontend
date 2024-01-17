@@ -19,7 +19,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: ${{ env.NODE_VERSION }}
-        npm-version: '9.8.1'
+
+    - name: Install specific NPM version
+      run: |
+        npm install -g npm@9.8.1
+        npm --version
 
     - name: Install Dependencies
       run: npm install
@@ -29,7 +33,7 @@ jobs:
       env:
         REACT_APP_BACKEND_URL: ${{ secrets.REACT_APP_BACKEND_URL }}
 
-    - name: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages 
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
