@@ -5,6 +5,12 @@ import { fetchFilenames } from "../../api/useApiUtil";
 import { useData } from "../../contexts/DataContext";
 import { useLayout } from "../../contexts/LayoutContext";
 import { SearchSource } from "../../types";
+import {
+  DebugPanelContainer,
+  RadioContainer,
+  RadioLabel,
+  RadioOption,
+} from "../../styles/indexElements";
 import "./DebugPanel.css";
 
 interface DebugPanelProps {
@@ -19,7 +25,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (currentSearchSource === SearchSource.Simulated) {
+    if (currentSearchSource === SearchSource.static) {
       const loadFilenames = async (): Promise<void> => {
         const fetchedFilenames = await fetchFilenames();
         setFilenames(fetchedFilenames);
@@ -50,47 +56,50 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
 
   if (!isDebugPanelVisible) return null;
   return (
-    <div className="debug-panel" data-testid="debug-panel">
-      <h4>Debug Panel</h4>
-      <div className="radio-container">
-        <label className="radio-option">
+    <DebugPanelContainer data-testid="debug-panel">
+      <h4 style={{ color: "black" }}>Debug Panel</h4>
+      <RadioContainer>
+        <RadioOption>
           <input
+            data-testid="search-source-ailab"
             type="radio"
             value="ailab"
-            checked={currentSearchSource === SearchSource.Ailab}
+            checked={currentSearchSource === SearchSource.ailab}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.Ailab);
+              setCurrentSearchSource(SearchSource.ailab);
             }}
           />
-          <span className="radio-label">Use AI Lab search</span>
-        </label>
-        <label className="radio-option">
+          <RadioLabel>Use AI Lab search</RadioLabel>
+        </RadioOption>
+        <RadioOption>
           <input
+            data-testid="search-source-azure"
             type="radio"
             value="azure"
-            checked={currentSearchSource === SearchSource.Azure}
+            checked={currentSearchSource === SearchSource.azure}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.Azure);
+              setCurrentSearchSource(SearchSource.azure);
             }}
           />
-          <span className="radio-label">Use Azure AI Search</span>
-        </label>
-        <label className="radio-option">
+          <RadioLabel>Use Azure AI Search</RadioLabel>
+        </RadioOption>
+        <RadioOption>
           <input
+            data-testid="search-source-static"
             type="radio"
             value="simulated"
-            checked={currentSearchSource === SearchSource.Simulated}
+            checked={currentSearchSource === SearchSource.static}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.Simulated);
+              setCurrentSearchSource(SearchSource.static);
             }}
           />
-          <span className="radio-label">Use Simulated Data</span>
-        </label>
-      </div>
-      {currentSearchSource === SearchSource.Simulated && (
+          <RadioLabel>Use Simulated Data</RadioLabel>
+        </RadioOption>
+      </RadioContainer>
+      {currentSearchSource === SearchSource.static && (
         <div className="input-container">
           <div>
-            <h5>Filenames:</h5>
+            <h5 style={{ color: "black" }}>Filenames:</h5>
             <ul>
               {filenames.map((filename, index) => (
                 <li key={index}>
@@ -107,6 +116,6 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
           </div>
         </div>
       )}
-    </div>
+    </DebugPanelContainer>
   );
 };

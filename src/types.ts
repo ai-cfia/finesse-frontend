@@ -1,7 +1,14 @@
 export enum SearchSource {
-  Simulated = "static",
-  Ailab = "ailab",
-  Azure = "azure",
+  static = "static",
+  ailab = "ailab",
+  azure = "azure",
+}
+
+export enum EDirection {
+  Up,
+  Down,
+  Left,
+  Right,
 }
 
 export interface QueryResult {
