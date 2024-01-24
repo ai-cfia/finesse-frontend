@@ -18,7 +18,8 @@ To get started with the project, follow the steps below:
 ### Configuration
 
 1. In the root of the project directory, locate the file named `.env.template`.
-2. Run the command `cp .env.template .env` to create a new `.env` file with the same contents.
+2. Run the command `cp .env.template .env` to create a new `.env` file with
+the same contents.
 3. Edit the `.env` file according to your specific needs.
 
 ### Running application
