@@ -1,15 +1,15 @@
 - [Overview](#overview)
 - [Testing Search Functionality](#testing-search-functionality)
-  - [Test 1: Interactive Search Input](#test-1-interactive-search-input)
-  - [Test 2: Submitting a Search Query](#test-2-submitting-a-search-query)
+  - [Test 1](#test-1-interactive-search-input)
+  - [Test 2](#test-2-submitting-a-search-query)
 - [Testing Debug Panel Interactivity](#testing-debug-panel-interactivity)
-  - [Test 1: Default Data Source Selection](#test-1-default-data-source-selection)
-  - [Test 2: Interaction with Data Source Options](#test-2-interaction-with-data-source-options)
-  - [Test 3: Data Source Selection Affects Search Results](#test-3-data-source-selection-affects-search-results)
+  - [Test 1](#test-1-default-data-source-selection)
+  - [Test 2](#test-2-interaction-with-data-source-options)
+  - [Test 3](#test-3-data-source-selection-affects-search-results)
 - [Testing Filenames List Interaction](#testing-filenames-list-interaction)
-  - [Test 1: Clicking on Filename Sets Search Bar String and Performs Search with Simulated Data](#test-1-clicking-on-filename-sets-search-bar-string-and-performs-search-with-simulated-data)
+  - [Test 1](#test-1-click-on-filename-sets-and-search-with-simulated-data)
 - [Testing CFIA Logo Navigation](#testing-cfia-logo-navigation)
-  - [Test 1: CFIA Logo Redirect Functionality](#test-1-cfia-logo-redirect-functionality)
+  - [Test 1](#test-1-cfia-logo-redirect-functionality)
 
 ## Overview
 
@@ -203,7 +203,10 @@ data source.
 
 ## Testing Filenames List Interaction
 
-### Test 1: Clicking on Filename Sets Search Bar String and Performs Search with Simulated Data
+### Test 1: Click on Filename Sets and Search with Simulated Data
+
+**Description:** Clicking on Filename Sets Search Bar String and Performs
+Search with Simulated Data
 
 **Objective:** Verify that clicking on a filename sets the string in the search
 bar, alerts the user of the action's success, and performs the search when using
