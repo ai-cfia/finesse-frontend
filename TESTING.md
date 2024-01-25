@@ -1,3 +1,5 @@
+# Testing documentation
+
 - [Overview](#overview)
 - [Testing Search Functionality](#testing-search-functionality)
   - [Test 1: Interactive Search Input](#test-1-interactive-search-input)

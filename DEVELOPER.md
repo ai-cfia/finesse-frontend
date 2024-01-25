@@ -1,3 +1,5 @@
+# Developer documentation
+
 ## Creating a TypeScript React App with ESLint and Prettier
 
 This guide walks you through the steps to set up a TypeScript-based React app
