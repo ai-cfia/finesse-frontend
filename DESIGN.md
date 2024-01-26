@@ -35,7 +35,8 @@ Below is the visual representation of the Finesse Frontend component structure:
 
 ![Finesse Frontend Component Diagram](https://github.com/ai-cfia/finesse-frontend/assets/133677161/b7bf92a1-cc24-48a9-8814-30b1b291e4e4)
 
-For a detailed view and interactive experience with the diagram, visit the [Finesse Component Diagram on Lucidchart](https://lucid.app/lucidchart/ae5c689e-25cb-4679-bb5f-aa509955a50f/edit?invitationId=inv_d4b29dba-3c6a-4c79-921e-fae853739ed4&page=0_0#).
+For a detailed view and interactive experience with the diagram, visit the
+[Finesse Component Diagram on Lucidchart](https://lucid.app/lucidchart/ae5c689e-25cb-4679-bb5f-aa509955a50f/edit?invitationId=inv_d4b29dba-3c6a-4c79-921e-fae853739ed4&page=0_0#).
 
 
 ### Root (`src` Folder)
@@ -77,7 +78,7 @@ This structure illustrates a separation of concerns between pages
 (`Home` and `SearchPage`) and shared components, and the encapsulation of
 state management in context components.
 
-**Details**
+## **Details**
 
 - The React application follows a parent-child relationship as shown in the
 diagram above.
