@@ -4,13 +4,14 @@ import styles from "../../pages/home/Home.module.css";
 import AlertBanner from "../alert_banner/AlertBanner";
 import DebugButton from "../debug_button/DebugButton";
 import { DebugPanel } from "../debug_panel/DebugPanel";
+import { HeaderContainer } from "../../styles/indexElements";
 
 // Header Component -> Displays CFIA banner image.
 const Header: React.FC = () => {
   // Add type annotation for the component.
   return (
     <header className={styles.header} role={"banner"}>
-      <div className={styles.headerContainer}>
+      <HeaderContainer>
         <nav>
           <ul className={styles.headerNavList}>
             <li className={styles.headerNavLeftMargin}>
@@ -26,7 +27,7 @@ const Header: React.FC = () => {
             <li className={styles.headerRightText}>Alpha Version</li>
           </ul>
         </nav>
-      </div>
+      </HeaderContainer>
       <AlertBanner />
       <DebugButton
         style={{

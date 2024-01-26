@@ -3,14 +3,14 @@
 exports[`Home Debug functionalities does not show the debug button when REACT_APP_DEBUG_MODE is false 1`] = `
 <DocumentFragment>
   <div
-    class="layout"
+    class="sc-bdfCDU loUhhx"
   >
     <header
       class="header"
       role="banner"
     >
       <div
-        class="headerContainer"
+        class="sc-iBPTVF kFPLcx"
       >
         <nav>
           <ul
@@ -41,7 +41,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
       </div>
     </header>
     <div
-      class="logo-container"
+      class="sc-gsTDqH gVtqUL"
     >
       <div>
         <a
@@ -51,20 +51,20 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
         >
           <img
             alt="CFIA logo"
-            class="githubLogo"
             src="CFIA_SmartSearch_Logo.png"
+            style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="searchBar-container"
+      class="sc-dlfmHC cwWZaV"
     >
       <form
-        class="form-wrapper"
+        class="sc-fubDmA kGDFDk"
       >
         <div
-          class="input-wrapper"
+          class="sc-pGaPU czysfp"
         >
           <svg
             data-testid="search-icon"
@@ -87,7 +87,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
             value=""
           />
           <button
-            class="button"
+            class="sc-kstpWv fEZtjS button"
             data-testid="submit-button"
             type="submit"
           >
@@ -111,19 +111,19 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
       </form>
     </div>
     <div
-      style="display: flex; text-align: center; margin-top: 20px; flex-direction: column; align-items: center; color: grey;"
+      class="sc-eCstZk hTAfyD"
     >
-      <span>
+      <text>
         Empowering agency's users with precision search.
-      </span>
-      <span
+      </text>
+      <text
         style="margin-top: 10px;"
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
-      </span>
+      </text>
     </div>
     <div
-      class="versionText"
+      class="sc-jSguLX iAOjcb"
     >
       v0.2.5
     </div>
@@ -134,14 +134,14 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
 exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_MODE is true 1`] = `
 <DocumentFragment>
   <div
-    class="layout"
+    class="sc-bdfCDU loUhhx"
   >
     <header
       class="header"
       role="banner"
     >
       <div
-        class="headerContainer"
+        class="sc-iBPTVF kFPLcx"
       >
         <nav>
           <ul
@@ -187,7 +187,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
       </svg>
     </header>
     <div
-      class="logo-container"
+      class="sc-gsTDqH gVtqUL"
     >
       <div>
         <a
@@ -197,20 +197,20 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
         >
           <img
             alt="CFIA logo"
-            class="githubLogo"
             src="CFIA_SmartSearch_Logo.png"
+            style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="searchBar-container"
+      class="sc-dlfmHC cwWZaV"
     >
       <form
-        class="form-wrapper"
+        class="sc-fubDmA kGDFDk"
       >
         <div
-          class="input-wrapper"
+          class="sc-pGaPU czysfp"
         >
           <svg
             data-testid="search-icon"
@@ -233,7 +233,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
             value=""
           />
           <button
-            class="button"
+            class="sc-kstpWv fEZtjS button"
             data-testid="submit-button"
             type="submit"
           >
@@ -257,19 +257,19 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
       </form>
     </div>
     <div
-      style="display: flex; text-align: center; margin-top: 20px; flex-direction: column; align-items: center; color: grey;"
+      class="sc-eCstZk hTAfyD"
     >
-      <span>
+      <text>
         Empowering agency's users with precision search.
-      </span>
-      <span
+      </text>
+      <text
         style="margin-top: 10px;"
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
-      </span>
+      </text>
     </div>
     <div
-      class="versionText"
+      class="sc-jSguLX iAOjcb"
     >
       v0.2.5
     </div>
@@ -280,14 +280,14 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
 exports[`Home Debug functionalities toggles the debug panel when the debug button is clicked 1`] = `
 <DocumentFragment>
   <div
-    class="layout"
+    class="sc-bdfCDU loUhhx"
   >
     <header
       class="header"
       role="banner"
     >
       <div
-        class="headerContainer"
+        class="sc-iBPTVF kFPLcx"
       >
         <nav>
           <ul
@@ -332,7 +332,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
         />
       </svg>
       <div
-        class="debug-panel"
+        class="sc-iqHXzD heCJM"
         data-testid="debug-panel"
       >
         <h4
@@ -341,10 +341,10 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
           Debug Panel
         </h4>
         <div
-          class="radio-container"
+          class="sc-crrtmM KqfJY"
         >
           <label
-            class="radio-option"
+            class="sc-dQpIV knqZxe"
           >
             <input
               data-testid="search-source-ailab"
@@ -352,13 +352,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
               value="ailab"
             />
             <span
-              class="radio-label"
+              class="sc-bqyKbq jYLzpr"
             >
               Use AI Lab search
             </span>
           </label>
           <label
-            class="radio-option"
+            class="sc-dQpIV knqZxe"
           >
             <input
               checked=""
@@ -367,13 +367,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
               value="azure"
             />
             <span
-              class="radio-label"
+              class="sc-bqyKbq jYLzpr"
             >
               Use Azure AI Search
             </span>
           </label>
           <label
-            class="radio-option"
+            class="sc-dQpIV knqZxe"
           >
             <input
               data-testid="search-source-static"
@@ -381,7 +381,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
               value="simulated"
             />
             <span
-              class="radio-label"
+              class="sc-bqyKbq jYLzpr"
             >
               Use Simulated Data
             </span>
@@ -390,7 +390,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </div>
     </header>
     <div
-      class="logo-container"
+      class="sc-gsTDqH gVtqUL"
     >
       <div>
         <a
@@ -400,20 +400,20 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
         >
           <img
             alt="CFIA logo"
-            class="githubLogo"
             src="CFIA_SmartSearch_Logo.png"
+            style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="searchBar-container"
+      class="sc-dlfmHC cwWZaV"
     >
       <form
-        class="form-wrapper"
+        class="sc-fubDmA kGDFDk"
       >
         <div
-          class="input-wrapper"
+          class="sc-pGaPU czysfp"
         >
           <svg
             data-testid="search-icon"
@@ -436,7 +436,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             value=""
           />
           <button
-            class="button"
+            class="sc-kstpWv fEZtjS button"
             data-testid="submit-button"
             type="submit"
           >
@@ -460,19 +460,19 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </form>
     </div>
     <div
-      style="display: flex; text-align: center; margin-top: 20px; flex-direction: column; align-items: center; color: grey;"
+      class="sc-eCstZk hTAfyD"
     >
-      <span>
+      <text>
         Empowering agency's users with precision search.
-      </span>
-      <span
+      </text>
+      <text
         style="margin-top: 10px;"
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
-      </span>
+      </text>
     </div>
     <div
-      class="versionText"
+      class="sc-jSguLX iAOjcb"
     >
       v0.2.5
     </div>
@@ -483,14 +483,14 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
 exports[`Home Debug functionalities toggles the debug panel when the debug button is clicked 2`] = `
 <DocumentFragment>
   <div
-    class="layout"
+    class="sc-bdfCDU loUhhx"
   >
     <header
       class="header"
       role="banner"
     >
       <div
-        class="headerContainer"
+        class="sc-iBPTVF kFPLcx"
       >
         <nav>
           <ul
@@ -536,7 +536,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </svg>
     </header>
     <div
-      class="logo-container"
+      class="sc-gsTDqH gVtqUL"
     >
       <div>
         <a
@@ -546,20 +546,20 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
         >
           <img
             alt="CFIA logo"
-            class="githubLogo"
             src="CFIA_SmartSearch_Logo.png"
+            style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="searchBar-container"
+      class="sc-dlfmHC cwWZaV"
     >
       <form
-        class="form-wrapper"
+        class="sc-fubDmA kGDFDk"
       >
         <div
-          class="input-wrapper"
+          class="sc-pGaPU czysfp"
         >
           <svg
             data-testid="search-icon"
@@ -582,7 +582,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             value=""
           />
           <button
-            class="button"
+            class="sc-kstpWv fEZtjS button"
             data-testid="submit-button"
             type="submit"
           >
@@ -606,19 +606,19 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </form>
     </div>
     <div
-      style="display: flex; text-align: center; margin-top: 20px; flex-direction: column; align-items: center; color: grey;"
+      class="sc-eCstZk hTAfyD"
     >
-      <span>
+      <text>
         Empowering agency's users with precision search.
-      </span>
-      <span
+      </text>
+      <text
         style="margin-top: 10px;"
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
-      </span>
+      </text>
     </div>
     <div
-      class="versionText"
+      class="sc-jSguLX iAOjcb"
     >
       v0.2.5
     </div>
@@ -629,14 +629,14 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
 exports[`Home renders the Home page correctly 1`] = `
 <DocumentFragment>
   <div
-    class="layout"
+    class="sc-bdfCDU loUhhx"
   >
     <header
       class="header"
       role="banner"
     >
       <div
-        class="headerContainer"
+        class="sc-iBPTVF kFPLcx"
       >
         <nav>
           <ul
@@ -682,7 +682,7 @@ exports[`Home renders the Home page correctly 1`] = `
       </svg>
     </header>
     <div
-      class="logo-container"
+      class="sc-gsTDqH gVtqUL"
     >
       <div>
         <a
@@ -692,20 +692,20 @@ exports[`Home renders the Home page correctly 1`] = `
         >
           <img
             alt="CFIA logo"
-            class="githubLogo"
             src="CFIA_SmartSearch_Logo.png"
+            style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="searchBar-container"
+      class="sc-dlfmHC cwWZaV"
     >
       <form
-        class="form-wrapper"
+        class="sc-fubDmA kGDFDk"
       >
         <div
-          class="input-wrapper"
+          class="sc-pGaPU czysfp"
         >
           <svg
             data-testid="search-icon"
@@ -728,7 +728,7 @@ exports[`Home renders the Home page correctly 1`] = `
             value=""
           />
           <button
-            class="button"
+            class="sc-kstpWv fEZtjS button"
             data-testid="submit-button"
             type="submit"
           >
@@ -752,19 +752,19 @@ exports[`Home renders the Home page correctly 1`] = `
       </form>
     </div>
     <div
-      style="display: flex; text-align: center; margin-top: 20px; flex-direction: column; align-items: center; color: grey;"
+      class="sc-eCstZk hTAfyD"
     >
-      <span>
+      <text>
         Empowering agency's users with precision search.
-      </span>
-      <span
+      </text>
+      <text
         style="margin-top: 10px;"
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
-      </span>
+      </text>
     </div>
     <div
-      class="versionText"
+      class="sc-jSguLX iAOjcb"
     >
       v0.2.5
     </div>

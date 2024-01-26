@@ -6,7 +6,11 @@ import CFIALogo from "../../components/logo/CFIALogo";
 import SearchResultList from "../../components/search_results/SearchResultsList";
 import { SearchBar } from "../../components/searchbar/SearchBar";
 import { useData } from "../../contexts/DataContext";
-import styles from "../home/Home.module.css";
+import {
+  LayoutContainer,
+  SearchPageHeaderContainer,
+  SearchBarSearchContainer,
+} from "../../styles/indexElements";
 
 const SearchPage: React.FC = () => {
   const { searchTerm, currentSearchSource } = useData();
@@ -24,17 +28,16 @@ const SearchPage: React.FC = () => {
   }, [searchTerm]);
 
   return (
-    <div className={styles.layout}>
+    <LayoutContainer>
       <Header />
-      <div className="searchPage_header">
+      <SearchPageHeaderContainer>
         <CFIALogo />
-
-        <div className="searchBar-container-search">
+        <SearchBarSearchContainer>
           <SearchBar />
-        </div>
-      </div>
+        </SearchBarSearchContainer>
+      </SearchPageHeaderContainer>
       <SearchResultList data={data} query={termProp} />
-    </div>
+    </LayoutContainer>
   );
 };
 
