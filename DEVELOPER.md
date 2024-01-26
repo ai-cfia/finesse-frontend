@@ -1,10 +1,15 @@
+# Developer documentation
+
 ## Creating a TypeScript React App with ESLint and Prettier
 
-This guide walks you through the steps to set up a TypeScript-based React app with ESLint for code linting and Prettier for code formatting. Following these steps will help you maintain a clean and consistent codebase.
+This guide walks you through the steps to set up a TypeScript-based React app
+with ESLint for code linting and Prettier for code formatting. Following these
+steps will help you maintain a clean and consistent codebase.
 
 ### Step 1: Create a TypeScript React App
 
-In the terminal, use Create React App to set up a new TypeScript-based React application:
+In the terminal, use Create React App to set up a new TypeScript-based React
+application:
 
 `npx create-react-app --template=typescript YOUR-PROJECT-NAME-HERE`
 
@@ -14,11 +19,13 @@ In the terminal, use Create React App to set up a new TypeScript-based React app
 
 ### Step 3: When prompted, select the following option:
 
-- "How would you like to use ESLint?" - Choose `To Check syntax, find problems, and enforce code style.`
+- "How would you like to use ESLint?" - Choose
+`To Check syntax, find problems, and enforce code style.`
 
 ### Step 4: When prompted, select the following option:
 
-- "What type of module does your project use?" - Choose `JavaScript modules (import/export).`
+- "What type of module does your project use?" - Choose
+`JavaScript modules (import/export).`
 
 ### Step 5: When prompted, select the following option:
 
@@ -34,7 +41,8 @@ In the terminal, use Create React App to set up a new TypeScript-based React app
 
 ### Step 8: When prompted, select the following option:
 
-- "How would you like to define a style for your project?" - Choose `Use a popular style guide.`
+- "How would you like to define a style for your project?" - Choose
+`Use a popular style guide.`
 
 ### Step 9: When prompted, select the following option:
 
@@ -54,7 +62,7 @@ All necessary ESLint packages will be installed for your project.
 
 `npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev`
 
-### Step 13: In the .eslintrc.json file, replace the existing content with the following configuration:
+### Step 13: In the .eslintrc.json file, replace the existing content with this:
 
 ```json
 {
@@ -90,7 +98,7 @@ All necessary ESLint packages will be installed for your project.
 }
 ```
 
-### Step 14: Create a file in the root directory called ‘.prettierrc’. Copy and paste this code in there:
+### Step 14: Create a file in the root directory called ‘.prettierrc’ and copy:
 
 ```json
 {
@@ -103,7 +111,8 @@ All necessary ESLint packages will be installed for your project.
 }
 ```
 
-### Step 15: In the package.json file, add the following two lines inside the "scripts" section:
+### Step 15: In the package.json file, add the following two
+### lines inside the "scripts" section:
 
 ```json
 "lint": "eslint .",
