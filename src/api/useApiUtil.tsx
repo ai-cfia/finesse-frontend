@@ -128,6 +128,11 @@ export const fetchFromBackend = async (
 
 // Function to fetch filenames from the GitHub repository
 export const fetchFilenames = async (): Promise<string[]> => {
+  type FileItem = {
+    type: string;
+    name: string;
+  };
+
   try {
     // Fetching the contents of the repository
     const response = await fetch(config.githubApiUrl ?? "");
@@ -139,9 +144,9 @@ export const fetchFilenames = async (): Promise<string[]> => {
     const data = await response.json();
     const filenames = data
       .filter(
-        (item: any) => item.type === "file" && item.name.endsWith(".json")
+        (item: FileItem) => item.type === "file" && item.name.endsWith(".json")
       )
-      .map((item: any) => item.name.replace(".json", ""));
+      .map((item: FileItem) => item.name.replace(".json", ""));
     return filenames;
   } catch (error) {
     console.error("Error fetching filenames:", error);
@@ -150,7 +155,7 @@ export const fetchFilenames = async (): Promise<string[]> => {
 };
 
 // Function to test connectivity with the backend
-export const PingBackend = async (): Promise<any> => {
+export const PingBackend = async (): Promise<string> => {
   try {
     // Sending a POST request to the backend to test connectivity
     const response = await fetch(GetEndpoint("/health"));
