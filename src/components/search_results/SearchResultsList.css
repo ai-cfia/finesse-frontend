@@ -1,0 +1,30 @@
+.search-result {
+  text-decoration: none;
+  color: inherit;
+  padding: 30px 20px;
+  border-bottom-color: #dddddd;
+  border-bottom-width: 1;
+  border-bottom-style: inset;
+}
+
+.search-result:hover {
+  background-color: #f3f3f3;
+}
+
+.search-result p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.search-result .url {
+  font-size: 15px;
+  color: #999;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.search-result .content {
+  font-size: 16px;
+  margin-top: 10px;
+}

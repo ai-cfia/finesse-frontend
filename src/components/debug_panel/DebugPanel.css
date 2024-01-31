@@ -1,0 +1,4 @@
+.radio-option input[type="radio"] {
+  margin-right: 5px;
+  cursor: pointer;
+}
