@@ -1,4 +1,5 @@
 import { createContext, useContext, useState, type ReactNode } from "react";
+import { config } from "../config";
 import { SearchSource, type QueryResult } from "../types";
 
 // Define the type for your context state
@@ -27,9 +28,9 @@ export const DataProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState<string | null>(null);
   const envSearchSource =
-    process.env.REACT_APP_SEARCH_SOURCE?.toLowerCase() ?? SearchSource.azure;
+    config.searchSource?.toLowerCase() ?? SearchSource.azure;
   const [currentSearchSource, setCurrentSearchSource] = useState<SearchSource>(
-    SearchSource[envSearchSource as keyof typeof SearchSource],
+    SearchSource[envSearchSource as keyof typeof SearchSource]
   );
   const [queryResult, setQueryResult] = useState<QueryResult[]>([]);
 

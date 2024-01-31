@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import "./App.css";
+import { config } from "./config";
 import { AlertProvider } from "./contexts/AlertContext";
 import { DataProvider } from "./contexts/DataContext";
 import { LayoutProvider } from "./contexts/LayoutContext";
@@ -11,9 +12,7 @@ interface AppProps {
   basename?: string;
 }
 
-function App({
-  basename = process.env.REACT_APP_BASENAME ?? "/",
-}: AppProps): JSX.Element {
+function App({ basename = config.basename ?? "/" }: AppProps): JSX.Element {
   return (
     <BrowserRouter basename={basename}>
       <AlertProvider>
