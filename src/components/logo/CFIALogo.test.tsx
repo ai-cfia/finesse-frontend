@@ -1,25 +1,48 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { setupTestEnvVars } from "../../setupTests";
+import { describe, it, expect, beforeAll, beforeEach, vi } from 'vitest';
 import CFIALogo from "./CFIALogo";
+import { setupTestEnvVars } from "../../setupTests";
+import { useLocation, useNavigate } from "react-router-dom";
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: jest.fn(),
-  useLocation: jest.fn(),
-}));
+// Mock the entire module
+vi.mock("react-router-dom", () => {
+  const originalModule = vi.importActual("react-router-dom");
+  return {
+    ...originalModule,
+    useNavigate: vi.fn(),
+    useLocation: vi.fn(() => ({
+      pathname: '/',
+      state: {},
+      key: 'mockKey',
+      search: '',
+      hash: ''
+    })),
+  };
+});
 
 describe("CFIALogo", () => {
+  // Setup the mock return values for useNavigate and useLocation
+  const navigateMock = vi.fn();
+  const locationMock = {
+    pathname: '/',
+    state: {},
+    key: 'mockKey',
+    search: '',
+    hash: ''
+  };
+
   beforeAll(() => {
     setupTestEnvVars();
   });
 
+  beforeEach(() => {
+    vi.mocked(useNavigate).mockReturnValue(navigateMock);
+    vi.mocked(useLocation).mockReturnValue(locationMock);
+    navigateMock.mockClear();
+  });
+
   it('calls useNavigate with "/" when the logo is clicked and current path is different', () => {
-    const navigateMock = jest.fn();
-    (useNavigate as jest.Mock).mockImplementation(() => navigateMock);
-    (useLocation as jest.Mock).mockImplementation(() => ({
-      pathname: "/some-other-path",
-    }));
+    locationMock.pathname = "/some-other-path";
     render(<CFIALogo />);
     const logoLink = screen.getByTestId("cfia-logo");
     fireEvent.click(logoLink);
@@ -27,12 +50,11 @@ describe("CFIALogo", () => {
   });
 
   it('does not call useNavigate when the logo is clicked and current path is "/"', () => {
-    const navigateMock = jest.fn();
-    (useNavigate as jest.Mock).mockImplementation(() => navigateMock);
-    (useLocation as jest.Mock).mockImplementation(() => ({ pathname: "/" }));
+    locationMock.pathname = "/";
     render(<CFIALogo />);
     const logoLink = screen.getByTestId("cfia-logo");
     fireEvent.click(logoLink);
     expect(navigateMock).not.toHaveBeenCalled();
   });
+
 });

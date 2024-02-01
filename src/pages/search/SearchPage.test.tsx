@@ -6,6 +6,7 @@ import {
   type RenderResult,
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import { config } from "../../config";
 import { DataProvider } from "../../contexts/DataContext";
 import { LayoutProvider } from "../../contexts/LayoutContext";
 import { setupTestEnvVars } from "../../setupTests";
@@ -24,26 +25,26 @@ describe("SearchPage", () => {
             <SearchPage />
           </LayoutProvider>
         </DataProvider>
-      </BrowserRouter>,
+      </BrowserRouter>
     );
   };
 
   it("shows the debug button when REACT_APP_DEBUG_MODE is true", () => {
-    process.env.REACT_APP_DEBUG_MODE = "true";
+    config.debugMode = true;
     const { asFragment } = renderSearchPage();
     expect(screen.getByTestId("debug-button")).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("does not show the debug button when REACT_APP_DEBUG_MODE is false", () => {
-    process.env.REACT_APP_DEBUG_MODE = "false";
+    config.debugMode = false;
     const { asFragment } = renderSearchPage();
     expect(screen.queryByTestId("debug-button")).not.toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
   it("toggles the debug panel when the debug button is clicked", () => {
-    process.env.REACT_APP_DEBUG_MODE = "true";
+    config.debugMode = true;
     const { asFragment } = renderSearchPage();
     fireEvent.click(screen.getByTestId("debug-button"));
     expect(screen.getByTestId("debug-panel")).toBeInTheDocument();
