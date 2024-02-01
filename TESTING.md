@@ -5,19 +5,19 @@
   - [Test 1: Interactive Search Input](#test-1-interactive-search-input)
   - [Test 2: Submitting a Search Query](#test-2-submitting-a-search-query)
 - [Testing Debug Panel Interactivity](#testing-debug-panel-interactivity)
-  - [Test 1: Default Data Source Selection](
-      #test-1-default-data-source-selection)
-  - [Test 2: Interaction with Data Source Options](
-      #test-2-interaction-with-data-source-options)
-  - [Test 3: Data Source Selection Affects Search Results](
-      #test-3-data-source-selection-affects-search-results)
+  - [Test 1: Default Data Source
+    Selection](#test-1-default-data-source-selection)
+  - [Test 2: Interaction with Data Source
+    Options](#test-2-interaction-with-data-source-options)
+  - [Test 3: Data Source Selection Affects Search
+    Results](#test-3-data-source-selection-affects-search-results)
 - [Testing Filenames List Interaction](#testing-filenames-list-interaction)
-  - [Test 1: Clicking on Filename Sets Search Bar
-  and Performs Search with Simulated Data](
-  #test-1-clicking-on-filename-sets-bar-and-performs-search-with-simulated-data)
+  - [Test 1: Clicking on Filename Sets Search Bar and Performs Search with
+    Simulated
+    Data](#test-1-clicking-on-filename-sets-bar-and-performs-search-with-simulated-data)
 - [Testing CFIA Logo Navigation](#testing-cfia-logo-navigation)
-  - [Test 1: CFIA Logo Redirect Functionality](
-      #test-1-cfia-logo-redirect-functionality)
+  - [Test 1: CFIA Logo Redirect
+    Functionality](#test-1-cfia-logo-redirect-functionality)
 
 ## Overview
 
@@ -257,28 +257,27 @@ simulated data.
 ### Test 1: CFIA Logo Redirect Functionality
 
 **Objective:** Verify that clicking the CFIA logo redirects the user to the
-application's base path as defined by the `REACT_APP_BASENAME` environment
-variable.
+application's base path as defined by the `VITE_BASENAME` environment variable.
 
 **Preconditions:**
 
 - [ ] The application is open, and the user is on a page other than the base
-  path set by `REACT_APP_BASENAME`.
+      path set by `VITE_BASENAME`.
 - [ ] The CFIA logo is visible and not obscured by any elements.
-- [ ] The `REACT_APP_BASENAME` environment variable is set to the appropriate
-  base path (e.g., "/finesse-frontend").
+- [ ] The `VITE_BASENAME` environment variable is set to the appropriate base
+      path (e.g., "/finesse-frontend").
 
 **Test Steps:**
 
-1. Ensure the `REACT_APP_BASENAME` environment variable is set to the desired
-   base path.
+1. Ensure the `VITE_BASENAME` environment variable is set to the desired base
+   path.
 2. Navigate to a page within the application that is not the base path.
 3. Click on the CFIA logo.
 
 **Expected Results:**
 
 - [ ] Clicking the logo should redirect the user to the base path as defined by
-  `REACT_APP_BASENAME`.
+      `VITE_BASENAME`.
 - [ ] The base path page should load successfully without errors.
 
 **Actual Results:**
@@ -287,7 +286,7 @@ variable.
 
 **Pass/Fail:**
 
-- [ ] Pass if the user is redirected to the base path set by
-  `REACT_APP_BASENAME` and it loads correctly.
+- [ ] Pass if the user is redirected to the base path set by `VITE_BASENAME` and
+      it loads correctly.
 - [ ] Fail if the user is not redirected to the base path, or the base path does
-  not load properly.
+      not load properly.

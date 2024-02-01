@@ -6,8 +6,7 @@ To get started with the project, follow the steps below:
 
 ### Prerequisites
 
-- Node.js v18.16.0
-- NPM 9.8.1
+- NPM
 
 ### Installation
 
@@ -19,7 +18,7 @@ To get started with the project, follow the steps below:
 
 1. In the root of the project directory, locate the file named `.env.template`.
 2. Run the command `cp .env.template .env` to create a new `.env` file with
-the same contents.
+   the same contents.
 3. Edit the `.env` file according to your specific needs.
 
 ### Running application
@@ -29,3 +28,8 @@ the same contents.
 ### Testing application
 
 1. npm test
+
+### Update app version
+
+1. Change the version in `package.json`
+2. Run `npm run prestart`
