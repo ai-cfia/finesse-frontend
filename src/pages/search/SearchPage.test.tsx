@@ -29,14 +29,14 @@ describe("SearchPage", () => {
     );
   };
 
-  it("shows the debug button when REACT_APP_DEBUG_MODE is true", () => {
+  it("shows the debug button when VITE_DEBUG_MODE is true", () => {
     config.debugMode = true;
     const { asFragment } = renderSearchPage();
     expect(screen.getByTestId("debug-button")).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it("does not show the debug button when REACT_APP_DEBUG_MODE is false", () => {
+  it("does not show the debug button when VITE_DEBUG_MODE is false", () => {
     config.debugMode = false;
     const { asFragment } = renderSearchPage();
     expect(screen.queryByTestId("debug-button")).not.toBeInTheDocument();

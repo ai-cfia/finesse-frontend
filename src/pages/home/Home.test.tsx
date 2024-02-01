@@ -44,8 +44,8 @@ describe("Home", () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  describe("Environment variable REACT_APP_BACKEND_URL", () => {
-    it("shows a warning message when REACT_APP_BACKEND_URL is not set", () => {
+  describe("Environment variable VITE_BACKEND_URL", () => {
+    it("shows a warning message when VITE_BACKEND_URL is not set", () => {
       config.backendUrl = "";
       renderHomePage();
       expect(
@@ -55,7 +55,7 @@ describe("Home", () => {
       ).toBeInTheDocument();
     });
 
-    it("does not show a warning message when REACT_APP_BACKEND_URL is set", () => {
+    it("does not show a warning message when VITE_BACKEND_URL is set", () => {
       config.backendUrl = "http://example.com";
       renderHomePage();
       expect(
@@ -67,14 +67,14 @@ describe("Home", () => {
   });
 
   describe("Debug functionalities", () => {
-    it("shows the debug button when REACT_APP_DEBUG_MODE is true", () => {
+    it("shows the debug button when VITE_DEBUG_MODE is true", () => {
       config.debugMode = true;
       const { asFragment } = renderHomePage();
       expect(screen.getByTestId("debug-button")).toBeInTheDocument();
       expect(asFragment()).toMatchSnapshot();
     });
 
-    it("does not show the debug button when REACT_APP_DEBUG_MODE is false", () => {
+    it("does not show the debug button when VITE_DEBUG_MODE is false", () => {
       config.debugMode = false;
       const { asFragment } = renderHomePage();
       expect(screen.queryByTestId("debug-button")).not.toBeInTheDocument();

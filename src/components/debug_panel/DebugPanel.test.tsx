@@ -98,7 +98,7 @@ describe("DebugPanel Component Tests", () => {
     });
   });
 
-  test('selects the "AI Lab" radio button when REACT_APP_SEARCH_SOURCE is ailab', async () => {
+  test('selects the "AI Lab" radio button when VITE_SEARCH_SOURCE is ailab', async () => {
     config.searchSource = "ailab";
     const view = renderDebugPanel();
 
@@ -114,7 +114,7 @@ describe("DebugPanel Component Tests", () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('selects the "Azure AI" radio button when REACT_APP_SEARCH_SOURCE is azure', async () => {
+  test('selects the "Azure AI" radio button when VITE_SEARCH_SOURCE is azure', async () => {
     config.searchSource = "azure";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
@@ -129,7 +129,7 @@ describe("DebugPanel Component Tests", () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('selects the "Simulated Data" radio button when REACT_APP_SEARCH_SOURCE is static', async () => {
+  test('selects the "Simulated Data" radio button when VITE_SEARCH_SOURCE is static', async () => {
     config.searchSource = "static";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
@@ -144,7 +144,7 @@ describe("DebugPanel Component Tests", () => {
     expect(view).toMatchSnapshot();
   });
 
-  test("no radio button is selected when REACT_APP_SEARCH_SOURCE has a bad value", async () => {
+  test("no radio button is selected when VITE_SEARCH_SOURCE has a bad value", async () => {
     config.searchSource = "bad";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
