@@ -19,6 +19,7 @@ COPY package-lock.json .
 COPY tsconfig.json .
 COPY tsconfig.node.json .
 COPY vite.config.ts .
+COPY index.html .
 
 RUN npm install -g npm@9.8.1
 RUN npm install --include=dev
