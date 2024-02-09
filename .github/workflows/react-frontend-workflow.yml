@@ -9,7 +9,7 @@ on:
 
 jobs:
   lint-test:
-    uses: ./.github/workflows/workflow-lint-test-node.yml
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-lint-test-node.yml@main
 
   markdown-check:
     uses: ai-cfia/github-workflows/.github/workflows/workflow-markdown-check.yml@76-as-a-devops-i-would-like-to-fix-the-markdown-lint-workflow
