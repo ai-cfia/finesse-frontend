@@ -39,7 +39,8 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",
-    "vitest": "^1.2.2"
+    "vitest": "^1.2.2",
+    "web-vitals": "^3.5.2"
   },
   "engines": {
     "npm": "^9.8.1",
