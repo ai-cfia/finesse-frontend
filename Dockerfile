@@ -2,21 +2,24 @@ FROM node:18.16.0-alpine AS build
 
 WORKDIR /code
 
-ARG ARG_REACT_APP_BACKEND_URL
-ARG ARG_REACT_APP_DEBUG_MODE
-ARG ARG_REACT_APP_GITHUB_API_URL
-ARG ARG_REACT_APP_SEARCH_SOURCE
+ARG ARG_VITE_BACKEND_URL
+ARG ARG_VITE_DEBUG_MODE
+ARG ARG_VITE_GITHUB_API_URL
+ARG ARG_VITE_SEARCH_SOURCE
 
-ENV REACT_APP_BACKEND_URL=${ARG_REACT_APP_BACKEND_URL:-/api}
-ENV REACT_APP_DEBUG_MODE=${ARG_REACT_APP_DEBUG_MODE:-True}
-ENV REACT_APP_GITHUB_API_URL=${ARG_REACT_APP_GITHUB_API_URL:-https://api.github.com/repos/ai-cfia/finesse-data/contents}
-ENV REACT_APP_SEARCH_SOURCE=${ARG_REACT_APP_SEARCH_SOURCE:-azure}
+ENV VITE_BACKEND_URL=${ARG_VITE_BACKEND_URL:-/api}
+ENV VITE_DEBUG_MODE=${ARG_VITE_DEBUG_MODE:-True}
+ENV VITE_GITHUB_API_URL=${ARG_VITE_GITHUB_API_URL:-https://api.github.com/repos/ai-cfia/finesse-data/contents}
+ENV VITE_SEARCH_SOURCE=${ARG_VITE_SEARCH_SOURCE:-azure}
 
 COPY ./src ./src
 COPY ./public ./public
 COPY package.json .
 COPY package-lock.json .
 COPY tsconfig.json .
+COPY tsconfig.node.json .
+COPY vite.config.ts .
+COPY index.html .
 
 RUN npm install -g npm@9.8.1
 RUN npm install --include=dev

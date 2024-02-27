@@ -14,7 +14,7 @@ jobs:
   markdown-check:
     uses: ai-cfia/github-workflows/.github/workflows/workflow-markdown-check.yml@76-as-a-devops-i-would-like-to-fix-the-markdown-lint-workflow
     with:
-      config-file-path: '.mlc_config.json'
+      config-file-path: ".mlc_config.json"
     secrets: inherit
 
   repo-standard:

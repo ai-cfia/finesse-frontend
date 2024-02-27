@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { config } from "../config";
 import { SearchSource, type QueryResult } from "../types";
 
 // Helper function to construct the endpoint URL using environment variable as base
 export const GetEndpoint = (path: string): string => {
-  const baseUrl = process.env.REACT_APP_BACKEND_URL ?? "";
+  const baseUrl = config.backendUrl ?? "";
   return baseUrl + path;
 };
 
@@ -30,7 +31,7 @@ export const useApiUtil = ({
 
     const fetchData = async (): Promise<void> => {
       if (
-        !isNonEmptyString(process.env.REACT_APP_BACKEND_URL) &&
+        !isNonEmptyString(config.backendUrl) &&
         currentSearchSource === SearchSource.static
       ) {
         const staticData = await fetchStaticData(term);
@@ -52,9 +53,9 @@ export const useApiUtil = ({
 
 // Function to fetch static data from finesse-data
 export const fetchStaticData = async (
-  term: string,
+  term: string
 ): Promise<ResponseData | null> => {
-  const githubApiUrl = process.env.REACT_APP_GITHUB_API_URL ?? "";
+  const githubApiUrl = config.githubApiUrl ?? "";
 
   try {
     // Fetching the list of files from GitHub repository
@@ -73,7 +74,7 @@ export const fetchStaticData = async (
 
     // Finding the matching file based on the normalized term
     const matchingFile = data.find((file) =>
-      file.name.toLowerCase().includes(normalizedTerm + ".json"),
+      file.name.toLowerCase().includes(normalizedTerm + ".json")
     );
 
     // Handling the case where no matching file is found
@@ -87,7 +88,7 @@ export const fetchStaticData = async (
     if (!resultsResponse.ok) {
       console.error(
         "Results fetch failed with status: ",
-        resultsResponse.status,
+        resultsResponse.status
       );
       return null;
     }
@@ -104,7 +105,7 @@ export const fetchStaticData = async (
 // Function to search from backend
 export const fetchFromBackend = async (
   term: string,
-  currentSearchSource: SearchSource,
+  currentSearchSource: SearchSource
 ): Promise<ResponseData | null> => {
   try {
     const endpoint = GetEndpoint(`/search/${currentSearchSource}`);
@@ -127,9 +128,14 @@ export const fetchFromBackend = async (
 
 // Function to fetch filenames from the GitHub repository
 export const fetchFilenames = async (): Promise<string[]> => {
+  type FileItem = {
+    type: string;
+    name: string;
+  };
+
   try {
     // Fetching the contents of the repository
-    const response = await fetch(process.env.REACT_APP_GITHUB_API_URL ?? "");
+    const response = await fetch(config.githubApiUrl ?? "");
     if (!response.ok) {
       console.error("Failed to fetch filenames with status:", response.status);
       return [];
@@ -138,9 +144,9 @@ export const fetchFilenames = async (): Promise<string[]> => {
     const data = await response.json();
     const filenames = data
       .filter(
-        (item: any) => item.type === "file" && item.name.endsWith(".json"),
+        (item: FileItem) => item.type === "file" && item.name.endsWith(".json")
       )
-      .map((item: any) => item.name.replace(".json", ""));
+      .map((item: FileItem) => item.name.replace(".json", ""));
     return filenames;
   } catch (error) {
     console.error("Error fetching filenames:", error);
@@ -149,7 +155,7 @@ export const fetchFilenames = async (): Promise<string[]> => {
 };
 
 // Function to test connectivity with the backend
-export const PingBackend = async (): Promise<any> => {
+export const PingBackend = async (): Promise<string> => {
   try {
     // Sending a POST request to the backend to test connectivity
     const response = await fetch(GetEndpoint("/health"));

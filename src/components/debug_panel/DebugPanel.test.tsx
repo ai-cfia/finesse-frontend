@@ -1,21 +1,27 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
+import { config } from "../../config";
 import { DataProvider } from "../../contexts/DataContext";
 import { LayoutProvider } from "../../contexts/LayoutContext";
 import { setupTestEnvVars } from "../../setupTests";
 import { DebugPanel } from "./DebugPanel";
 
-jest.mock("../../api/useApiUtil", () => ({
+vi.mock("react-router-dom", async () => {
+  const originalModule = await vi.importActual("react-router-dom"); // Use async import if necessary
+  return {
+    ...originalModule,
+    useNavigate: () => vi.fn(),
+    // Ensure BrowserRouter is correctly exported if not automatically included
+    BrowserRouter: originalModule.BrowserRouter,
+  };
+});
+
+vi.mock("../../api/useApiUtil", () => ({
   fetchFilenames: async () =>
     await Promise.resolve(["file1", "file2", "file3"]),
 }));
 
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: () => jest.fn(),
-}));
-
-jest.mock("../../contexts/LayoutContext", () => ({
+vi.mock("../../contexts/LayoutContext", () => ({
   useLayout: () => ({ isDebugPanelVisible: true }),
   LayoutProvider: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
@@ -31,7 +37,7 @@ describe("DebugPanel Component Tests", () => {
             <DebugPanel />
           </LayoutProvider>
         </DataProvider>
-      </BrowserRouter>,
+      </BrowserRouter>
     );
     return screen.getByTestId("debug-panel");
   };
@@ -39,11 +45,11 @@ describe("DebugPanel Component Tests", () => {
 
   beforeAll(() => {
     setupTestEnvVars();
-    window.alert = jest.fn();
+    window.alert = vi.fn();
   });
 
   afterEach(() => {
-    jest.resetAllMocks();
+    vi.resetAllMocks();
   });
 
   afterAll(() => {
@@ -61,18 +67,17 @@ describe("DebugPanel Component Tests", () => {
 
   test("can switch to simulated data and display filenames", async () => {
     const view = renderDebugPanel();
-
     expect(screen.queryByText("file1")).not.toBeInTheDocument();
     expect(screen.queryByText("file2")).not.toBeInTheDocument();
     expect(screen.queryByText("file3")).not.toBeInTheDocument();
 
     const simulatedRadioButton = screen.getByLabelText("Use Simulated Data");
-    fireEvent.click(simulatedRadioButton);
 
     await waitFor(() => {
+      fireEvent.click(simulatedRadioButton);
       expect(screen.getByText("file1")).toBeInTheDocument();
+      expect(view).toMatchSnapshot();
     });
-    expect(view).toMatchSnapshot();
   });
 
   test("clicking on a filename button updates the search term", async () => {
@@ -81,18 +86,22 @@ describe("DebugPanel Component Tests", () => {
     expect(screen.queryByText("file1")).not.toBeInTheDocument();
 
     const simulatedRadioButton = screen.getByLabelText("Use Simulated Data");
-    fireEvent.click(simulatedRadioButton);
 
-    const firstFilenameButton = await screen.findByText("file1");
-    fireEvent.click(firstFilenameButton);
-    expect(window.alert).toHaveBeenCalledWith("Search query set successfully!");
-
-    expect(view).toMatchSnapshot();
+    await waitFor(async () => {
+      fireEvent.click(simulatedRadioButton);
+      const firstFilenameButton = await screen.findByText("file1");
+      fireEvent.click(firstFilenameButton);
+      expect(window.alert).toHaveBeenCalledWith(
+        "Search query set successfully!"
+      );
+      expect(view).toMatchSnapshot();
+    });
   });
 
-  test('selects the "AI Lab" radio button when REACT_APP_SEARCH_SOURCE is ailab', async () => {
-    process.env.REACT_APP_SEARCH_SOURCE = "ailab";
+  test('selects the "AI Lab" radio button when VITE_SEARCH_SOURCE is ailab', async () => {
+    config.searchSource = "ailab";
     const view = renderDebugPanel();
+
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
     const staticRadioButton = screen.getByTestId("search-source-static");
@@ -105,8 +114,8 @@ describe("DebugPanel Component Tests", () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('selects the "Azure AI" radio button when REACT_APP_SEARCH_SOURCE is azure', async () => {
-    process.env.REACT_APP_SEARCH_SOURCE = "azure";
+  test('selects the "Azure AI" radio button when VITE_SEARCH_SOURCE is azure', async () => {
+    config.searchSource = "azure";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
@@ -120,8 +129,8 @@ describe("DebugPanel Component Tests", () => {
     expect(view).toMatchSnapshot();
   });
 
-  test('selects the "Simulated Data" radio button when REACT_APP_SEARCH_SOURCE is static', async () => {
-    process.env.REACT_APP_SEARCH_SOURCE = "static";
+  test('selects the "Simulated Data" radio button when VITE_SEARCH_SOURCE is static', async () => {
+    config.searchSource = "static";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
@@ -135,8 +144,8 @@ describe("DebugPanel Component Tests", () => {
     expect(view).toMatchSnapshot();
   });
 
-  test("no radio button is selected when REACT_APP_SEARCH_SOURCE has a bad value", async () => {
-    process.env.REACT_APP_SEARCH_SOURCE = "badvalue";
+  test("no radio button is selected when VITE_SEARCH_SOURCE has a bad value", async () => {
+    config.searchSource = "bad";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");

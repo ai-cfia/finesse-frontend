@@ -1,23 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is false 1`] = `
+exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is false 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -26,13 +26,13 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -41,7 +41,7 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
       </div>
     </header>
     <div
-      class="sc-gKsecS dkylnR"
+      class="sc-gLLuof jXjFEF"
     >
       <div>
         <a
@@ -51,19 +51,19 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
       <div
-        class="sc-hKgKIp bNvNHu"
+        class="sc-hLQSwg gdFcDT"
       >
         <form
-          class="sc-fubDmA kGDFDk"
+          class="sc-fsYfdN gMdzwM"
         >
           <div
-            class="sc-pGaPU czysfp"
+            class="sc-qZrbh hoLtJU"
           >
             <svg
               data-testid="search-icon"
@@ -86,7 +86,7 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
               value=""
             />
             <button
-              class="sc-kstpWv fEZtjS button"
+              class="sc-ktwOfi ddPxBG button"
               data-testid="submit-button"
               type="submit"
             >
@@ -111,30 +111,30 @@ exports[`SearchPage does not show the debug button when REACT_APP_DEBUG_MODE is 
       </div>
     </div>
     <div
-      class="sc-jrAGKZ ecXFXO"
+      class="sc-jsEeTM dRvvwI"
     />
   </div>
 </DocumentFragment>
 `;
 
-exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`] = `
+exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -143,13 +143,13 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -173,7 +173,7 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
       </svg>
     </header>
     <div
-      class="sc-gKsecS dkylnR"
+      class="sc-gLLuof jXjFEF"
     >
       <div>
         <a
@@ -183,19 +183,19 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
       <div
-        class="sc-hKgKIp bNvNHu"
+        class="sc-hLQSwg gdFcDT"
       >
         <form
-          class="sc-fubDmA kGDFDk"
+          class="sc-fsYfdN gMdzwM"
         >
           <div
-            class="sc-pGaPU czysfp"
+            class="sc-qZrbh hoLtJU"
           >
             <svg
               data-testid="search-icon"
@@ -218,7 +218,7 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
               value=""
             />
             <button
-              class="sc-kstpWv fEZtjS button"
+              class="sc-ktwOfi ddPxBG button"
               data-testid="submit-button"
               type="submit"
             >
@@ -243,30 +243,30 @@ exports[`SearchPage shows the debug button when REACT_APP_DEBUG_MODE is true 1`]
       </div>
     </div>
     <div
-      class="sc-jrAGKZ ecXFXO"
+      class="sc-jsEeTM dRvvwI"
     />
   </div>
 </DocumentFragment>
 `;
 
-exports[`SearchPage toggles the debug panel when the debug button is clicked 1`] = `
+exports[`SearchPage > toggles the debug panel when the debug button is clicked 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -275,13 +275,13 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -304,7 +304,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
         />
       </svg>
       <div
-        class="sc-iqHXzD heCJM"
+        class="sc-irLvIq hkeVyu"
         data-testid="debug-panel"
       >
         <h4
@@ -313,10 +313,10 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
           Debug Panel
         </h4>
         <div
-          class="sc-crrtmM KqfJY"
+          class="sc-csKJxZ ilyJmt"
         >
           <label
-            class="sc-dQpIV knqZxe"
+            class="sc-eTNRI cNqKFl"
           >
             <input
               data-testid="search-source-ailab"
@@ -324,13 +324,13 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
               value="ailab"
             />
             <span
-              class="sc-bqyKbq jYLzpr"
+              class="sc-brSamD fpMuCT"
             >
               Use AI Lab search
             </span>
           </label>
           <label
-            class="sc-dQpIV knqZxe"
+            class="sc-eTNRI cNqKFl"
           >
             <input
               checked=""
@@ -339,13 +339,13 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
               value="azure"
             />
             <span
-              class="sc-bqyKbq jYLzpr"
+              class="sc-brSamD fpMuCT"
             >
               Use Azure AI Search
             </span>
           </label>
           <label
-            class="sc-dQpIV knqZxe"
+            class="sc-eTNRI cNqKFl"
           >
             <input
               data-testid="search-source-static"
@@ -353,7 +353,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
               value="simulated"
             />
             <span
-              class="sc-bqyKbq jYLzpr"
+              class="sc-brSamD fpMuCT"
             >
               Use Simulated Data
             </span>
@@ -362,7 +362,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
       </div>
     </header>
     <div
-      class="sc-gKsecS dkylnR"
+      class="sc-gLLuof jXjFEF"
     >
       <div>
         <a
@@ -372,19 +372,19 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
       <div
-        class="sc-hKgKIp bNvNHu"
+        class="sc-hLQSwg gdFcDT"
       >
         <form
-          class="sc-fubDmA kGDFDk"
+          class="sc-fsYfdN gMdzwM"
         >
           <div
-            class="sc-pGaPU czysfp"
+            class="sc-qZrbh hoLtJU"
           >
             <svg
               data-testid="search-icon"
@@ -407,7 +407,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
               value=""
             />
             <button
-              class="sc-kstpWv fEZtjS button"
+              class="sc-ktwOfi ddPxBG button"
               data-testid="submit-button"
               type="submit"
             >
@@ -432,30 +432,30 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 1`]
       </div>
     </div>
     <div
-      class="sc-jrAGKZ ecXFXO"
+      class="sc-jsEeTM dRvvwI"
     />
   </div>
 </DocumentFragment>
 `;
 
-exports[`SearchPage toggles the debug panel when the debug button is clicked 2`] = `
+exports[`SearchPage > toggles the debug panel when the debug button is clicked 2`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -464,13 +464,13 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -494,7 +494,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
       </svg>
     </header>
     <div
-      class="sc-gKsecS dkylnR"
+      class="sc-gLLuof jXjFEF"
     >
       <div>
         <a
@@ -504,19 +504,19 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
       <div
-        class="sc-hKgKIp bNvNHu"
+        class="sc-hLQSwg gdFcDT"
       >
         <form
-          class="sc-fubDmA kGDFDk"
+          class="sc-fsYfdN gMdzwM"
         >
           <div
-            class="sc-pGaPU czysfp"
+            class="sc-qZrbh hoLtJU"
           >
             <svg
               data-testid="search-icon"
@@ -539,7 +539,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
               value=""
             />
             <button
-              class="sc-kstpWv fEZtjS button"
+              class="sc-ktwOfi ddPxBG button"
               data-testid="submit-button"
               type="submit"
             >
@@ -564,7 +564,7 @@ exports[`SearchPage toggles the debug panel when the debug button is clicked 2`]
       </div>
     </div>
     <div
-      class="sc-jrAGKZ ecXFXO"
+      class="sc-jsEeTM dRvvwI"
     />
   </div>
 </DocumentFragment>

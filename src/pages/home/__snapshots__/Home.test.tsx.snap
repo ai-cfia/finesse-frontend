@@ -1,23 +1,23 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Home Debug functionalities does not show the debug button when REACT_APP_DEBUG_MODE is false 1`] = `
+exports[`Home > Debug functionalities > does not show the debug button when VITE_DEBUG_MODE is false 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -26,13 +26,13 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -41,7 +41,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
       </div>
     </header>
     <div
-      class="sc-gsTDqH gVtqUL"
+      class="sc-guDLey cEokNJ"
     >
       <div>
         <a
@@ -51,20 +51,20 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="sc-dlfmHC cwWZaV"
+      class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fubDmA kGDFDk"
+        class="sc-fsYfdN gMdzwM"
       >
         <div
-          class="sc-pGaPU czysfp"
+          class="sc-qZrbh hoLtJU"
         >
           <svg
             data-testid="search-icon"
@@ -87,7 +87,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
             value=""
           />
           <button
-            class="sc-kstpWv fEZtjS button"
+            class="sc-ktwOfi ddPxBG button"
             data-testid="submit-button"
             type="submit"
           >
@@ -111,7 +111,7 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
       </form>
     </div>
     <div
-      class="sc-eCstZk hTAfyD"
+      class="sc-eDLKkx fIWqab"
     >
       <text>
         Empowering agency's users with precision search.
@@ -123,32 +123,32 @@ exports[`Home Debug functionalities does not show the debug button when REACT_AP
       </text>
     </div>
     <div
-      class="sc-jSguLX iAOjcb"
+      class="sc-jTQCzO IZJjs"
     >
-      v0.2.5
+      v1.0.0
     </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_MODE is true 1`] = `
+exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_MODE is true 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -157,13 +157,13 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -187,7 +187,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
       </svg>
     </header>
     <div
-      class="sc-gsTDqH gVtqUL"
+      class="sc-guDLey cEokNJ"
     >
       <div>
         <a
@@ -197,20 +197,20 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="sc-dlfmHC cwWZaV"
+      class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fubDmA kGDFDk"
+        class="sc-fsYfdN gMdzwM"
       >
         <div
-          class="sc-pGaPU czysfp"
+          class="sc-qZrbh hoLtJU"
         >
           <svg
             data-testid="search-icon"
@@ -233,7 +233,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
             value=""
           />
           <button
-            class="sc-kstpWv fEZtjS button"
+            class="sc-ktwOfi ddPxBG button"
             data-testid="submit-button"
             type="submit"
           >
@@ -257,7 +257,7 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
       </form>
     </div>
     <div
-      class="sc-eCstZk hTAfyD"
+      class="sc-eDLKkx fIWqab"
     >
       <text>
         Empowering agency's users with precision search.
@@ -269,32 +269,32 @@ exports[`Home Debug functionalities shows the debug button when REACT_APP_DEBUG_
       </text>
     </div>
     <div
-      class="sc-jSguLX iAOjcb"
+      class="sc-jTQCzO IZJjs"
     >
-      v0.2.5
+      v1.0.0
     </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`Home Debug functionalities toggles the debug panel when the debug button is clicked 1`] = `
+exports[`Home > Debug functionalities > toggles the debug panel when the debug button is clicked 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -303,13 +303,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -332,7 +332,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
         />
       </svg>
       <div
-        class="sc-iqHXzD heCJM"
+        class="sc-irLvIq hkeVyu"
         data-testid="debug-panel"
       >
         <h4
@@ -341,10 +341,10 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
           Debug Panel
         </h4>
         <div
-          class="sc-crrtmM KqfJY"
+          class="sc-csKJxZ ilyJmt"
         >
           <label
-            class="sc-dQpIV knqZxe"
+            class="sc-eTNRI cNqKFl"
           >
             <input
               data-testid="search-source-ailab"
@@ -352,13 +352,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
               value="ailab"
             />
             <span
-              class="sc-bqyKbq jYLzpr"
+              class="sc-brSamD fpMuCT"
             >
               Use AI Lab search
             </span>
           </label>
           <label
-            class="sc-dQpIV knqZxe"
+            class="sc-eTNRI cNqKFl"
           >
             <input
               checked=""
@@ -367,13 +367,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
               value="azure"
             />
             <span
-              class="sc-bqyKbq jYLzpr"
+              class="sc-brSamD fpMuCT"
             >
               Use Azure AI Search
             </span>
           </label>
           <label
-            class="sc-dQpIV knqZxe"
+            class="sc-eTNRI cNqKFl"
           >
             <input
               data-testid="search-source-static"
@@ -381,7 +381,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
               value="simulated"
             />
             <span
-              class="sc-bqyKbq jYLzpr"
+              class="sc-brSamD fpMuCT"
             >
               Use Simulated Data
             </span>
@@ -390,7 +390,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </div>
     </header>
     <div
-      class="sc-gsTDqH gVtqUL"
+      class="sc-guDLey cEokNJ"
     >
       <div>
         <a
@@ -400,20 +400,20 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="sc-dlfmHC cwWZaV"
+      class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fubDmA kGDFDk"
+        class="sc-fsYfdN gMdzwM"
       >
         <div
-          class="sc-pGaPU czysfp"
+          class="sc-qZrbh hoLtJU"
         >
           <svg
             data-testid="search-icon"
@@ -436,7 +436,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             value=""
           />
           <button
-            class="sc-kstpWv fEZtjS button"
+            class="sc-ktwOfi ddPxBG button"
             data-testid="submit-button"
             type="submit"
           >
@@ -460,7 +460,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </form>
     </div>
     <div
-      class="sc-eCstZk hTAfyD"
+      class="sc-eDLKkx fIWqab"
     >
       <text>
         Empowering agency's users with precision search.
@@ -472,32 +472,32 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </text>
     </div>
     <div
-      class="sc-jSguLX iAOjcb"
+      class="sc-jTQCzO IZJjs"
     >
-      v0.2.5
+      v1.0.0
     </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`Home Debug functionalities toggles the debug panel when the debug button is clicked 2`] = `
+exports[`Home > Debug functionalities > toggles the debug panel when the debug button is clicked 2`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -506,13 +506,13 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -536,7 +536,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </svg>
     </header>
     <div
-      class="sc-gsTDqH gVtqUL"
+      class="sc-guDLey cEokNJ"
     >
       <div>
         <a
@@ -546,20 +546,20 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="sc-dlfmHC cwWZaV"
+      class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fubDmA kGDFDk"
+        class="sc-fsYfdN gMdzwM"
       >
         <div
-          class="sc-pGaPU czysfp"
+          class="sc-qZrbh hoLtJU"
         >
           <svg
             data-testid="search-icon"
@@ -582,7 +582,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
             value=""
           />
           <button
-            class="sc-kstpWv fEZtjS button"
+            class="sc-ktwOfi ddPxBG button"
             data-testid="submit-button"
             type="submit"
           >
@@ -606,7 +606,7 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </form>
     </div>
     <div
-      class="sc-eCstZk hTAfyD"
+      class="sc-eDLKkx fIWqab"
     >
       <text>
         Empowering agency's users with precision search.
@@ -618,32 +618,32 @@ exports[`Home Debug functionalities toggles the debug panel when the debug butto
       </text>
     </div>
     <div
-      class="sc-jSguLX iAOjcb"
+      class="sc-jTQCzO IZJjs"
     >
-      v0.2.5
+      v1.0.0
     </div>
   </div>
 </DocumentFragment>
 `;
 
-exports[`Home renders the Home page correctly 1`] = `
+exports[`Home > renders the Home page correctly 1`] = `
 <DocumentFragment>
   <div
-    class="sc-bdfCDU loUhhx"
+    class="sc-beySPh ijVLbz"
   >
     <header
-      class="header"
+      class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-iBPTVF kFPLcx"
+        class="sc-iBdnpw iSWxFd"
       >
         <nav>
           <ul
-            class="headerNavList"
+            class="_headerNavList_c7ee54"
           >
             <li
-              class="headerNavLeftMargin"
+              class="_headerNavLeftMargin_c7ee54"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -652,13 +652,13 @@ exports[`Home renders the Home page correctly 1`] = `
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="CFIA_Banner.png"
+                  src="/src/assets/CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="headerRightText"
+              class="_headerRightText_c7ee54"
             >
               Alpha Version
             </li>
@@ -682,7 +682,7 @@ exports[`Home renders the Home page correctly 1`] = `
       </svg>
     </header>
     <div
-      class="sc-gsTDqH gVtqUL"
+      class="sc-guDLey cEokNJ"
     >
       <div>
         <a
@@ -692,20 +692,20 @@ exports[`Home renders the Home page correctly 1`] = `
         >
           <img
             alt="CFIA logo"
-            src="CFIA_SmartSearch_Logo.png"
+            src="/src/assets/CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="sc-dlfmHC cwWZaV"
+      class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fubDmA kGDFDk"
+        class="sc-fsYfdN gMdzwM"
       >
         <div
-          class="sc-pGaPU czysfp"
+          class="sc-qZrbh hoLtJU"
         >
           <svg
             data-testid="search-icon"
@@ -728,7 +728,7 @@ exports[`Home renders the Home page correctly 1`] = `
             value=""
           />
           <button
-            class="sc-kstpWv fEZtjS button"
+            class="sc-ktwOfi ddPxBG button"
             data-testid="submit-button"
             type="submit"
           >
@@ -752,7 +752,7 @@ exports[`Home renders the Home page correctly 1`] = `
       </form>
     </div>
     <div
-      class="sc-eCstZk hTAfyD"
+      class="sc-eDLKkx fIWqab"
     >
       <text>
         Empowering agency's users with precision search.
@@ -764,9 +764,9 @@ exports[`Home renders the Home page correctly 1`] = `
       </text>
     </div>
     <div
-      class="sc-jSguLX iAOjcb"
+      class="sc-jTQCzO IZJjs"
     >
-      v0.2.5
+      v1.0.0
     </div>
   </div>
 </DocumentFragment>

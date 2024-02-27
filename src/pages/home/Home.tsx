@@ -3,10 +3,10 @@ import { PingBackend } from "../../api/useApiUtil";
 import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
+import { config } from "../../config";
 import { useAlert } from "../../contexts/AlertContext";
 import { useData } from "../../contexts/DataContext";
 import { environment } from "../../environments/environment";
-import { EDirection } from "../../types";
 import {
   LayoutContainer,
   LogoContainer,
@@ -14,6 +14,7 @@ import {
   SloganContainer,
   VersionTextContainer,
 } from "../../styles/indexElements";
+import { EDirection } from "../../types";
 
 const Home: React.FC = () => {
   const { currentSearchSource } = useData();
@@ -23,12 +24,9 @@ const Home: React.FC = () => {
     console.log("currentSearchSource:", currentSearchSource);
     console.log("testing enums", EDirection["Up" as keyof typeof EDirection]);
 
-    if (
-      process.env.REACT_APP_BACKEND_URL === null ||
-      process.env.REACT_APP_BACKEND_URL === ""
-    ) {
+    if ([null, ""].includes(config.backendUrl)) {
       setAlertMessage(
-        "Warning: Backend URL is not set, frontend is misconfigured.",
+        "Warning: Backend URL is not set, frontend is misconfigured."
       );
     } else {
       PingBackend()
@@ -37,13 +35,13 @@ const Home: React.FC = () => {
             console.log("Ping response:", response);
           } else {
             setAlertMessage(
-              "Warning: Initializing ping request to backend failed.",
+              "Warning: Initializing ping request to backend failed."
             );
           }
         })
         .catch(() => {
           setAlertMessage(
-            "Warning: Initializing ping request to backend failed.",
+            "Warning: Initializing ping request to backend failed."
           );
         });
     }

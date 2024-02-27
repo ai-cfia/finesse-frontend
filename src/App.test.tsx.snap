@@ -1,23 +1,23 @@
-// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+// Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Component > displays the version that matches the environment version 1`] = `
+exports[`App Component displays the version that matches the environment version 1`] = `
 <DocumentFragment>
   <div
-    class="sc-beySPh ijVLbz"
+    class="sc-bdfCDU loUhhx"
   >
     <header
-      class="_header_c7ee54"
+      class="header"
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-iBPTVF kFPLcx"
       >
         <nav>
           <ul
-            class="_headerNavList_c7ee54"
+            class="headerNavList"
           >
             <li
-              class="_headerNavLeftMargin_c7ee54"
+              class="headerNavLeftMargin"
             >
               <a
                 href="https://inspection.canada.ca/"
@@ -26,13 +26,13 @@ exports[`App Component > displays the version that matches the environment versi
                 <img
                   alt="CFIA logo"
                   aria-label="Link to CFIA | Lien à l'ACIA"
-                  src="/src/assets/CFIA_Banner.png"
+                  src="CFIA_Banner.png"
                   style="height: 50px;"
                 />
               </a>
             </li>
             <li
-              class="_headerRightText_c7ee54"
+              class="headerRightText"
             >
               Alpha Version
             </li>
@@ -56,7 +56,7 @@ exports[`App Component > displays the version that matches the environment versi
       </svg>
     </header>
     <div
-      class="sc-guDLey cEokNJ"
+      class="sc-gsTDqH gVtqUL"
     >
       <div>
         <a
@@ -66,20 +66,20 @@ exports[`App Component > displays the version that matches the environment versi
         >
           <img
             alt="CFIA logo"
-            src="/src/assets/CFIA_SmartSearch_Logo.png"
+            src="CFIA_SmartSearch_Logo.png"
             style="height: 110px;"
           />
         </a>
       </div>
     </div>
     <div
-      class="sc-dmyCSP cgQPPk"
+      class="sc-dlfmHC cwWZaV"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-fubDmA kGDFDk"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-pGaPU czysfp"
         >
           <svg
             data-testid="search-icon"
@@ -102,7 +102,7 @@ exports[`App Component > displays the version that matches the environment versi
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-kstpWv fEZtjS button"
             data-testid="submit-button"
             type="submit"
           >
@@ -126,7 +126,7 @@ exports[`App Component > displays the version that matches the environment versi
       </form>
     </div>
     <div
-      class="sc-eDLKkx fIWqab"
+      class="sc-eCstZk hTAfyD"
     >
       <text>
         Empowering agency's users with precision search.
@@ -138,9 +138,9 @@ exports[`App Component > displays the version that matches the environment versi
       </text>
     </div>
     <div
-      class="sc-jTQCzO IZJjs"
+      class="sc-jSguLX iAOjcb"
     >
-      v1.0.0
+      v0.2.5
     </div>
   </div>
 </DocumentFragment>

@@ -4,20 +4,16 @@ import { useNavigate } from "react-router-dom";
 import { fetchFilenames } from "../../api/useApiUtil";
 import { useData } from "../../contexts/DataContext";
 import { useLayout } from "../../contexts/LayoutContext";
-import { SearchSource } from "../../types";
 import {
   DebugPanelContainer,
   RadioContainer,
   RadioLabel,
   RadioOption,
 } from "../../styles/indexElements";
+import { SearchSource } from "../../types";
 import "./DebugPanel.css";
 
-interface DebugPanelProps {
-  onSetSimulatedData?: (data: any) => void;
-}
-
-export const DebugPanel: React.FC<DebugPanelProps> = () => {
+export const DebugPanel: React.FC = () => {
   const { isDebugPanelVisible } = useLayout();
   const { currentSearchSource, setCurrentSearchSource, setSearchTerm } =
     useData();
@@ -45,7 +41,7 @@ export const DebugPanel: React.FC<DebugPanelProps> = () => {
 
   const handleFilenameClick = (
     e: React.MouseEvent<HTMLButtonElement>,
-    filename: string,
+    filename: string
   ): void => {
     e.preventDefault();
     // TODO: revisit navigate.

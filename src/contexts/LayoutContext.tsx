@@ -5,6 +5,7 @@ import React, {
   useState,
   type ReactNode,
 } from "react";
+import { config } from "../config";
 
 // Type for your context state
 interface LayoutContextState {
@@ -33,8 +34,7 @@ export const LayoutProvider: React.FC<{ children: ReactNode }> = ({
   const [isAlertBannerVisible, setIsAlertBannerVisible] = useState(false);
 
   useEffect(() => {
-    const debugMode = process.env.REACT_APP_DEBUG_MODE;
-    setIsDebugButtonVisible(debugMode?.toLowerCase() === "true");
+    setIsDebugButtonVisible(config.debugMode);
   }, []);
 
   const toggleDebugPanel = (): void => {

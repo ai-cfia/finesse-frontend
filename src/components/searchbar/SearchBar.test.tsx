@@ -1,36 +1,52 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
+import {
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from "vitest";
 import { useData } from "../../contexts/DataContext";
 import { setupTestEnvVars } from "../../setupTests";
+import { SearchSource } from "../../types";
 import { SearchBar } from "./SearchBar";
 
-jest.mock("../../contexts/DataContext", () => ({
-  useData: jest.fn(),
+vi.mock("../../contexts/DataContext", () => ({
+  useData: vi.fn(),
 }));
 
-jest.mock("react-router-dom", () => ({
-  useNavigate: jest.fn(),
+vi.mock("react-router-dom", () => ({
+  useNavigate: vi.fn(),
 }));
 
 describe("SearchBar", () => {
-  const mockSetSearchTerm = jest.fn();
-  const mockNavigate = jest.fn();
+  const mockSetSearchTerm = vi.fn();
+  const mockNavigate = vi.fn();
+
+  const dataContextMock = {
+    searchTerm: "initial",
+    setSearchTerm: mockSetSearchTerm,
+    currentSearchSource: SearchSource.ailab,
+    setCurrentSearchSource: vi.fn(),
+    queryResult: [],
+    setQueryResult: vi.fn(),
+  };
 
   beforeAll(() => {
     setupTestEnvVars();
   });
 
   beforeEach(() => {
-    (useData as jest.Mock).mockReturnValue({
-      searchTerm: "initial",
-      setSearchTerm: mockSetSearchTerm,
-    });
-    (useNavigate as jest.Mock).mockReturnValue(mockNavigate);
-    jest.spyOn(console, "warn").mockImplementation(() => {});
+    vi.mocked(useData).mockReturnValue(dataContextMock);
+    vi.mocked(useNavigate).mockReturnValue(mockNavigate);
+    vi.spyOn(console, "warn").mockImplementation(() => {});
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it("renders correctly", () => {
