@@ -23,11 +23,26 @@ To get started with the project, follow the steps below:
 
 ### Running application
 
-1. npm start
+`npm start`
+
+### Running the application with docker
+
+1. Build the docker image:
+
+   ```bash
+   docker build \
+   --build-arg ARG_VITE_BACKEND_URL=<finesse-backend-url> \
+   -t finesse-frontend .
+   ```
+
+2. Run the image: `docker run -p 5000:3000 finesse-frontend`.
+
+   Use arg `-e PORT=<port> -p 5000:<port>` if you wish to control the internal
+   port.
 
 ### Testing application
 
-1. npm test
+`npm test`
 
 ### Update app version
 

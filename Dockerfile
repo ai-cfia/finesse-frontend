@@ -12,6 +12,7 @@ ENV VITE_BACKEND_URL=${ARG_VITE_BACKEND_URL:-/api}
 ENV VITE_DEBUG_MODE=${ARG_VITE_DEBUG_MODE:-True}
 ENV VITE_GITHUB_API_URL=${ARG_VITE_GITHUB_API_URL:-https://api.github.com/repos/ai-cfia/finesse-data/contents}
 ENV VITE_SEARCH_SOURCE=${ARG_VITE_SEARCH_SOURCE:-azure}
+ENV PORT=3000
 
 # Copy files
 COPY ./src ./src
