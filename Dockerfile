@@ -21,11 +21,10 @@ COPY tsconfig.node.json .
 COPY vite.config.ts .
 COPY index.html .
 
-RUN npm install -g npm@9.8.1
 RUN npm install --include=dev
 RUN npm run build
 RUN CI=1 npm run test
 
 RUN npm install -g serve
 
-ENTRYPOINT serve -s build
+ENTRYPOINT serve -s dist
