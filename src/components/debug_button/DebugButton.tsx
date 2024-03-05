@@ -1,5 +1,5 @@
 import { FaCog } from "react-icons/fa";
-import { useLayout } from "../../contexts/LayoutContext";
+import { useLayout } from "../../contexts/layoutContext";
 
 interface DebugButtonProps {
   style?: React.CSSProperties;

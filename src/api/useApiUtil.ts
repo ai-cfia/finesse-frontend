@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
 import { config } from "../config";
-import { SearchSource, type QueryResult } from "../types";
+import { ResponseData, SearchSource } from "../types";
 
 // Helper function to construct the endpoint URL using environment variable as base
 export const GetEndpoint = (path: string): string => {
@@ -8,47 +7,20 @@ export const GetEndpoint = (path: string): string => {
   return baseUrl + path;
 };
 
-// TypeScript interfaces to define the structure of expected props and data
-interface UseApiUtilProps {
-  term: string;
-  currentSearchSource: SearchSource;
-}
+// Main search function
+export const search = async (
+  term: string,
+  currentSearchSource: SearchSource
+): Promise<ResponseData | null> => {
+  if (!isNonEmptyString(term)) return null;
 
-// Defining a type for an array of QueryResult objects
-type ResponseData = QueryResult[];
+  if (
+    !isNonEmptyString(config.backendUrl) &&
+    currentSearchSource === SearchSource.static
+  )
+    return await fetchStaticData(term);
 
-export const useApiUtil = ({
-  term,
-  currentSearchSource,
-}: UseApiUtilProps): { data: ResponseData | null } => {
-  const [data, setData] = useState<ResponseData | null>(null);
-
-  useEffect(() => {
-    if (!isNonEmptyString(term)) {
-      setData(null);
-      return;
-    }
-
-    const fetchData = async (): Promise<void> => {
-      if (
-        !isNonEmptyString(config.backendUrl) &&
-        currentSearchSource === SearchSource.static
-      ) {
-        const staticData = await fetchStaticData(term);
-        setData(staticData);
-        return;
-      }
-
-      const backendData = await fetchFromBackend(term, currentSearchSource);
-      setData(backendData);
-    };
-
-    fetchData().catch((error) => {
-      console.error("Error fetching data in fetchData: ", error);
-    });
-  }, [term, currentSearchSource]);
-
-  return { data };
+  return await fetchFromBackend(term, currentSearchSource);
 };
 
 // Function to fetch static data from finesse-data

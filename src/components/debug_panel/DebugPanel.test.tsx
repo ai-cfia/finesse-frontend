@@ -1,8 +1,8 @@
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { config } from "../../config";
-import { DataProvider } from "../../contexts/DataContext";
-import { LayoutProvider } from "../../contexts/LayoutContext";
+import DataProvider from "../../contexts/DataProvider";
+import LayoutProvider from "../../contexts/LayoutProvider";
 import { setupTestEnvVars } from "../../setupTests";
 import { DebugPanel } from "./DebugPanel";
 
@@ -21,11 +21,14 @@ vi.mock("../../api/useApiUtil", () => ({
     await Promise.resolve(["file1", "file2", "file3"]),
 }));
 
-vi.mock("../../contexts/LayoutContext", () => ({
-  useLayout: () => ({ isDebugPanelVisible: true }),
-  LayoutProvider: ({ children }: { children: React.ReactNode }) => (
+vi.mock("../../contexts/LayoutProvider", () => ({
+  default: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
   ),
+}));
+
+vi.mock("../../contexts/layoutContext", () => ({
+  useLayout: () => ({ isDebugPanelVisible: true }),
 }));
 
 describe("DebugPanel Component Tests", () => {

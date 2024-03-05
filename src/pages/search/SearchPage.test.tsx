@@ -7,8 +7,8 @@ import {
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { config } from "../../config";
-import { DataProvider } from "../../contexts/DataContext";
-import { LayoutProvider } from "../../contexts/LayoutContext";
+import DataProvider from "../../contexts/DataProvider";
+import LayoutProvider from "../../contexts/LayoutProvider";
 import { setupTestEnvVars } from "../../setupTests";
 import SearchPage from "./SearchPage";
 

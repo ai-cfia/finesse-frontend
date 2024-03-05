@@ -7,9 +7,9 @@ import {
 } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import { config } from "../../config";
-import { AlertProvider } from "../../contexts/AlertContext";
-import { DataProvider } from "../../contexts/DataContext";
-import { LayoutProvider } from "../../contexts/LayoutContext";
+import AlertProvider from "../../contexts/AlertProvider";
+import DataProvider from "../../contexts/DataProvider";
+import LayoutProvider from "../../contexts/LayoutProvider";
 import { setupTestEnvVars } from "../../setupTests";
 import Home from "./Home"; // Adjust the import path as needed.
 

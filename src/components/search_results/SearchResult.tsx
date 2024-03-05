@@ -1,7 +1,7 @@
 // SearchResult.tsx
 import React from "react";
+import ResultContent from "../highlighted_content/HighlightedContent";
 import "./SearchResultsList.css";
-import HighlightedContent from "../highlighted_content/HighlightedContent";
 
 interface SearchResultProps {
   item: {
@@ -14,7 +14,7 @@ interface SearchResultProps {
 }
 
 // Search Result Component
-const SearchResult: React.FC<SearchResultProps> = ({ item, query }) => {
+const SearchResult: React.FC<SearchResultProps> = ({ item }) => {
   return (
     <div className="search-result">
       <a
@@ -32,7 +32,7 @@ const SearchResult: React.FC<SearchResultProps> = ({ item, query }) => {
         </div>
       </a>
       <div>
-        <HighlightedContent content={item.content} query={query} />
+        <ResultContent content={item.content} />
       </div>
     </div>
   );

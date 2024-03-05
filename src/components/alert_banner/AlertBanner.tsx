@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { useAlert } from "../../contexts/AlertContext";
-import { useLayout } from "../../contexts/LayoutContext";
+import { useAlert } from "../../contexts/alertContext";
+import { useLayout } from "../../contexts/layoutContext";
 import { WarningLabel } from "../../styles/indexElements";
 
 const AlertBanner: React.FC = () => {

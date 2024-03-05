@@ -2,13 +2,13 @@ import * as React from "react";
 import { useState } from "react";
 import { FaArrowRight, FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import { useData } from "../../contexts/DataContext";
-import "./SearchBar.css";
+import { useData } from "../../contexts/dataContext";
 import {
   FormWrapper,
   InputWrapper,
   SearchButton,
 } from "../../styles/indexElements";
+import "./SearchBar.css";
 
 const SEARCH_PLACEHOLDER = "Type to search...";
 

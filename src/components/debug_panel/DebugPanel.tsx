@@ -2,8 +2,8 @@ import * as React from "react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchFilenames } from "../../api/useApiUtil";
-import { useData } from "../../contexts/DataContext";
-import { useLayout } from "../../contexts/LayoutContext";
+import { useData } from "../../contexts/dataContext";
+import { useLayout } from "../../contexts/layoutContext";
 import {
   DebugPanelContainer,
   RadioContainer,
