@@ -125,7 +125,7 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
     <div
       class="sc-jTQCzO IZJjs"
     >
-      v1.0.0
+      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -271,7 +271,7 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
     <div
       class="sc-jTQCzO IZJjs"
     >
-      v1.0.0
+      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -474,7 +474,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
     <div
       class="sc-jTQCzO IZJjs"
     >
-      v1.0.0
+      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -620,7 +620,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
     <div
       class="sc-jTQCzO IZJjs"
     >
-      v1.0.0
+      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -766,7 +766,7 @@ exports[`Home > renders the Home page correctly 1`] = `
     <div
       class="sc-jTQCzO IZJjs"
     >
-      v1.0.0
+      v1.0.1
     </div>
   </div>
 </DocumentFragment>

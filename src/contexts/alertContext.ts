@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useContext } from "react";
 
 // Type for the alert context state
 interface AlertContextState {
@@ -12,23 +7,10 @@ interface AlertContextState {
 }
 
 // Create the context with a default value
-const AlertContext = createContext<AlertContextState>({
+export const AlertContext = createContext<AlertContextState>({
   alertMessage: null,
   setAlertMessage: () => {},
 });
-
-// Create a provider component for the alert context
-export const AlertProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
-  const [alertMessage, setAlertMessage] = useState<string | null>(null);
-
-  return (
-    <AlertContext.Provider value={{ alertMessage, setAlertMessage }}>
-      {children}
-    </AlertContext.Provider>
-  );
-};
 
 // Custom hook to use the alert context
 export const useAlert = (): AlertContextState => {

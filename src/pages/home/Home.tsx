@@ -4,8 +4,8 @@ import Header from "../../components/header/Header";
 import CFIALogo from "../../components/logo/CFIALogo";
 import { SearchBar } from "../../components/searchbar/SearchBar";
 import { config } from "../../config";
-import { useAlert } from "../../contexts/AlertContext";
-import { useData } from "../../contexts/DataContext";
+import { useAlert } from "../../contexts/alertContext";
+import { useData } from "../../contexts/dataContext";
 import { environment } from "../../environments/environment";
 import {
   LayoutContainer,

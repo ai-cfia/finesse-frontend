@@ -17,3 +17,5 @@ export interface QueryResult {
   title: string;
   content: string;
 }
+
+export type ResponseData = QueryResult[];

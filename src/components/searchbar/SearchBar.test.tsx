@@ -9,12 +9,12 @@ import {
   it,
   vi,
 } from "vitest";
-import { useData } from "../../contexts/DataContext";
+import { useData } from "../../contexts/dataContext";
 import { setupTestEnvVars } from "../../setupTests";
 import { SearchSource } from "../../types";
 import { SearchBar } from "./SearchBar";
 
-vi.mock("../../contexts/DataContext", () => ({
+vi.mock("../../contexts/dataContext", () => ({
   useData: vi.fn(),
 }));
 
