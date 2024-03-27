@@ -59,16 +59,16 @@ describe("DebugPanel Component Tests", () => {
     process.env = originalEnv;
   });
 
-  test("renders radio buttons for search sources", async () => {
+  it("renders radio buttons for search sources", async () => {
     const view = renderDebugPanel();
     await waitFor(() => {
       const radioButtons = screen.queryAllByRole("radio");
-      expect(radioButtons.length).toBe(3);
+      expect(radioButtons.length).toBe(4);
     });
     expect(view).toMatchSnapshot();
   });
 
-  test("can switch to simulated data and display filenames", async () => {
+  it("can switch to simulated data and display filenames", async () => {
     const view = renderDebugPanel();
     expect(screen.queryByText("file1")).not.toBeInTheDocument();
     expect(screen.queryByText("file2")).not.toBeInTheDocument();
@@ -83,7 +83,7 @@ describe("DebugPanel Component Tests", () => {
     });
   });
 
-  test("clicking on a filename button updates the search term", async () => {
+  it("clicking on a filename button updates the search term", async () => {
     const view = renderDebugPanel();
 
     expect(screen.queryByText("file1")).not.toBeInTheDocument();
@@ -101,53 +101,80 @@ describe("DebugPanel Component Tests", () => {
     });
   });
 
-  test('selects the "AI Lab" radio button when VITE_SEARCH_SOURCE is ailab', async () => {
+  it('selects the "AI Lab" radio button when VITE_SEARCH_SOURCE is ailab', async () => {
     config.searchSource = "ailab";
     const view = renderDebugPanel();
 
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
     const staticRadioButton = screen.getByTestId("search-source-static");
+    const llamaRadioButton = screen.getByTestId("search-source-llama");
     expect(ailabRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeInTheDocument();
     expect(staticRadioButton).toBeInTheDocument();
+    expect(llamaRadioButton).toBeInTheDocument();
     expect(ailabRadioButton).toBeChecked();
     expect(azureRadioButton).not.toBeChecked();
     expect(staticRadioButton).not.toBeChecked();
+    expect(llamaRadioButton).not.toBeChecked();
     expect(view).toMatchSnapshot();
   });
 
-  test('selects the "Azure AI" radio button when VITE_SEARCH_SOURCE is azure', async () => {
+  it('selects the "Azure AI" radio button when VITE_SEARCH_SOURCE is azure', async () => {
     config.searchSource = "azure";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
     const staticRadioButton = screen.getByTestId("search-source-static");
+    const llamaRadioButton = screen.getByTestId("search-source-llama");
     expect(ailabRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeInTheDocument();
     expect(staticRadioButton).toBeInTheDocument();
+    expect(llamaRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeChecked();
     expect(ailabRadioButton).not.toBeChecked();
     expect(staticRadioButton).not.toBeChecked();
+    expect(llamaRadioButton).not.toBeChecked();
     expect(view).toMatchSnapshot();
   });
 
-  test('selects the "Simulated Data" radio button when VITE_SEARCH_SOURCE is static', async () => {
+  it('selects the "Simulated Data" radio button when VITE_SEARCH_SOURCE is static', async () => {
     config.searchSource = "static";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
     const staticRadioButton = screen.getByTestId("search-source-static");
+    const llamaRadioButton = screen.getByTestId("search-source-llama");
     expect(ailabRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeInTheDocument();
     expect(staticRadioButton).toBeInTheDocument();
+    expect(llamaRadioButton).toBeInTheDocument();
     expect(staticRadioButton).toBeChecked();
     expect(ailabRadioButton).not.toBeChecked();
     expect(azureRadioButton).not.toBeChecked();
+    expect(llamaRadioButton).not.toBeChecked();
     expect(view).toMatchSnapshot();
   });
 
-  test("no radio button is selected when VITE_SEARCH_SOURCE has a bad value", async () => {
+  it('selects the "Simulated Data" radio button when VITE_SEARCH_SOURCE is static', async () => {
+    config.searchSource = "llama";
+    const view = renderDebugPanel();
+    const ailabRadioButton = screen.getByTestId("search-source-ailab");
+    const azureRadioButton = screen.getByTestId("search-source-azure");
+    const staticRadioButton = screen.getByTestId("search-source-static");
+    const llamaRadioButton = screen.getByTestId("search-source-llama");
+    expect(ailabRadioButton).toBeInTheDocument();
+    expect(azureRadioButton).toBeInTheDocument();
+    expect(staticRadioButton).toBeInTheDocument();
+    expect(llamaRadioButton).toBeInTheDocument();
+    expect(staticRadioButton).not.toBeChecked();
+    expect(ailabRadioButton).not.toBeChecked();
+    expect(azureRadioButton).not.toBeChecked();
+    expect(llamaRadioButton).toBeChecked();
+    expect(view).toMatchSnapshot();
+  });
+
+  it("selects no radio button when VITE_SEARCH_SOURCE has a bad value", async () => {
     config.searchSource = "bad";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");

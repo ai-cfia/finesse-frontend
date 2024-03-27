@@ -354,7 +354,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             <span
               class="sc-brSamD fpMuCT"
             >
-              Use AI Lab search
+              Use AI Lab Search
             </span>
           </label>
           <label
@@ -370,6 +370,20 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
               class="sc-brSamD fpMuCT"
             >
               Use Azure AI Search
+            </span>
+          </label>
+          <label
+            class="sc-eTNRI cNqKFl"
+          >
+            <input
+              data-testid="search-source-llama"
+              type="radio"
+              value="llama"
+            />
+            <span
+              class="sc-brSamD fpMuCT"
+            >
+              Use AI Lab Llama Search
             </span>
           </label>
           <label

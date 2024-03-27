@@ -65,7 +65,7 @@ export const DebugPanel: React.FC = () => {
               setCurrentSearchSource(SearchSource.ailab);
             }}
           />
-          <RadioLabel>Use AI Lab search</RadioLabel>
+          <RadioLabel>Use AI Lab Search</RadioLabel>
         </RadioOption>
         <RadioOption>
           <input
@@ -78,6 +78,18 @@ export const DebugPanel: React.FC = () => {
             }}
           />
           <RadioLabel>Use Azure AI Search</RadioLabel>
+        </RadioOption>
+        <RadioOption>
+          <input
+            data-testid="search-source-llama"
+            type="radio"
+            value="llama"
+            checked={currentSearchSource === SearchSource.llama}
+            onChange={() => {
+              setCurrentSearchSource(SearchSource.llama);
+            }}
+          />
+          <RadioLabel>Use AI Lab Llama Search</RadioLabel>
         </RadioOption>
         <RadioOption>
           <input
