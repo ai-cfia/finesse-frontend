@@ -1,240 +1,5 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DebugPanel Component Tests > can switch to simulated data and display filenames 1`] = `
-<div
-  class="sc-irLvIq hkeVyu"
-  data-testid="debug-panel"
->
-  <h4
-    style="color: black;"
-  >
-    Debug Panel
-  </h4>
-  <div
-    class="sc-csKJxZ ilyJmt"
-  >
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-ailab"
-        type="radio"
-        value="ailab"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use AI Lab search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        checked=""
-        data-testid="search-source-azure"
-        type="radio"
-        value="azure"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Azure AI Search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-static"
-        type="radio"
-        value="simulated"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Simulated Data
-      </span>
-    </label>
-  </div>
-  <div
-    class="input-container"
-  >
-    <div>
-      <h5
-        style="color: black;"
-      >
-        Filenames:
-      </h5>
-      <ul>
-        <li>
-          <button>
-            file1
-          </button>
-        </li>
-        <li>
-          <button>
-            file2
-          </button>
-        </li>
-        <li>
-          <button>
-            file3
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DebugPanel Component Tests > clicking on a filename button updates the search term 1`] = `
-<div
-  class="sc-irLvIq hkeVyu"
-  data-testid="debug-panel"
->
-  <h4
-    style="color: black;"
-  >
-    Debug Panel
-  </h4>
-  <div
-    class="sc-csKJxZ ilyJmt"
-  >
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-ailab"
-        type="radio"
-        value="ailab"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use AI Lab search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        checked=""
-        data-testid="search-source-azure"
-        type="radio"
-        value="azure"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Azure AI Search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-static"
-        type="radio"
-        value="simulated"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Simulated Data
-      </span>
-    </label>
-  </div>
-  <div
-    class="input-container"
-  >
-    <div>
-      <h5
-        style="color: black;"
-      >
-        Filenames:
-      </h5>
-      <ul>
-        <li>
-          <button>
-            file1
-          </button>
-        </li>
-        <li>
-          <button>
-            file2
-          </button>
-        </li>
-        <li>
-          <button>
-            file3
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`DebugPanel Component Tests > no radio button is selected when VITE_SEARCH_SOURCE has a bad value 1`] = `
-<div
-  class="sc-irLvIq hkeVyu"
-  data-testid="debug-panel"
->
-  <h4
-    style="color: black;"
-  >
-    Debug Panel
-  </h4>
-  <div
-    class="sc-csKJxZ ilyJmt"
-  >
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-ailab"
-        type="radio"
-        value="ailab"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use AI Lab search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-azure"
-        type="radio"
-        value="azure"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Azure AI Search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-static"
-        type="radio"
-        value="simulated"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Simulated Data
-      </span>
-    </label>
-  </div>
-</div>
-`;
-
 exports[`DebugPanel Component Tests > renders radio buttons for search sources 1`] = `
 <div
   class="sc-irLvIq hkeVyu"
@@ -259,7 +24,7 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab search
+        Use AI Lab Search
       </span>
     </label>
     <label
@@ -281,14 +46,133 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-static"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="simulated"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use Simulated Data
+        Use AI Lab LlamaIndex Search
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_SOURCE has a bad value 1`] = `
+<div
+  class="sc-irLvIq hkeVyu"
+  data-testid="debug-panel"
+>
+  <h4
+    style="color: black;"
+  >
+    Debug Panel
+  </h4>
+  <div
+    class="sc-csKJxZ ilyJmt"
+  >
+    <label
+      class="sc-eTNRI cNqKFl"
+    >
+      <input
+        data-testid="search-source-ailab"
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="sc-brSamD fpMuCT"
+      >
+        Use AI Lab Search
+      </span>
+    </label>
+    <label
+      class="sc-eTNRI cNqKFl"
+    >
+      <input
+        data-testid="search-source-azure"
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="sc-brSamD fpMuCT"
+      >
+        Use Azure AI Search
+      </span>
+    </label>
+    <label
+      class="sc-eTNRI cNqKFl"
+    >
+      <input
+        data-testid="search-source-llamaindex"
+        type="radio"
+        value="llamaindex"
+      />
+      <span
+        class="sc-brSamD fpMuCT"
+      >
+        Use AI Lab LlamaIndex Search
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio button when VITE_SEARCH_SOURCE is llamaindex 1`] = `
+<div
+  class="sc-irLvIq hkeVyu"
+  data-testid="debug-panel"
+>
+  <h4
+    style="color: black;"
+  >
+    Debug Panel
+  </h4>
+  <div
+    class="sc-csKJxZ ilyJmt"
+  >
+    <label
+      class="sc-eTNRI cNqKFl"
+    >
+      <input
+        data-testid="search-source-ailab"
+        type="radio"
+        value="ailab"
+      />
+      <span
+        class="sc-brSamD fpMuCT"
+      >
+        Use AI Lab Search
+      </span>
+    </label>
+    <label
+      class="sc-eTNRI cNqKFl"
+    >
+      <input
+        data-testid="search-source-azure"
+        type="radio"
+        value="azure"
+      />
+      <span
+        class="sc-brSamD fpMuCT"
+      >
+        Use Azure AI Search
+      </span>
+    </label>
+    <label
+      class="sc-eTNRI cNqKFl"
+    >
+      <input
+        checked=""
+        data-testid="search-source-llamaindex"
+        type="radio"
+        value="llamaindex"
+      />
+      <span
+        class="sc-brSamD fpMuCT"
+      >
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
@@ -320,7 +204,7 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab search
+        Use AI Lab Search
       </span>
     </label>
     <label
@@ -341,14 +225,14 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-static"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="simulated"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use Simulated Data
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
@@ -379,7 +263,7 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab search
+        Use AI Lab Search
       </span>
     </label>
     <label
@@ -401,88 +285,16 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-static"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="simulated"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use Simulated Data
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
-  </div>
-</div>
-`;
-
-exports[`DebugPanel Component Tests > selects the "Simulated Data" radio button when VITE_SEARCH_SOURCE is static 1`] = `
-<div
-  class="sc-irLvIq hkeVyu"
-  data-testid="debug-panel"
->
-  <h4
-    style="color: black;"
-  >
-    Debug Panel
-  </h4>
-  <div
-    class="sc-csKJxZ ilyJmt"
-  >
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-ailab"
-        type="radio"
-        value="ailab"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use AI Lab search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        data-testid="search-source-azure"
-        type="radio"
-        value="azure"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Azure AI Search
-      </span>
-    </label>
-    <label
-      class="sc-eTNRI cNqKFl"
-    >
-      <input
-        checked=""
-        data-testid="search-source-static"
-        type="radio"
-        value="simulated"
-      />
-      <span
-        class="sc-brSamD fpMuCT"
-      >
-        Use Simulated Data
-      </span>
-    </label>
-  </div>
-  <div
-    class="input-container"
-  >
-    <div>
-      <h5
-        style="color: black;"
-      >
-        Filenames:
-      </h5>
-      <ul />
-    </div>
   </div>
 </div>
 `;

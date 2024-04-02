@@ -13,65 +13,7 @@ export const search = async (
   currentSearchSource: SearchSource
 ): Promise<ResponseData | null> => {
   if (!isNonEmptyString(term)) return null;
-
-  if (
-    !isNonEmptyString(config.backendUrl) &&
-    currentSearchSource === SearchSource.static
-  )
-    return await fetchStaticData(term);
-
   return await fetchFromBackend(term, currentSearchSource);
-};
-
-// Function to fetch static data from finesse-data
-export const fetchStaticData = async (
-  term: string
-): Promise<ResponseData | null> => {
-  const githubApiUrl = config.githubApiUrl ?? "";
-
-  try {
-    // Fetching the list of files from GitHub repository
-    const response = await fetch(githubApiUrl);
-    if (!response.ok) {
-      console.error("Failed to fetch data with status:", response.status);
-      return null;
-    }
-
-    // Parsing the JSON response to an array of files with their download URLs
-    const data: Array<{ name: string; download_url: string }> =
-      await response.json();
-
-    // Normalizing the search term to lower case
-    const normalizedTerm = term.toLowerCase();
-
-    // Finding the matching file based on the normalized term
-    const matchingFile = data.find((file) =>
-      file.name.toLowerCase().includes(normalizedTerm + ".json")
-    );
-
-    // Handling the case where no matching file is found
-    if (matchingFile == null) {
-      console.log("No matching file found");
-      return null;
-    }
-
-    // Fetching the actual data from the matched file's download URL
-    const resultsResponse = await fetch(matchingFile.download_url);
-    if (!resultsResponse.ok) {
-      console.error(
-        "Results fetch failed with status: ",
-        resultsResponse.status
-      );
-      return null;
-    }
-
-    // Parsing the fetched data into the expected format and setting it to state
-    const resultsData: ResponseData = await resultsResponse.json();
-    return resultsData;
-  } catch (error) {
-    console.error("API request failed with error: ", error);
-    return null;
-  }
 };
 
 // Function to search from backend

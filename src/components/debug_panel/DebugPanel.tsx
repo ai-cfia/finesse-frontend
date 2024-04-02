@@ -1,7 +1,4 @@
 import * as React from "react";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { fetchFilenames } from "../../api/useApiUtil";
 import { useData } from "../../contexts/dataContext";
 import { useLayout } from "../../contexts/layoutContext";
 import {
@@ -15,40 +12,8 @@ import "./DebugPanel.css";
 
 export const DebugPanel: React.FC = () => {
   const { isDebugPanelVisible } = useLayout();
-  const { currentSearchSource, setCurrentSearchSource, setSearchTerm } =
+  const { currentSearchSource, setCurrentSearchSource } =
     useData();
-  const [filenames, setFilenames] = useState<string[]>([]);
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    if (currentSearchSource === SearchSource.static) {
-      const loadFilenames = async (): Promise<void> => {
-        const fetchedFilenames = await fetchFilenames();
-        setFilenames(fetchedFilenames);
-      };
-
-      loadFilenames()
-        .then(() => {
-          console.log("Filenames loaded successfully");
-        })
-        .catch((error) => {
-          console.error("Error loading filenames", error);
-        });
-    } else {
-      setFilenames([]);
-    }
-  }, [currentSearchSource]);
-
-  const handleFilenameClick = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    filename: string
-  ): void => {
-    e.preventDefault();
-    // TODO: revisit navigate.
-    navigate("/search");
-    setSearchTerm(filename);
-    alert("Search query set successfully!");
-  };
 
   if (!isDebugPanelVisible) return null;
   return (
@@ -65,7 +30,7 @@ export const DebugPanel: React.FC = () => {
               setCurrentSearchSource(SearchSource.ailab);
             }}
           />
-          <RadioLabel>Use AI Lab search</RadioLabel>
+          <RadioLabel>Use AI Lab Search</RadioLabel>
         </RadioOption>
         <RadioOption>
           <input
@@ -81,37 +46,17 @@ export const DebugPanel: React.FC = () => {
         </RadioOption>
         <RadioOption>
           <input
-            data-testid="search-source-static"
+            data-testid="search-source-llamaindex"
             type="radio"
-            value="simulated"
-            checked={currentSearchSource === SearchSource.static}
+            value="llamaindex"
+            checked={currentSearchSource === SearchSource.llamaindex}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.static);
+              setCurrentSearchSource(SearchSource.llamaindex);
             }}
           />
-          <RadioLabel>Use Simulated Data</RadioLabel>
+          <RadioLabel>Use AI Lab LlamaIndex Search</RadioLabel>
         </RadioOption>
       </RadioContainer>
-      {currentSearchSource === SearchSource.static && (
-        <div className="input-container">
-          <div>
-            <h5 style={{ color: "black" }}>Filenames:</h5>
-            <ul>
-              {filenames.map((filename, index) => (
-                <li key={index}>
-                  <button
-                    onClick={(e) => {
-                      handleFilenameClick(e, filename);
-                    }}
-                  >
-                    {filename}
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      )}
     </DebugPanelContainer>
   );
 };
