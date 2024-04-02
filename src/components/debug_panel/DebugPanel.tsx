@@ -46,15 +46,15 @@ export const DebugPanel: React.FC = () => {
         </RadioOption>
         <RadioOption>
           <input
-            data-testid="search-source-llama"
+            data-testid="search-source-llamaindex"
             type="radio"
-            value="llama"
-            checked={currentSearchSource === SearchSource.llama}
+            value="llamaindex"
+            checked={currentSearchSource === SearchSource.llamaindex}
             onChange={() => {
-              setCurrentSearchSource(SearchSource.llama);
+              setCurrentSearchSource(SearchSource.llamaindex);
             }}
           />
-          <RadioLabel>Use AI Lab Llama Search</RadioLabel>
+          <RadioLabel>Use AI Lab LlamaIndex Search</RadioLabel>
         </RadioOption>
       </RadioContainer>
     </DebugPanelContainer>

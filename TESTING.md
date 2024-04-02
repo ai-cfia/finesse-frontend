@@ -134,7 +134,7 @@ differentiate the results based on the source.
    results.
 2. Select `Use Azure AI Search`, perform the same search, and note any changes
    in search results.
-3. Select `Use AI Lab Llama Search`, perform the same search, and note any
+3. Select `Use AI Lab LlamaIndex Search`, perform the same search, and note any
    changes in search results.
 
 **Expected Results:**

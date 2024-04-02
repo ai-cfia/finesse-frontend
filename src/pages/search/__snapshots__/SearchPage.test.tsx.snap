@@ -348,14 +348,14 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
             class="sc-eTNRI cNqKFl"
           >
             <input
-              data-testid="search-source-llama"
+              data-testid="search-source-llamaindex"
               type="radio"
-              value="llama"
+              value="llamaindex"
             />
             <span
               class="sc-brSamD fpMuCT"
             >
-              Use AI Lab Llama Search
+              Use AI Lab LlamaIndex Search
             </span>
           </label>
         </div>

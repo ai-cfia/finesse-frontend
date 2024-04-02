@@ -1,7 +1,7 @@
 export enum SearchSource {
   ailab = "ailab",
   azure = "azure",
-  llama = "llama",
+  llamaindex = "llamaindex",
 }
 
 export enum EDirection {

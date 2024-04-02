@@ -74,13 +74,15 @@ describe("DebugPanel Component Tests", () => {
 
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
-    const llamaRadioButton = screen.getByTestId("search-source-llama");
+    const llamaindexRadioButton = screen.getByTestId(
+      "search-source-llamaindex"
+    );
     expect(ailabRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeInTheDocument();
-    expect(llamaRadioButton).toBeInTheDocument();
+    expect(llamaindexRadioButton).toBeInTheDocument();
     expect(ailabRadioButton).toBeChecked();
     expect(azureRadioButton).not.toBeChecked();
-    expect(llamaRadioButton).not.toBeChecked();
+    expect(llamaindexRadioButton).not.toBeChecked();
     expect(view).toMatchSnapshot();
   });
 
@@ -89,28 +91,32 @@ describe("DebugPanel Component Tests", () => {
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
-    const llamaRadioButton = screen.getByTestId("search-source-llama");
+    const llamaindexRadioButton = screen.getByTestId(
+      "search-source-llamaindex"
+    );
     expect(ailabRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeInTheDocument();
-    expect(llamaRadioButton).toBeInTheDocument();
+    expect(llamaindexRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeChecked();
     expect(ailabRadioButton).not.toBeChecked();
-    expect(llamaRadioButton).not.toBeChecked();
+    expect(llamaindexRadioButton).not.toBeChecked();
     expect(view).toMatchSnapshot();
   });
 
-  it('selects the "AI Lab Llama" radio button when VITE_SEARCH_SOURCE is llama', async () => {
-    config.searchSource = "llama";
+  it('selects the "AI Lab LlamaIndex" radio button when VITE_SEARCH_SOURCE is llamaindex', async () => {
+    config.searchSource = "llamaindex";
     const view = renderDebugPanel();
     const ailabRadioButton = screen.getByTestId("search-source-ailab");
     const azureRadioButton = screen.getByTestId("search-source-azure");
-    const llamaRadioButton = screen.getByTestId("search-source-llama");
+    const llamaindexRadioButton = screen.getByTestId(
+      "search-source-llamaindex"
+    );
     expect(ailabRadioButton).toBeInTheDocument();
     expect(azureRadioButton).toBeInTheDocument();
-    expect(llamaRadioButton).toBeInTheDocument();
+    expect(llamaindexRadioButton).toBeInTheDocument();
     expect(ailabRadioButton).not.toBeChecked();
     expect(azureRadioButton).not.toBeChecked();
-    expect(llamaRadioButton).toBeChecked();
+    expect(llamaindexRadioButton).toBeChecked();
     expect(view).toMatchSnapshot();
   });
 

@@ -46,14 +46,14 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-llama"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="llama"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab Llama Search
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
@@ -105,21 +105,21 @@ exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_S
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-llama"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="llama"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab Llama Search
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
 </div>
 `;
 
-exports[`DebugPanel Component Tests > selects the "AI Lab Llama" radio button when VITE_SEARCH_SOURCE is llama 1`] = `
+exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio button when VITE_SEARCH_SOURCE is llamaindex 1`] = `
 <div
   class="sc-irLvIq hkeVyu"
   data-testid="debug-panel"
@@ -165,14 +165,14 @@ exports[`DebugPanel Component Tests > selects the "AI Lab Llama" radio button wh
     >
       <input
         checked=""
-        data-testid="search-source-llama"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="llama"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab Llama Search
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
@@ -225,14 +225,14 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-llama"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="llama"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab Llama Search
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
@@ -285,14 +285,14 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
       class="sc-eTNRI cNqKFl"
     >
       <input
-        data-testid="search-source-llama"
+        data-testid="search-source-llamaindex"
         type="radio"
-        value="llama"
+        value="llamaindex"
       />
       <span
         class="sc-brSamD fpMuCT"
       >
-        Use AI Lab Llama Search
+        Use AI Lab LlamaIndex Search
       </span>
     </label>
   </div>
