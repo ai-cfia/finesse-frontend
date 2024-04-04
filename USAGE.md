@@ -23,7 +23,7 @@ To get started with the project, follow the steps below:
 
 ### Running application
 
-`npm start`
+`npm run dev`
 
 ### Running the application with docker
 

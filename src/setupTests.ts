@@ -7,7 +7,6 @@ import { config } from "./config";
 
 export const setupTestEnvVars = (): void => {
   config.backendUrl = "backend";
-  config.basename = "/";
   config.debugMode = true;
   config.githubApiUrl = "github";
 };

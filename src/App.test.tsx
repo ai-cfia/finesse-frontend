@@ -9,7 +9,7 @@ describe("App Component", () => {
   });
 
   it("displays the version that matches the environment version", () => {
-    const { asFragment } = render(<App basename="/" />);
+    const { asFragment } = render(<App />);
     expect(screen.getByText("v" + environment.version)).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
