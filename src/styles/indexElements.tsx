@@ -47,8 +47,8 @@ export const SloganContainer = styled.div`
 
 export const VersionTextContainer = styled.div`
   position: fixed;
-  bottom: 20px;
-  left: 50%;
+  top: 65px;
+  right: 25px;
   transform: translateX(-50%);
   text-align: center;
   color: grey;
