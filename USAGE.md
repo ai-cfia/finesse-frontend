@@ -44,6 +44,10 @@ To get started with the project, follow the steps below:
 
 `npm test`
 
+### Updating test snapshots
+
+`npm run test:update`
+
 ### Update app version
 
 1. Change the version in `package.json`
