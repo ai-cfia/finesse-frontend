@@ -6,13 +6,11 @@ import { SearchBar } from "../../components/searchbar/SearchBar";
 import { config } from "../../config";
 import { useAlert } from "../../contexts/alertContext";
 import { useData } from "../../contexts/dataContext";
-import { environment } from "../../environments/environment";
 import {
   LayoutContainer,
   LogoContainer,
   SearchBarContainer,
   SloganContainer,
-  VersionTextContainer,
 } from "../../styles/indexElements";
 import { EDirection } from "../../types";
 
