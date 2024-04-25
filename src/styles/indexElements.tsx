@@ -45,17 +45,6 @@ export const SloganContainer = styled.div`
   color: grey;
 `;
 
-export const VersionTextContainer = styled.div`
-  position: fixed;
-  top: 65px;
-  right: 25px;
-  transform: translateX(-50%);
-  text-align: center;
-  color: grey;
-  font-size: 16px;
-  font-weight: bold;
-`;
-
 export const SearchPageHeaderContainer = styled.div`
   display: flex;
   top: 0;

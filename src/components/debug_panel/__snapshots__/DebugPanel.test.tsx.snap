@@ -2,7 +2,7 @@
 
 exports[`DebugPanel Component Tests > renders radio buttons for search sources 1`] = `
 <div
-  class="sc-irLvIq hkeVyu"
+  class="sc-kFCroH IqMcE"
   data-testid="debug-panel"
 >
   <h4
@@ -11,10 +11,10 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
     Debug Panel
   </h4>
   <div
-    class="sc-csKJxZ ilyJmt"
+    class="sc-irLvIq cxLSMH"
   >
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-ailab"
@@ -22,13 +22,13 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
         value="ailab"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         checked=""
@@ -37,13 +37,13 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
         value="azure"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-llamaindex"
@@ -51,7 +51,7 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
         value="llamaindex"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab LlamaIndex Search
       </span>
@@ -62,7 +62,7 @@ exports[`DebugPanel Component Tests > renders radio buttons for search sources 1
 
 exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_SOURCE has a bad value 1`] = `
 <div
-  class="sc-irLvIq hkeVyu"
+  class="sc-kFCroH IqMcE"
   data-testid="debug-panel"
 >
   <h4
@@ -71,10 +71,10 @@ exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_S
     Debug Panel
   </h4>
   <div
-    class="sc-csKJxZ ilyJmt"
+    class="sc-irLvIq cxLSMH"
   >
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-ailab"
@@ -82,13 +82,13 @@ exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_S
         value="ailab"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-azure"
@@ -96,13 +96,13 @@ exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_S
         value="azure"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-llamaindex"
@@ -110,7 +110,7 @@ exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_S
         value="llamaindex"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab LlamaIndex Search
       </span>
@@ -121,7 +121,7 @@ exports[`DebugPanel Component Tests > selects no radio button when VITE_SEARCH_S
 
 exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio button when VITE_SEARCH_SOURCE is llamaindex 1`] = `
 <div
-  class="sc-irLvIq hkeVyu"
+  class="sc-kFCroH IqMcE"
   data-testid="debug-panel"
 >
   <h4
@@ -130,10 +130,10 @@ exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio butt
     Debug Panel
   </h4>
   <div
-    class="sc-csKJxZ ilyJmt"
+    class="sc-irLvIq cxLSMH"
   >
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-ailab"
@@ -141,13 +141,13 @@ exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio butt
         value="ailab"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-azure"
@@ -155,13 +155,13 @@ exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio butt
         value="azure"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         checked=""
@@ -170,7 +170,7 @@ exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio butt
         value="llamaindex"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab LlamaIndex Search
       </span>
@@ -181,7 +181,7 @@ exports[`DebugPanel Component Tests > selects the "AI Lab LlamaIndex" radio butt
 
 exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VITE_SEARCH_SOURCE is ailab 1`] = `
 <div
-  class="sc-irLvIq hkeVyu"
+  class="sc-kFCroH IqMcE"
   data-testid="debug-panel"
 >
   <h4
@@ -190,10 +190,10 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
     Debug Panel
   </h4>
   <div
-    class="sc-csKJxZ ilyJmt"
+    class="sc-irLvIq cxLSMH"
   >
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         checked=""
@@ -202,13 +202,13 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
         value="ailab"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-azure"
@@ -216,13 +216,13 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
         value="azure"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-llamaindex"
@@ -230,7 +230,7 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
         value="llamaindex"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab LlamaIndex Search
       </span>
@@ -241,7 +241,7 @@ exports[`DebugPanel Component Tests > selects the "AI Lab" radio button when VIT
 
 exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when VITE_SEARCH_SOURCE is azure 1`] = `
 <div
-  class="sc-irLvIq hkeVyu"
+  class="sc-kFCroH IqMcE"
   data-testid="debug-panel"
 >
   <h4
@@ -250,10 +250,10 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
     Debug Panel
   </h4>
   <div
-    class="sc-csKJxZ ilyJmt"
+    class="sc-irLvIq cxLSMH"
   >
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-ailab"
@@ -261,13 +261,13 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
         value="ailab"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         checked=""
@@ -276,13 +276,13 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
         value="azure"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use Azure AI Search
       </span>
     </label>
     <label
-      class="sc-eTNRI cNqKFl"
+      class="sc-csKJxZ kZvwRK"
     >
       <input
         data-testid="search-source-llamaindex"
@@ -290,7 +290,7 @@ exports[`DebugPanel Component Tests > selects the "Azure AI" radio button when V
         value="llamaindex"
       />
       <span
-        class="sc-brSamD fpMuCT"
+        class="sc-eTNRI dNRwTo"
       >
         Use AI Lab LlamaIndex Search
       </span>

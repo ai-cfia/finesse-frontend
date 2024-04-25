@@ -63,9 +63,6 @@ const Home: React.FC = () => {
           précision.
         </text>
       </SloganContainer>
-      <VersionTextContainer>
-        {environment.version !== "" ? "v" + environment.version : ""}
-      </VersionTextContainer>
     </LayoutContainer>
   );
 };
