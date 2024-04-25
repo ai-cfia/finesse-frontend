@@ -34,7 +34,7 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v1.0.1
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -151,7 +151,7 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v1.0.1
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -283,7 +283,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v1.0.1
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -472,7 +472,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 2
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v1.0.1
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
