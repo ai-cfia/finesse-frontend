@@ -23,7 +23,7 @@ To get started with the project, follow the steps below:
 
 ### Running application
 
-`npm start`
+`npm run dev`
 
 ### Running the application with docker
 
@@ -43,6 +43,10 @@ To get started with the project, follow the steps below:
 ### Testing application
 
 `npm test`
+
+### Updating test snapshots
+
+`npm run test:update`
 
 ### Update app version
 

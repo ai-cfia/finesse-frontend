@@ -1,6 +1,5 @@
 export const config = {
   backendUrl: import.meta.env.VITE_BACKEND_URL,
-  basename: import.meta.env.VITE_BASENAME,
   debugMode: import.meta.env.VITE_DEBUG_MODE?.toLowerCase() === "true",
   githubApiUrl:
     import.meta.env.VITE_GITHUB_API_URL ||

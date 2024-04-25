@@ -9,8 +9,8 @@ describe("App Component", () => {
   });
 
   it("displays the version that matches the environment version", () => {
-    const { asFragment } = render(<App basename="/" />);
-    expect(screen.getByText("v" + environment.version)).toBeInTheDocument();
+    const { asFragment } = render(<App />);
+    expect(screen.getByText("Alpha Version v" + environment.version)).toBeInTheDocument();
     expect(asFragment()).toMatchSnapshot();
   });
 });

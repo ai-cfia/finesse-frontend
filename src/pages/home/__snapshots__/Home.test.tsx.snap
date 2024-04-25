@@ -10,7 +10,7 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-gLLuof eGamgQ"
       >
         <nav>
           <ul
@@ -34,7 +34,7 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -61,10 +61,10 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
       class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-iBdnpw eTktYW"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-fsYfdN ksPYQH"
         >
           <svg
             data-testid="search-icon"
@@ -87,7 +87,7 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-brSamD bzA-Dzl button"
             data-testid="submit-button"
             type="submit"
           >
@@ -121,11 +121,6 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
       </text>
-    </div>
-    <div
-      class="sc-jTQCzO IZJjs"
-    >
-      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -141,7 +136,7 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-gLLuof eGamgQ"
       >
         <nav>
           <ul
@@ -165,7 +160,7 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -207,10 +202,10 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
       class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-iBdnpw eTktYW"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-fsYfdN ksPYQH"
         >
           <svg
             data-testid="search-icon"
@@ -233,7 +228,7 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-brSamD bzA-Dzl button"
             data-testid="submit-button"
             type="submit"
           >
@@ -268,11 +263,6 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
         Équiper les utilisateurs de l'agence avec la recherche de précision.
       </text>
     </div>
-    <div
-      class="sc-jTQCzO IZJjs"
-    >
-      v1.0.1
-    </div>
   </div>
 </DocumentFragment>
 `;
@@ -287,7 +277,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-gLLuof eGamgQ"
       >
         <nav>
           <ul
@@ -311,7 +301,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -332,7 +322,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
         />
       </svg>
       <div
-        class="sc-irLvIq hkeVyu"
+        class="sc-kFCroH IqMcE"
         data-testid="debug-panel"
       >
         <h4
@@ -341,10 +331,10 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
           Debug Panel
         </h4>
         <div
-          class="sc-csKJxZ ilyJmt"
+          class="sc-irLvIq cxLSMH"
         >
           <label
-            class="sc-eTNRI cNqKFl"
+            class="sc-csKJxZ kZvwRK"
           >
             <input
               data-testid="search-source-ailab"
@@ -352,13 +342,13 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
               value="ailab"
             />
             <span
-              class="sc-brSamD fpMuCT"
+              class="sc-eTNRI dNRwTo"
             >
               Use AI Lab Search
             </span>
           </label>
           <label
-            class="sc-eTNRI cNqKFl"
+            class="sc-csKJxZ kZvwRK"
           >
             <input
               checked=""
@@ -367,13 +357,13 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
               value="azure"
             />
             <span
-              class="sc-brSamD fpMuCT"
+              class="sc-eTNRI dNRwTo"
             >
               Use Azure AI Search
             </span>
           </label>
           <label
-            class="sc-eTNRI cNqKFl"
+            class="sc-csKJxZ kZvwRK"
           >
             <input
               data-testid="search-source-llamaindex"
@@ -381,7 +371,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
               value="llamaindex"
             />
             <span
-              class="sc-brSamD fpMuCT"
+              class="sc-eTNRI dNRwTo"
             >
               Use AI Lab LlamaIndex Search
             </span>
@@ -410,10 +400,10 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
       class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-iBdnpw eTktYW"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-fsYfdN ksPYQH"
         >
           <svg
             data-testid="search-icon"
@@ -436,7 +426,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-brSamD bzA-Dzl button"
             data-testid="submit-button"
             type="submit"
           >
@@ -470,11 +460,6 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
       </text>
-    </div>
-    <div
-      class="sc-jTQCzO IZJjs"
-    >
-      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -490,7 +475,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-gLLuof eGamgQ"
       >
         <nav>
           <ul
@@ -514,7 +499,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -556,10 +541,10 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
       class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-iBdnpw eTktYW"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-fsYfdN ksPYQH"
         >
           <svg
             data-testid="search-icon"
@@ -582,7 +567,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-brSamD bzA-Dzl button"
             data-testid="submit-button"
             type="submit"
           >
@@ -616,11 +601,6 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
       </text>
-    </div>
-    <div
-      class="sc-jTQCzO IZJjs"
-    >
-      v1.0.1
     </div>
   </div>
 </DocumentFragment>
@@ -636,7 +616,7 @@ exports[`Home > renders the Home page correctly 1`] = `
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-gLLuof eGamgQ"
       >
         <nav>
           <ul
@@ -660,7 +640,7 @@ exports[`Home > renders the Home page correctly 1`] = `
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version
+              Alpha Version v0.1.1
             </li>
           </ul>
         </nav>
@@ -702,10 +682,10 @@ exports[`Home > renders the Home page correctly 1`] = `
       class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-iBdnpw eTktYW"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-fsYfdN ksPYQH"
         >
           <svg
             data-testid="search-icon"
@@ -728,7 +708,7 @@ exports[`Home > renders the Home page correctly 1`] = `
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-brSamD bzA-Dzl button"
             data-testid="submit-button"
             type="submit"
           >
@@ -762,11 +742,6 @@ exports[`Home > renders the Home page correctly 1`] = `
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
       </text>
-    </div>
-    <div
-      class="sc-jTQCzO IZJjs"
-    >
-      v1.0.1
     </div>
   </div>
 </DocumentFragment>

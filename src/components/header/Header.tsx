@@ -5,6 +5,7 @@ import AlertBanner from "../alert_banner/AlertBanner";
 import DebugButton from "../debug_button/DebugButton";
 import { DebugPanel } from "../debug_panel/DebugPanel";
 import { HeaderContainer } from "../../styles/indexElements";
+import { environment } from "../../environments/environment";
 
 // Header Component -> Displays CFIA banner image.
 const Header: React.FC = () => {
@@ -24,7 +25,7 @@ const Header: React.FC = () => {
                 />
               </a>
             </li>
-            <li className={styles.headerRightText}>Alpha Version</li>
+            <li className={styles.headerRightText}>Alpha Version {environment.version !== "" ? "v" + environment.version : ""}</li>
           </ul>
         </nav>
       </HeaderContainer>
