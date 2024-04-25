@@ -29,7 +29,7 @@ describe("SearchBar", () => {
   const dataContextMock = {
     searchTerm: "initial",
     setSearchTerm: mockSetSearchTerm,
-    currentSearchSource: SearchSource.ailab,
+    currentSearchSource: SearchSource.azure,
     setCurrentSearchSource: vi.fn(),
     queryResult: [],
     setQueryResult: vi.fn(),

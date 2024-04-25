@@ -347,20 +347,6 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             class="sc-eTNRI cNqKFl"
           >
             <input
-              data-testid="search-source-ailab"
-              type="radio"
-              value="ailab"
-            />
-            <span
-              class="sc-brSamD fpMuCT"
-            >
-              Use AI Lab Search
-            </span>
-          </label>
-          <label
-            class="sc-eTNRI cNqKFl"
-          >
-            <input
               checked=""
               data-testid="search-source-azure"
               type="radio"

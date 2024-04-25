@@ -22,18 +22,6 @@ export const DebugPanel: React.FC = () => {
       <RadioContainer>
         <RadioOption>
           <input
-            data-testid="search-source-ailab"
-            type="radio"
-            value="ailab"
-            checked={currentSearchSource === SearchSource.ailab}
-            onChange={() => {
-              setCurrentSearchSource(SearchSource.ailab);
-            }}
-          />
-          <RadioLabel>Use AI Lab Search</RadioLabel>
-        </RadioOption>
-        <RadioOption>
-          <input
             data-testid="search-source-azure"
             type="radio"
             value="azure"
