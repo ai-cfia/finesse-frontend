@@ -1,7 +1,7 @@
 {
   "name": "finesse-frontend",
   "private": true,
-  "version": "1.0.1",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "prestart": "ts-appversion",
@@ -10,7 +10,8 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --ignore",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "test:update": "vitest -u"
   },
   "dependencies": {
     "@saithodev/ts-appversion": "^2.2.0",

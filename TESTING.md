@@ -161,27 +161,22 @@ search engine.
 ### Test 1: CFIA Logo Redirect Functionality
 
 **Objective:** Verify that clicking the CFIA logo redirects the user to the
-application's base path as defined by the `VITE_BASENAME` environment variable.
+application's base path `/`.
 
 **Preconditions:**
 
 - [ ] The application is open, and the user is on a page other than the base
-      path set by `VITE_BASENAME`.
+      path `/`.
 - [ ] The CFIA logo is visible and not obscured by any elements.
-- [ ] The `VITE_BASENAME` environment variable is set to the appropriate base
-      path (e.g., "/finesse-frontend").
 
 **Test Steps:**
 
-1. Ensure the `VITE_BASENAME` environment variable is set to the desired base
-   path.
-2. Navigate to a page within the application that is not the base path.
-3. Click on the CFIA logo.
+1. Navigate to a page within the application that is not the base path.
+2. Click on the CFIA logo.
 
 **Expected Results:**
 
-- [ ] Clicking the logo should redirect the user to the base path as defined by
-      `VITE_BASENAME`.
+- [ ] Clicking the logo should redirect the user to the base path `/`.
 - [ ] The base path page should load successfully without errors.
 
 **Actual Results:**
@@ -190,7 +185,7 @@ application's base path as defined by the `VITE_BASENAME` environment variable.
 
 **Pass/Fail:**
 
-- [ ] Pass if the user is redirected to the base path set by `VITE_BASENAME` and
-      it loads correctly.
+- [ ] Pass if the user is redirected to the base path `/` and it loads
+      correctly.
 - [ ] Fail if the user is not redirected to the base path, or the base path does
       not load properly.

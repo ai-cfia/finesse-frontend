@@ -10,7 +10,7 @@ exports[`App Component > displays the version that matches the environment versi
       role="banner"
     >
       <div
-        class="sc-iBdnpw iSWxFd"
+        class="sc-gLLuof eGamgQ"
       >
         <nav>
           <ul
@@ -34,7 +34,7 @@ exports[`App Component > displays the version that matches the environment versi
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -76,10 +76,10 @@ exports[`App Component > displays the version that matches the environment versi
       class="sc-dmyCSP cgQPPk"
     >
       <form
-        class="sc-fsYfdN gMdzwM"
+        class="sc-iBdnpw eTktYW"
       >
         <div
-          class="sc-qZrbh hoLtJU"
+          class="sc-fsYfdN ksPYQH"
         >
           <svg
             data-testid="search-icon"
@@ -102,7 +102,7 @@ exports[`App Component > displays the version that matches the environment versi
             value=""
           />
           <button
-            class="sc-ktwOfi ddPxBG button"
+            class="sc-brSamD bzA-Dzl button"
             data-testid="submit-button"
             type="submit"
           >
@@ -136,11 +136,6 @@ exports[`App Component > displays the version that matches the environment versi
       >
         Équiper les utilisateurs de l'agence avec la recherche de précision.
       </text>
-    </div>
-    <div
-      class="sc-jTQCzO IZJjs"
-    >
-      v1.0.1
     </div>
   </div>
 </DocumentFragment>
