@@ -34,7 +34,7 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -151,7 +151,7 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -283,7 +283,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -315,20 +315,6 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
         <div
           class="sc-irLvIq cxLSMH"
         >
-          <label
-            class="sc-csKJxZ kZvwRK"
-          >
-            <input
-              data-testid="search-source-ailab"
-              type="radio"
-              value="ailab"
-            />
-            <span
-              class="sc-eTNRI dNRwTo"
-            >
-              Use AI Lab Search
-            </span>
-          </label>
           <label
             class="sc-csKJxZ kZvwRK"
           >
@@ -472,7 +458,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 2
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>

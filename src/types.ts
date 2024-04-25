@@ -1,5 +1,4 @@
 export enum SearchSource {
-  ailab = "ailab",
   azure = "azure",
   llamaindex = "llamaindex",
 }

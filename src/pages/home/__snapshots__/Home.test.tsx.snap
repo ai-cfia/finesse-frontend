@@ -34,7 +34,7 @@ exports[`Home > Debug functionalities > does not show the debug button when VITE
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -160,7 +160,7 @@ exports[`Home > Debug functionalities > shows the debug button when VITE_DEBUG_M
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -301,7 +301,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -333,20 +333,6 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
         <div
           class="sc-irLvIq cxLSMH"
         >
-          <label
-            class="sc-csKJxZ kZvwRK"
-          >
-            <input
-              data-testid="search-source-ailab"
-              type="radio"
-              value="ailab"
-            />
-            <span
-              class="sc-eTNRI dNRwTo"
-            >
-              Use AI Lab Search
-            </span>
-          </label>
           <label
             class="sc-csKJxZ kZvwRK"
           >
@@ -499,7 +485,7 @@ exports[`Home > Debug functionalities > toggles the debug panel when the debug b
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>
@@ -640,7 +626,7 @@ exports[`Home > renders the Home page correctly 1`] = `
             <li
               class="_headerRightText_c7ee54"
             >
-              Alpha Version v0.1.1
+              Alpha Version v0.2.0
             </li>
           </ul>
         </nav>

@@ -15,7 +15,7 @@ interface DataContextState {
 export const DataContext = createContext<DataContextState>({
   searchTerm: null,
   setSearchTerm: () => {},
-  currentSearchSource: SearchSource.ailab,
+  currentSearchSource: SearchSource.azure,
   setCurrentSearchSource: () => {},
   queryResult: [],
   setQueryResult: () => {},
