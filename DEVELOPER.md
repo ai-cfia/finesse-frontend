@@ -44,8 +44,8 @@ test: {
 ## Integrating Vitest for Testing
 
 - Follow the example from [Vitest's React Testing Library
-  example](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
-  for Vitest setup.
+  example](https://github.com/vitest-dev/vitest/tree/main/examples/react) for
+  Vitest setup.
 - Add the following test configuration to `vite.config.ts`:
 
 ```typescript
