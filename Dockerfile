@@ -1,4 +1,4 @@
-FROM node:18.16.0-alpine AS build
+FROM node:18.20.2-alpine AS build
 
 WORKDIR /code
 
@@ -30,7 +30,7 @@ RUN npm run build
 RUN CI=1 npm run test
 
 # Setup for production
-FROM node:18.16.0-alpine AS runtime
+FROM node:18.20.2-alpine AS runtime
 
 # Install serve globally
 RUN npm install -g serve
