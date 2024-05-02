@@ -3,14 +3,14 @@
 exports[`App Component > displays the version that matches the environment version 1`] = `
 <DocumentFragment>
   <div
-    class="sc-beySPh ijVLbz"
+    class="sc-beqWNU jANgdx"
   >
     <header
       class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-gLLuof eGamgQ"
+        class="sc-gLDymS isyenm"
       >
         <nav>
           <ul
@@ -56,7 +56,7 @@ exports[`App Component > displays the version that matches the environment versi
       </svg>
     </header>
     <div
-      class="sc-guDLey cEokNJ"
+      class="sc-gueXAH kpCnlc"
     >
       <div>
         <a
@@ -73,13 +73,13 @@ exports[`App Component > displays the version that matches the environment versi
       </div>
     </div>
     <div
-      class="sc-dmyCSP cgQPPk"
+      class="sc-dmqGRC fLqYnn"
     >
       <form
-        class="sc-iBdnpw eTktYW"
+        class="sc-iAEzLF eqgXOc"
       >
         <div
-          class="sc-fsYfdN ksPYQH"
+          class="sc-fsQjcA csETly"
         >
           <svg
             data-testid="search-icon"
@@ -102,7 +102,7 @@ exports[`App Component > displays the version that matches the environment versi
             value=""
           />
           <button
-            class="sc-brSamD bzA-Dzl button"
+            class="sc-brKelq dEoUwU button"
             data-testid="submit-button"
             type="submit"
           >
@@ -126,7 +126,7 @@ exports[`App Component > displays the version that matches the environment versi
       </form>
     </div>
     <div
-      class="sc-eDLKkx fIWqab"
+      class="sc-eDDOjk cTuiLA"
     >
       <text>
         Empowering agency's users with precision search.
