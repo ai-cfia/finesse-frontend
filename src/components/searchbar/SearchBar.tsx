@@ -34,6 +34,7 @@ export const SearchBar: React.FC = () => {
       <InputWrapper>
         <FaSearch id="fa-arrow-right" data-testid="search-icon" />
         <input
+          autoFocus
           placeholder={SEARCH_PLACEHOLDER}
           value={searchQuery}
           onChange={(e) => {
