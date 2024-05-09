@@ -22,7 +22,7 @@ jobs:
     secrets: inherit
 
   build-and-push-ghcr:
-    uses: ai-cfia/github-workflows/.github/workflows/workflow-build-push-container-github-registry.yml@126-as-a-devsecops-i-want-to-remove-slash-or-backslash-from-the-docker-image-tag
+    uses: ai-cfia/github-workflows/.github/workflows/workflow-build-push-container-github-registry.yml@main
     with:
       container-name: ${{ github.event.repository.name }}
       tag: ${{ github.sha }}
