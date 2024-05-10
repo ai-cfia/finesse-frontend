@@ -71,9 +71,6 @@ export const FormWrapper = styled.form`
   height: 4rem;
   display: flex;
   align-items: center;
-  position:sticky;
-  top:0;
-  z-index:1000;
 `;
 
 export const InputWrapper = styled.div`
@@ -87,6 +84,9 @@ export const InputWrapper = styled.div`
   display: flex;
   align-items: center;
   margin-left: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 `;
 
 export const ResultList = styled.div`
