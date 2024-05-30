@@ -15,7 +15,7 @@ services:
       - finesse-network
 
   backend:
-    image: ghcr.io/ai-cfia/finesse-frontend:main
+    image: ghcr.io/ai-cfia/finesse-backend:main
     command: ["/bin/sh", "-c", "gunicorn --bind :8080 --workers 1 --threads 8 --timeout 0 --forwarded-allow-ips '*' app:app"]
     ports:
       - "8080:8080"

@@ -17,8 +17,8 @@ To get started with the project, follow the steps below:
 ### Configuration
 
 1. In the root of the project directory, locate the file named `.env.template`.
-2. Run the command `cp .env.template .env` to create a new `.env` file with
-   the same contents.
+2. Run the command `cp .env.template .env` to create a new `.env` file with the
+   same contents.
 3. Edit the `.env` file according to your specific needs.
 
 ### Running application
@@ -42,10 +42,13 @@ To get started with the project, follow the steps below:
 
 ### Docker-compose (optional)
 
-You can also use `docker-compose` to run the API with the client. The API is
-the backend that this client uses and is available at <https://github.com/ai-cfia/finesse-backend>.
+You can also use `docker-compose` to run the API with the client. The API is the
+backend that this client uses and is available at
+<https://github.com/ai-cfia/finesse-backend>.
 
-To run the API and the client together, you can use the following command:
+To run the API and the client together, make sure you have all the environment
+variables required from the backend (see .env.template in the repository) and
+then you can use the following command:
 
 ```bash
 docker-compose up --build
