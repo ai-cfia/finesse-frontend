@@ -40,6 +40,19 @@ To get started with the project, follow the steps below:
    Use arg `-e PORT=<port> -p 5000:<port>` if you wish to control the internal
    port.
 
+### Docker-compose (optional)
+
+You can also use `docker-compose` to run the API with the client. The API is
+the backend that this client uses and is available at <https://github.com/ai-cfia/finesse-backend>.
+
+To run the API and the client together, you can use the following command:
+
+```bash
+docker-compose up --build
+```
+
+You can then access the client at <http://localhost>.
+
 ### Testing application
 
 `npm test`
