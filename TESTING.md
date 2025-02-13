@@ -92,6 +92,7 @@ is submitted.
 ### Test 1: Default search engine selection
 
 #### Objective
+
 Confirm that `Use Azure AI Search` is selected by default and the application
 behaves as expected upon initial load.
 
@@ -122,6 +123,7 @@ behaves as expected upon initial load.
 ### Test 2: Search engine selection effects on search results
 
 #### Objective
+
 Verify that selecting different search engine options changes the search
 results, even though the current implementation does not clearly differentiate
 the results based on the source.
