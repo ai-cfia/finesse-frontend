@@ -1,4 +1,4 @@
-FROM node:18.20.2-alpine AS build
+FROM node:22.14.0-alpine AS build
 
 WORKDIR /code
 
@@ -8,8 +8,8 @@ ARG ARG_VITE_DEBUG_MODE
 ARG ARG_VITE_GITHUB_API_URL
 ARG ARG_VITE_SEARCH_SOURCE
 
-ENV VITE_BACKEND_URL=${ARG_VITE_BACKEND_URL:-/api}
-ENV VITE_DEBUG_MODE=${ARG_VITE_DEBUG_MODE:-True}
+ENV VITE_BACKEND_URL=${ARG_VITE_BACKEND_URL:-http://finesse-backend-svc.finesse:5000/api}
+ENV VITE_DEBUG_MODE=${ARG_VITE_DEBUG_MODE:-False}
 ENV VITE_GITHUB_API_URL=${ARG_VITE_GITHUB_API_URL:-https://api.github.com/repos/ai-cfia/finesse-data/contents}
 ENV VITE_SEARCH_SOURCE=${ARG_VITE_SEARCH_SOURCE:-azure}
 ENV PORT=3000
@@ -30,7 +30,7 @@ RUN npm run build
 RUN CI=1 npm run test
 
 # Setup for production
-FROM node:18.20.2-alpine AS runtime
+FROM node:22.14.0-alpine AS runtime
 
 # Install serve globally
 RUN npm install -g serve
