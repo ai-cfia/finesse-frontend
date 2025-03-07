@@ -3,14 +3,14 @@
 exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is false 1`] = `
 <DocumentFragment>
   <div
-    class="sc-beqWNU jANgdx"
+    class="sc-FEMpB clPfUa"
   >
     <header
       class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-gLDymS isyenm"
+        class="sc-gNZgCX eDXqUY"
       >
         <nav>
           <ul
@@ -41,7 +41,7 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
       </div>
     </header>
     <div
-      class="sc-jTrOVX gRySki"
+      class="sc-jbAkgO hEiXZE"
     >
       <div>
         <a
@@ -57,13 +57,13 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
         </a>
       </div>
       <div
-        class="sc-hLseSp hUlXXZ"
+        class="sc-fLDLck hJBNBf"
       >
         <form
-          class="sc-iAEzLF eqgXOc"
+          class="sc-kfeOyU bQyvBn"
         >
           <div
-            class="sc-fsQjcA csETly"
+            class="sc-hRDKVd iwALkA"
           >
             <svg
               data-testid="search-icon"
@@ -86,7 +86,7 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
               value=""
             />
             <button
-              class="sc-brKelq dEoUwU button"
+              class="sc-jZTQcj eTHOcC button"
               data-testid="submit-button"
               type="submit"
             >
@@ -111,7 +111,7 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
       </div>
     </div>
     <div
-      class="sc-qRuZU dsWwpM"
+      class="sc-jBIHhB knrchj"
     />
   </div>
 </DocumentFragment>
@@ -120,14 +120,14 @@ exports[`SearchPage > does not show the debug button when VITE_DEBUG_MODE is fal
 exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = `
 <DocumentFragment>
   <div
-    class="sc-beqWNU jANgdx"
+    class="sc-FEMpB clPfUa"
   >
     <header
       class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-gLDymS isyenm"
+        class="sc-gNZgCX eDXqUY"
       >
         <nav>
           <ul
@@ -173,7 +173,7 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
       </svg>
     </header>
     <div
-      class="sc-jTrOVX gRySki"
+      class="sc-jbAkgO hEiXZE"
     >
       <div>
         <a
@@ -189,13 +189,13 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
         </a>
       </div>
       <div
-        class="sc-hLseSp hUlXXZ"
+        class="sc-fLDLck hJBNBf"
       >
         <form
-          class="sc-iAEzLF eqgXOc"
+          class="sc-kfeOyU bQyvBn"
         >
           <div
-            class="sc-fsQjcA csETly"
+            class="sc-hRDKVd iwALkA"
           >
             <svg
               data-testid="search-icon"
@@ -218,7 +218,7 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
               value=""
             />
             <button
-              class="sc-brKelq dEoUwU button"
+              class="sc-jZTQcj eTHOcC button"
               data-testid="submit-button"
               type="submit"
             >
@@ -243,7 +243,7 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
       </div>
     </div>
     <div
-      class="sc-qRuZU dsWwpM"
+      class="sc-jBIHhB knrchj"
     />
   </div>
 </DocumentFragment>
@@ -252,14 +252,14 @@ exports[`SearchPage > shows the debug button when VITE_DEBUG_MODE is true 1`] = 
 exports[`SearchPage > toggles the debug panel when the debug button is clicked 1`] = `
 <DocumentFragment>
   <div
-    class="sc-beqWNU jANgdx"
+    class="sc-FEMpB clPfUa"
   >
     <header
       class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-gLDymS isyenm"
+        class="sc-gNZgCX eDXqUY"
       >
         <nav>
           <ul
@@ -304,7 +304,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
         />
       </svg>
       <div
-        class="sc-kFuvnu bPxKlT"
+        class="sc-jUkaYT gXgWeP"
         data-testid="debug-panel"
       >
         <h4
@@ -313,10 +313,10 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
           Debug Panel
         </h4>
         <div
-          class="sc-irTrJD kQrLE"
+          class="sc-deSjom ghpsbY"
         >
           <label
-            class="sc-csCNwM dNaTTH"
+            class="sc-jHswkR jaWoSa"
           >
             <input
               checked=""
@@ -325,13 +325,13 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
               value="azure"
             />
             <span
-              class="sc-fbJSV gtiTPy"
+              class="sc-cSaEAk cNnabG"
             >
               Use Azure AI Search
             </span>
           </label>
           <label
-            class="sc-csCNwM dNaTTH"
+            class="sc-jHswkR jaWoSa"
           >
             <input
               data-testid="search-source-llamaindex"
@@ -339,7 +339,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
               value="llamaindex"
             />
             <span
-              class="sc-fbJSV gtiTPy"
+              class="sc-cSaEAk cNnabG"
             >
               Use AI Lab LlamaIndex Search
             </span>
@@ -348,7 +348,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
       </div>
     </header>
     <div
-      class="sc-jTrOVX gRySki"
+      class="sc-jbAkgO hEiXZE"
     >
       <div>
         <a
@@ -364,13 +364,13 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
         </a>
       </div>
       <div
-        class="sc-hLseSp hUlXXZ"
+        class="sc-fLDLck hJBNBf"
       >
         <form
-          class="sc-iAEzLF eqgXOc"
+          class="sc-kfeOyU bQyvBn"
         >
           <div
-            class="sc-fsQjcA csETly"
+            class="sc-hRDKVd iwALkA"
           >
             <svg
               data-testid="search-icon"
@@ -393,7 +393,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
               value=""
             />
             <button
-              class="sc-brKelq dEoUwU button"
+              class="sc-jZTQcj eTHOcC button"
               data-testid="submit-button"
               type="submit"
             >
@@ -418,7 +418,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
       </div>
     </div>
     <div
-      class="sc-qRuZU dsWwpM"
+      class="sc-jBIHhB knrchj"
     />
   </div>
 </DocumentFragment>
@@ -427,14 +427,14 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 1
 exports[`SearchPage > toggles the debug panel when the debug button is clicked 2`] = `
 <DocumentFragment>
   <div
-    class="sc-beqWNU jANgdx"
+    class="sc-FEMpB clPfUa"
   >
     <header
       class="_header_c7ee54"
       role="banner"
     >
       <div
-        class="sc-gLDymS isyenm"
+        class="sc-gNZgCX eDXqUY"
       >
         <nav>
           <ul
@@ -480,7 +480,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 2
       </svg>
     </header>
     <div
-      class="sc-jTrOVX gRySki"
+      class="sc-jbAkgO hEiXZE"
     >
       <div>
         <a
@@ -496,13 +496,13 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 2
         </a>
       </div>
       <div
-        class="sc-hLseSp hUlXXZ"
+        class="sc-fLDLck hJBNBf"
       >
         <form
-          class="sc-iAEzLF eqgXOc"
+          class="sc-kfeOyU bQyvBn"
         >
           <div
-            class="sc-fsQjcA csETly"
+            class="sc-hRDKVd iwALkA"
           >
             <svg
               data-testid="search-icon"
@@ -525,7 +525,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 2
               value=""
             />
             <button
-              class="sc-brKelq dEoUwU button"
+              class="sc-jZTQcj eTHOcC button"
               data-testid="submit-button"
               type="submit"
             >
@@ -550,7 +550,7 @@ exports[`SearchPage > toggles the debug panel when the debug button is clicked 2
       </div>
     </div>
     <div
-      class="sc-qRuZU dsWwpM"
+      class="sc-jBIHhB knrchj"
     />
   </div>
 </DocumentFragment>

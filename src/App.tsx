@@ -7,10 +7,9 @@ import LayoutProvider from "./contexts/LayoutProvider";
 import Home from "./pages/home/Home";
 import SearchPage from "./pages/search/SearchPage";
 
-
-function App(): JSX.Element {
+function App() {
   return (
-    <BrowserRouter >
+    <BrowserRouter>
       <AlertProvider>
         <DataProvider>
           <LayoutProvider>
