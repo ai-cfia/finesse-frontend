@@ -1,5 +1,7 @@
 # Migration From Create-React-App to Vite
 
+([*Le français est disponible au bas de la page*](#vue-densemble))
+
 ## Overview
 
 This document outlines the steps taken to migrate a TypeScript React application
@@ -70,3 +72,82 @@ test: {
   integrity.
 - Finalize changes on the new branch, followed by code reviews and testing
   before merging.
+
+---
+
+## Migration de Create-React-App vers Vite
+
+## Vue d'ensemble
+
+Ce document décrit les étapes effectuées pour migrer une application React
+TypeScript de Create-React-App (CRA) vers Vite, avec une transition de Jest à
+Vitest pour les tests unitaires.
+
+## Configuration initiale et nettoyage
+
+- Créez une nouvelle branche pour le processus de migration.
+- Supprimez les fichiers inutiles à l'exception de la documentation, des
+  configurations `.github`, du Dockerfile et des autres fichiers de
+  configuration de l'environnement de développement.
+
+## Création d'un nouveau projet avec Vite
+
+- Initialisez un nouveau projet Vite en exécutant `npm create vite@latest .`
+  dans votre répertoire de projet, en choisissant le framework `react` et la
+  variante `TypeScript + SWC`.
+- Importez le code `src` et les assets du projet précédent dans la nouvelle
+  structure du projet Vite.
+
+## Configuration des dépendances
+
+- Installez les dépendances nécessaires, en excluant celles qui ne sont pas
+  requises dans l'environnement Vite.
+- Mettez à jour les préfixes des variables d'environnement de `REACT_APP_` à
+  `VITE_` dans l'ensemble du code.
+
+## Ajustement de la configuration de Vite
+
+- Modifiez `vite.config.ts` pour servir sur `0.0.0.0` et utiliser par défaut le
+  port `3000`.
+- Ajoutez la configuration suivante pour les tests avec Vitest dans
+  `vite.config.ts` :
+
+```typescript
+test: {
+  globals: true,
+  environment: 'jsdom',
+  setupFiles: './src/test/setup.ts',
+  css: true,
+}
+```
+
+## Intégration de Vitest pour les tests
+
+- Suivez l'exemple de [Vitest's React Testing
+  Library](https://github.com/vitest-dev/vitest/tree/main/examples/react) pour
+  la configuration de Vitest.
+- Ajoutez la configuration de test suivante à `vite.config.ts` :
+
+```typescript
+test: {
+  globals: true,
+  environment: "jsdom",
+  setupFiles: "./src/test/setup.ts",
+  css: true,
+}
+```
+
+- Ajoutez `"types": ["vitest/globals"]` à `tsconfig.json`.
+- Créez le fichier `src/test/setup.ts` avec `import
+  '@testing-library/jest-dom'`.
+- Adaptez les tests pour utiliser Vitest à la place de Jest.
+- Conservez `@testing-library/react` et `@testing-library/jest-dom` installés et
+  utilisés.
+
+## Étapes finales
+
+- Vérifiez que l'application fonctionne correctement dans l'environnement Vite.
+- Exécutez les tests avec Vitest pour confirmer la logique de l'application et
+  l'intégrité des composants.
+- Finalisez les modifications sur la nouvelle branche, suivez les revues de code
+  et effectuez des tests avant de fusionner.
